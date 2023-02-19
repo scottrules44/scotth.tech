@@ -1,0 +1,81 @@
+<div id = "main">
+	<h3><a id="videoEditor">Video Editor Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you to trim videos, merge two videos into one, get video info (Duration, size, width, height), and get a thumbnail(image) of specific second in a video.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works with iOS and Android</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>videoEditor.createThumbnail(videoInput, imageOutput, atTime, imageWidth, imageHeight, quality)</h4></p>
+	<p></p>
+	<p>videoInput(string) video file path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>imageOutput(string) image output path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>atTime (number) second to get image from video</p>
+	<p></p>
+	<p>imageWidth (number) image width</p>
+	<p></p>
+	<p>imageHeight (number) image height</p>
+	<p></p>
+	<p>quality (number) image quality (1-100, 100 = high quality) </p>
+	<p></p>
+	<p><h4>videoEditor.trim(videoInput, startTime, endTime, videoOutput, listener)</h4></p>
+	<p></p>
+	<p>videoInput(string) video file path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>startTime (number) second to start trim</p>
+	<p></p>
+	<p>endTime (number) second to end trim</p>
+	<p></p>
+	<p>imageHeight (number) image height</p>
+	<p></p>
+	<p>videoOutput(string) video output path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>listener (function) returns event.isError if true then an error occured, if false then it was a success</p>
+	<p></p>
+	<p><h4>videoEditor.getVideoInfo(videoInput)</h4> -- output table with key value pairs: width(number), height(number), orientation(string, values: "portrait", "landscape"), duration(number), size(number, bytes of file), bitrate (number)</p>
+	<p></p>
+	<p>videoInput(string) video file path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p><h4>videoEditor.mergeVideos(videoInput1, videoInput2, videoOutput, listener)</h4></p>
+	<p></p>
+	<p>videoInput1(string)first video to merge file path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>videoInput2(string)second video to merge file path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>videoOutput(string) video output path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>listener (function) returns event.isError if true then an error occured, if false then it was a success</p>
+	<p></p>
+	<p><h4>videoEditor.cropVideo(videoInput, videoOutput, width, height, listener)</h4>--"important" make sure the crop width and height is smaller video width and height </p>
+	<p></p>
+	<p>videoInput(string) video to crop file path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>videoOutput(string) video output path via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>width(number)crop video width <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>height(number)crop video height <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+	<p></p>
+	<p>listener (function) returns event.isError if true then an error occured, if false then it was a success</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.videoEditor"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p> <a href="https://solar2dmarketplace.com/plugins?VideoEditor_tech-scotth">Get plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/videoEditor-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

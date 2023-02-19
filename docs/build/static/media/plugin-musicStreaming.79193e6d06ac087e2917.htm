@@ -1,0 +1,98 @@
+<div id = "main">
+
+	<h3><a id="start">Music Streaming</a></h3>
+	<p>This plugin allows you to stream audio from a server.</p>
+	<p></p>
+	<p><h3>Limitations:</h3> At this moment iOS (and simulator), macOS, android (read gottchas),and tvOS are only supported. Also please note you only can play one stream at a time (use musicStreaming.stop() before playing another song). Trying to play two will cause an error and crash. Also you can only stream http:// and https:// urls with this plugin.</p>
+	<p></p>
+	<p>Gotchas: addToQueue does not work on android.</p>
+	<p></p>
+	<p>Please note "not playing" = you not calling musicStreaming.play() first </p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p>musicStreaming.init()</p>
+	<p>sets things up</p>
+	<p></p>
+	<p>musicStreaming.play(url, listener) </p>
+	<p>--url (required)(string) the url of the string you would like to stream, example: "https://www.example.com/test1.mp3"</p>
+	<p>--listener (required)(function) lets you know when a song is started, finshed, or there is an error with the following event.response</p>
+	<unordered-list-item>starting</unordered-list-item>
+	<unordered-list-item>finished</unordered-list-item>
+	<unordered-list-item>error loading song</unordered-list-item>
+	<p></p>
+	<p>musicStreaming.pause() </p>
+	<p>returns string, values "not playing", "already paused", or "pausing" </p>
+	<p></p>
+	<p>musicStreaming.stop() </p>
+	<p>returns string, values "not playing" or "stopped" </p>
+	<p></p>
+	<p>musicStreaming.resume() </p>
+	<p>returns string, values "not playing", "already playing",or "resume" </p>
+	<p> </p>
+	<p></p>
+	<p>musicStreaming.getStatus() </p>
+	<p>returns string, values "not playing", "paused", "error" (this is rare),or "playing" </p>
+	<p></p>
+	<p>musicStreaming.getDuration() </p>
+	<p>how long is the song </p>
+	<p>returns number (note: using milliseconds)</p>
+	<p></p>
+	<p>musicStreaming.getProgress() </p>
+	<p>where are we in the song</p>
+	<p>returns number (note: using milliseconds)</p>
+	<p></p>
+	<p>musicStreaming.getVolume() </p>
+	<p>returns number </p>
+	<p></p>
+	<p>musicStreaming.setVolume(volume) </p>
+	<p>--volume (required) (integer) 0 = mute, 1= loudest, default is 1.</p>
+	<p> </p>
+	<p>musicStreaming.addToQueue(url) </p>
+	<p>This allows you to play audio back to back without a gap. Note on android this has not been added due to technical limitations. I am working on a workaround.</p>
+	<p>--url (required)(string) the url of the string you would like to stream after song is finshed, example: "https://www.example.com/test1.mp3"</p>
+	<p>returns string, values "not playing" or "added to queue"</p>
+	<p> </p>
+	<p>musicStreaming.seek(seekNum) </p>
+	--seekNum (required)(integer)where you would like to go in the song (note: using milliseconds)</p>
+	<p>returns string, values "not playing" or "seeking"</p>
+	<p> </p>
+	<p>musicStreaming.checkAudio(url, listener) (only works iOS, tvOS, and MacOS) </p>
+	<p>--url (required)(string) url to check</p>
+	<p>--listener (required)(function) returns strings:</p>
+	<unordered-list-item>song found</unordered-list-item>
+	<unordered-list-item>error loading song</unordered-list-item>
+	<p> </p>
+	<p> </p>
+	<p><a id="musicStreamingBackground"><h3>Background play:</a></h3></p>
+	<p> </p>
+	<p>Android:</p>
+	<p>please note that audio will play in background by default. Please use <a href="https://coronalabs.com/blog/2012/05/15/handling-corona-system-events/">system events</a> to .pause() the music with "applicationSuspend".</p>
+	<p></p>
+	<p>iOS:</p>
+	<p>While there is a way on iOS, it is not offical supported by corona. So use at your own risk</p>
+	<p>Example found<a href="https://forums.coronalabs.com/topic/34435-streaming-audio-with-app-in-backgroundsuspended/"> here</a></p>
+	<p></p>
+	<p></p>
+	<h3>Build.settings</h3>
+	<script src="https://gist.github.com/scottrules44/222c73a48d8f1350fd2a6246e6ad9664.js"></script>
+	<p></p>
+	<p><h3>Credits:</h3></p>
+	<p><a href="https://github.com/tumtumtum/StreamingKit">streaming kit</a> by Thong Nguyen was used for for iOS, Mac, and tvOs</p>
+	<p></p>
+	<p><h3>build.settings</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	["plugin.musicStreaming"] =<br/>
+	{<br/>
+		publisherId="tech.scotth",<br/>
+		marketplaceId = "insert marketplace account ID",<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://solar2dmarketplace.com/plugins?MusicStreaming_tech-scotth">Get Plugin</a> </p>
+	<p> <a href="https://github.com/scottrules44/musicStreamingDemo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

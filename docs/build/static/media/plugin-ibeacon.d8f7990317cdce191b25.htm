@@ -1,0 +1,114 @@
+
+<div id = "main">
+	<h3><a id="ibeacon">iBeacon Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you to find ibeacons nearby and create an beacons from your device</p>
+	<p></p>
+	<p><h3>Platforms:</h3>the ibeacon plugin only works with iOS 7.0+(not simulator due to ibeacon not being testable in simulator)</p>
+	<p></p>
+	<p><h3>Limitations:</h3>please use two device to test demo project</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>ibeacon.search(uuids,listener)</h4></p>
+	<p></p>
+	<p>uuids(array)(required) uuids to seach for example {"00000000-0000-0000-0000-000000000000", ""00000000-0000-0000-0000-000000000001"}</p>
+	<p>listener(function) (required)</p>
+	<unordered-list-item>
+		<li>event.accuracy(string)-- possible values are</li>
+		<unordered-list-item>
+			<li>"best"</li>
+			<li>"kilometer"</li>
+			<li>"hundred meters"</li>
+			<li>"three kilometers"</li>
+			<li>"nearest ten meters"</li>
+			<li>"best for navigation"</li>
+			<li>"unknown"</li>
+		</unordered-list-item>
+		<li>event.major(integer)-- The most significant value in the beacon</li>
+		<li>event.minor(integer)-- The least significant value in the beacon</li>
+		<li>event.uuid(string)-- the uuid of the beacon</li>
+		<li>event.proximity(string)-- how close the user is</li>
+		<unordered-list-item>
+			<li>"immediate"</li>
+			<li>"near"</li>
+			<li>"far"</li>
+			<li>"unknown"</li>
+		</unordered-list-item>
+		<li>event.rssi(number)-- The received signal strength of the beacon, measured in decibels</li>
+	</unordered-list-item>
+<code><pre>
+local function iBeaconLis( e )<br/>
+    print( "Beacon Found" )<br/>
+    print( "--------------" )<br/>
+    print( "accuracy:"..e.accuracy )<br/>
+    print( "uuid:"..e.uuid )<br/>
+    print( "accuracy:"..e.accuracy )<br/>
+    print( "major:"..e.major )<br/>
+    print( "minor:"..e.minor )<br/>
+    print( "--------------" )<br/>
+end<br/>
+ibeacon.search({"00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"},iBeaconLis)<br/>
+</pre></code>
+	<p></p>
+	<p><h4>ibeacon.setTimer(seconds)</h4></p>
+	<p>seconds(integer)(required) how often the device should search</p>
+<code><pre>
+ibeacon.setTimer(10)
+</pre></code>
+	<p></p>
+	<p><h4>ibeacon.stopUUIDSearch(uuid)</h4></p>
+	<p>uuid(string)(required) stop search for a particular uuid</p>
+<code><pre>
+ibeacon.stopUUIDSearch("00000000-0000-0000-0000-000000000000")
+</pre></code>
+	<p></p>
+	<p><h4>ibeacon.stopAllSearchs()</h4> -- stop all searching for beacons</p>
+<code><pre>
+ibeacon.stopAllSearchs()
+</pre></code>
+	<p></p>
+	<p><h4>ibeacon.startTransmitting(uuid, major, minor)</h4> -- turns device into iBeacon</p>
+	<p>uuid(string)(optional) the uuid to broadcast</p>
+	<p>major(integer)(required) the major to broadcast</p>
+	<p>minor(integer)(required) the minor to broadcast</p>
+<code><pre>
+ibeacon.startTransmitting("00000000-0000-0000-0000-000000000000", 10001, 69)
+--or 
+ibeacon.startTransmitting(10001, 69) -- uses device uuid
+</pre></code>
+	<p></p>
+	<p><h4>ibeacon.stopTransmitting()</h4> -- stop device broadcasting</p>
+<code><pre>
+ibeacon.stopTransmitting()
+</pre></code>
+	<p></p>
+	<p><h4>ibeacon.canAccess()</h4> --used to check if location services is on, returns string "services disabled", "denied", "authorized", or "not determined"</p>
+<code><pre>
+print(ibeacon.canAccess())
+</pre></code>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	iphone =
+	{<br/>
+		plist =<br/>
+		{<br/>
+			NSLocationAlwaysUsageDescription = "ibeacon stuff",<br/>
+		},<br/>
+	},<br/>
+	plugins = {<br/>
+		["plugin.ibeacon"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?IbeaconPlugin_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/ibeacon-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

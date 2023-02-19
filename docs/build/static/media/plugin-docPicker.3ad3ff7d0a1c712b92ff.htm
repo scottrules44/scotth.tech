@@ -1,0 +1,50 @@
+<div id = "main">
+	<h3><a id="docPicker">Doc Picker Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you to import and export to icloud and 3rd party apps.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>iOS 8.0+</p>
+	<p></p>
+	<p><h3>Setup:</h3>Go to your apple developer account, go to certificates and profiles, go to iCloud containers, create a contain with the + plus, then go to app ids, click the id you are using and edit, make sure include cloud kit support is enabled, click edit, check the iCloud container you just made, continue and assign. Then go to your development providing profile, click edit, click regenerate, download, and install the new profile.</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>docPicker.import(documentTypes, listener)</h4></p>
+	<p>documentTypes(array of strings) array of <a href="https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319">uniform type identifiers</a> example ("public.text", "public.image")</p>
+	<p></p>
+	<p>listener(function) event.status can be "document picked", "documents picked", or "picker cancelled". event.url is returned "document picked"(iOS 8-10), event.urls returns array of paths to files (iOS 11+)</p>
+	<p></p>
+	<p><h4>docPicker.export(exportPath, listener)</h4></p>
+	<p></p>
+	<p>exportPath (path) export file url(<a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)  </p>
+	<p></p>
+	<p>listener(function) event.status can be "picker cancelled", "documents picked", or "document picked". event.url is returned "document picked"(iOS 8-10), event.urls returns array of paths to files (iOS 11+)</p>
+	<p></p>
+	<p><h4>docPicker.copy(fileToCopy, pathToCopy)</h4>-- use to copy to app sandbox</p>
+	<p></p>
+	<p>fileToCopy (string) the string of url import to copy to app sand box </p>
+	<p></p>
+	<p><p>pathToCopy (path) copy to url(<a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)  </p></p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	iphone =<br/>
+	{<br/>
+		iCloud = true,<br/>
+	},<br/>
+	plugins =<br/>
+    {<br/>
+		["plugin.docPicker"] =<br/>
+		{<br/>
+		    publisherId="tech.scotth",<br/>
+		    marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+    },<br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?DocPicker_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/docPicker-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>

@@ -1,0 +1,128 @@
+<div id = "main">
+	<h3><a id="replayKit">Replay Kit</a></h3>
+	<p>This plugin uses the <a href="https://developer.apple.com/reference/replaykit">Replay kit</a> framework which requires iOS 9+ for recording and iOS 10+ for broadcasting (tvOS requires 10+ for both). For andorid recording, it is build in the <a href="https://docs.coronalabs.com/plugin/gpgs/videos/index.html">gpgs plugin</a> corona made. One other note all system events(like notfication and other app music) are not recorded. Speed and quailty are based on device and networking speeds.</p>
+	<p></p>
+	<p></p>
+	<p><h3>Limitations:</h3> Only works on iOS, tvOS and "not" iOS or tvOS simulator. Also you cannot access microphone on tvOS.</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><a id="recordingReplayKit">---Recording screen iOS 9+ and tvOS 10+, please note the app does have access to the video.</a></p>
+	<p></p>
+	<p>replayKit.record(listener) </p>
+	<p>--listener (Required)(function) return event.response which could contain the following strings:</p>
+	<p></p>
+	<unordered-list-item>could not start recording</unordered-list-item>
+	<unordered-list-item>recording started</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p>replayKit.cacheRecording(listener) </p>
+	<p>--listener (Required)(function) return event.response which could contain the following strings:</p>
+	<p></p>
+	<unordered-list-item>cached video</unordered-list-item>
+	<unordered-list-item>sharing video</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.showCacheRecording()-- returns strings "showing", "nothing cached"</p>
+	<p></p>
+	<p></p>
+	<p>replayKit.stopRecording(listener) </p>
+	<p>--listener (Required)(function) return event.response which could contain the following strings:</p>
+	<p></p>
+	<unordered-list-item>could not stop</unordered-list-item>
+	<unordered-list-item>sharing video</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.cancelRecording(listener) </p>
+	<p>--listener (Required)(function) return event.response which could contain the following strings:</p>
+	<p></p>
+	<unordered-list-item>could not cancel</unordered-list-item>
+	<unordered-list-item>recording canceled</unordered-list-item>
+	<unordered-list-item>recording recycled</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.recordingScreen() </p>
+	<p>returns boolean, true = screen being recorded, false = screen not being recorded</p>
+	<p></p>
+	<p></p>
+	<p>replayKit.usingMicrophoneForRecoding() </p>
+	<p>returns boolean, true = mic being used for recording, false = mic not being used for recording</p>
+	<p></p>
+	<p></p>
+	<p>replayKit.availableToRecord() </p>
+	<p>returns boolean, true = you can record screen, false = you cannot record screen</p>
+	<p></p>
+	<p></p>
+	<p><a id="recordingReplayKit">---Broadcasting screen iOS 10+. I used the mobcrush for testing broadcasting feature, but should work the same for other apps.</a></p>
+	<p></p>
+	<p></p>
+	<p>replayKit.setBroadcastingOptions(micOn)</p>
+	<p>--micOn (optional)(boolean) this will allow users to talk during the broadcasting. (default is false)</p>
+	<p></p>
+	<p></p>
+	<p>replayKit.startBroadcasting(listener) </p>
+	<p>--listener (Required)(function) return event.response which could contain the following strings:</p>
+	<p></p>
+	<unordered-list-item>showing stream picker</unordered-list-item>
+	<unordered-list-item>unable to show stream picker</unordered-list-item>
+	<unordered-list-item>we are live</unordered-list-item>
+	<unordered-list-item>error loading stream</unordered-list-item>
+	<unordered-list-item>error while broadcasting</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.stopBroadcasting(listener) </p>
+	<p>--listener (Required)(function) return event.response which could contain the following strings:</p>
+	<p></p>
+	<unordered-list-item>unable to stop broadcasting</unordered-list-item>
+	<unordered-list-item>broadcast stopped</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.pauseBroadcasting() </p>
+	<p>returns string which could be</p>
+	<p></p>
+	<unordered-list-item>not broadcasting</unordered-list-item>
+	<unordered-list-item>broadcast already paused</unordered-list-item>
+	<unordered-list-item>broadcast paused</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.resumeBroadcasting() </p>
+	<p>returns string which could be</p>
+	<p></p>
+	<unordered-list-item>not broadcasting</unordered-list-item>
+	<unordered-list-item>already broadcasting</unordered-list-item>
+	<unordered-list-item>resume broadcasting</unordered-list-item>
+	<p></p>
+	<p></p>
+	<p>replayKit.broadcastIsPaused() </p>
+	<p>returns boolean, true = broadcast is paused, false = broadcast is not paused</p>
+	<p></p>
+	<p></p>
+	<p>replayKit.getBroadcastingUrl() </p>
+	<p>returns string, which is the url of broadcast( nil if there is not one)</p>
+	<p></p>
+	<p><h3>build.settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	iphone =<br/>
+	{<br/>
+		plist =<br/>
+		{<br/>
+			NSMicrophoneUsageDescription = "Testing",<br/>
+		},<br/>
+	},<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.replayKit"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	}<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?ReplayKit_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/replaykit-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

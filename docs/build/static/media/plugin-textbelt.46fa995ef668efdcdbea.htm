@@ -1,0 +1,61 @@
+<div id = "main">
+	<h3><a id="textbelt">Textbelt Plugin</a></h3>
+	<p>This plugins uses <a href="http://www.textbelt.com/">Textbelt</a>. Which allows you to send sms messages.</p>
+	<p></p>
+	<p>Limitations: Textbelt is now a paid service if you don't want to setup textbelt on your own server (see textbelt.init function). See textbelt website for info on carrier support (<a href="http://www.textbelt.com">here</a>)</p>
+	<p></p>
+	<h3>Functions:</h3>
+	<p></p>
+	<p>textbelt.init(key) -- textbelt key</p>
+	<p>key(string) -- found on text belt site</p>
+	<p></p>
+	<p>textbelt.sendText(number, message ,lis)</p>
+	<p>--number(string)</p>
+	<p>the phone number to send text message to</p>
+	<p>--message(string)</p>
+	<p>the message you would like to send</p>
+	<p>--lis(function)</p>
+	<li>
+		<unordered-list-item>event.isError</unordered-list-item>
+		<unordered-list-item>event.error returns("unable to send", "unable to connect")</unordered-list-item>
+		<unordered-list-item>event.status returns("success", "error")</unordered-list-item>
+		<unordered-list-item>event.data returns tables</unordered-list-item>
+	</li>
+<code><pre>
+textbelt.sendUS("0123456789", "hello there", function (e)<br/>
+	if e.isError then<br/>
+		print("error sending message")<br/>
+	else<br/>
+		print("error sending message")<br/>
+	end		<br/>
+end)<br/>
+</pre></code>
+
+	<p></p>
+	<h3>Variables:</h3>
+	<p></p>
+	<p>textbelt.serverIp --(string) if you are hosting textbelt for your own server</p>
+	<p>textbelt.serverIpHttps --(boolean)should use https with your server (default is true)</p>
+	<p></p>
+	<h3><a id="textbeltATS">App transport securtiy url(s):</a></h3>
+	<p>--textbelt.com</p>
+	<p>Set NSIncludesSubdomains = true, check out Solar2D's guide <a href="https://docs.coronalabs.com/guide/hardware/appleATS/index.html">here</a></p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.textbelt"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://solar2dmarketplace.com/plugins?TextbeltPlugin_tech-scotth">Get Plugin</a> </p>
+	<p> <a href="https://github.com/scottrules44/textbelt-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

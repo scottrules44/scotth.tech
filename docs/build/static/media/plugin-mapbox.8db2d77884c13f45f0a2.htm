@@ -1,0 +1,160 @@
+<div id = "main">
+	<h3><a id="mapbox">Mapbox Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you display mapviews from the Mapbox SDK. You can add custom mapview styles to the mapviews.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works on iOS via Corona Simulator and Android and iOS via Corona native (see how to build for Corona Native below)</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>mapbox.init(accessToken)</h4></p>
+	<p>access token from mapbox account</p>
+	<p></p>
+	<p><h4>mapbox.newView(params)</h4> (Note this does not return anything, obj is returned in listener</p>
+	<p>params(table)</p>
+	<unordered-list-item>
+		<li>x (number) x corona point of mapview</li>
+		<dl>
+		<li>y (number) y corona point of mapview</li>
+		<dl>
+		<li>width (number) width of mapview</li>
+		<dl>
+		<li>height (number) height of mapview</li>
+		<dl>
+		<li>listener (number) returns Mapview and other events</li>
+		<unordered-list-item>
+			<li>event.type == "obj", event.obj =(Mapbox Mapview) returns a mapview object with all it Proporties and Methods down bellow</li>
+			<dl>
+			<li>event.type == "regionChange", event.phase == "began", "moving", or "ended", event.lat = (number) returns latitude, event.lng= (number) returns longitude</li>
+			<dl>
+			<li>event.type == "annotationInfoClicked", event.annotationLat = (number) returns latitude, event.annotationLng= (number) returns longitude, event.annotationTitle = (string) title of annotation clicked, event.annotationSubtitle = (string) Subtitle of annotation clicked, event.annotationSubtitle = (string) Subtitle of annotation clicked</li>
+		</unordered-list-item>
+		<dl>
+		<li>style (string)(optional) default if "light", other options are custom mapbox style, "dark", "emerald", "hybrid", "streets", or "satellite" </li>
+		<dl>
+		<li>hideLogo (boolean)(optional) default if false</li>
+		<dl>
+		<li>hideAttribution (boolean)(optional) default if false</li>
+		<dl>
+		<li>hideCompass (boolean)(optional) default if false</li>
+		<dl>
+		<li>rotateEnabled (boolean)(optional) default if true</li>
+		<dl>
+		<li>scrollEnabled (boolean)(optional) default if true</li>
+		<dl>
+		<li>zoomEnabled (boolean)(optional) default if true</li>
+		<dl>
+		<li>showsUserLocation (boolean)(optional) default if false (note requires location on device see bellow)</li>
+		<dl>
+		<li>allowsTilting (boolean)(optional) default if true</li>
+	</unordered-list-item>
+	<p><h3>Mapbox Mapview Proporties:</h3></p>
+	<p></p>
+	<p>x (number) x corona point of mapview</p>
+	<p></p>
+	<p>y (number) y corona point of mapview</p>
+	<p></p>
+	<p>width (number) width of mapview</p>
+	<p></p>
+	<p>height (number) height of mapview</p>
+	<p></p>
+	<p>hideLogo (boolean)</p>
+	<p></p>
+	<p>hideAttribution (boolean)</p>
+	<p></p>
+	<p>hideCompass (boolean)</p>
+	<p></p>
+	<p>rotateEnabled (boolean)</p>
+	<p></p>
+	<p>scrollEnabled (boolean)</p>
+	<p></p>
+	<p>zoomEnabled (boolean)</p>
+	<p></p>
+	<p>showsUserLocation (boolean) (note requires location on device see bellow)</p>
+	<p></p>
+	<p>allowsTilting (boolean)</p>
+	<p></p>
+	<p><h3>Mapbox Mapview Method:</h3></p>
+	<p></p>
+	<p>:getZoom(listener)</p>
+	<p>listener(function) returns event.zoom(number)</p>
+	<p></p>
+	<p>:setZoom(zoom)</p>
+	<p>zoom(number) set zoom for map</p>
+	<p></p>
+	<p>:setCenter(lat, lng)</p>
+	<p>lat(number) latitude of map</p>
+	<p>lng(number) longitude of map</p>
+	<p></p>
+	<p>:getCenter(listener)</p>
+	<p>listener(function) returns event.lat, event.lng</p>
+	<p></p>
+	<p>:animateCamera(params)</p>
+	<p>params(table)</p>
+	<unordered-list-item>
+		<li>lat(number) latitude to animate to</li>
+		<dl>
+		<li>lng(number) longitude to animate to</li>
+		<dl>
+		<li>duration(number)(optional) time of animation (measured in seconds), deafult is 10</li>
+		<dl>
+		<li>tilt(number)(optional) toward the horizon measured in degrees</li>
+		<dl>
+		<li>bearing(number)(optional) measured in degrees clockwise from true north</li>
+	</unordered-list-item>
+	<p></p>
+	<p>:addMarkers(markers)</p>
+	<p>markers(array) array of tables with the following params</p>
+	<unordered-list-item>
+		<li>lat(number) latitude to pin marker to</li>
+		<dl>
+		<li>lng(number) longitude to pin marker to</li>
+		<dl>
+		<li>title(number)(optional) title to add to pin</li>
+		<dl>
+		<li>subtitle(number)(optional) subtitle to add to pin</li>
+	</unordered-list-item>
+	<p></p>
+	<p>:removeAllMarkers()-- remove all markers from map</p>
+	<p></p>
+	<p>:hide()-- hide map</p>
+	<p></p>
+	<p>:unhide()-- unhide map</p>
+	<p></p>
+	<p>:setFollowMode(mode) (note requires location on device see bellow)</p>
+	<p>mode(string) "follow", "disable"</p>
+	<p></p>
+	<p>:disableUserInteraction(shouldDisable)</p>
+	<p>shouldDisable(boolean)</p>
+	<p></p>
+	<p>:destroyView()-- destroy map</p>
+	<p></p>
+	<p><h3>User Location:</h3></p>
+	<p>In order to use the location on iOS, You need permission from user to use location. You have to add NSLocationWhenInUseUsageDescription to Info.plist. You can use mapbox.requestLocationServices() to request access and then mapbox.locationServicesEnabled()-- returns string ("denied"(iOS), "granted"(iOS), "restricted"(iOS parental controls prevent access), "not determined"(iOS you have not requested access)) </p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	iphone =<br/>
+	{<br/>
+		plist =<br/>
+        {<br/>
+           --used for user tracking<br/>
+		   --NSLocationWhenInUseUsageDescription = "A description of why the app needs access to location services."<br/>
+        },<br/>
+	},<br/>
+    plugins =<br/>
+    {<br/>
+    	["plugin.mapbox"] =<br/>
+		{<br/>
+		publisherId="tech.scotth",<br/>
+		marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+    },<br/>
+}<br/></pre></code>
+	<script src="https://gist.github.com/scottrules44/2399975222f7b435a3881dfb98b7c139.js"></script>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p> <a href="https://solar2dmarketplace.com/plugins?MapboxPlugin_tech-scotth">Get Plugin</a> </p>
+	<p> <a href="https://github.com/scottrules44/mapbox-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>
