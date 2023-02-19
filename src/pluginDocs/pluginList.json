@@ -1,0 +1,77 @@
+{
+    "plugins":{
+        "plugin-ironSource":{"category":"Ads/Monetization", "name":"Iron Source", "legacyFormat":true},
+        "plugin-isAdQuality":{"category":"Ads/Monetization", "name":"Ad Quality (Iron Source)", "legacyFormat":true},
+        "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay", "legacyFormat":true},
+        "plugin-storeView":{"category":"Ads/Monetization", "name":"Store View", "legacyFormat":true},
+
+        "plugin-firebaseCrashlytics":{"category":"Analytics/Attribution", "name":"Firebase Crashlytics", "legacyFormat":true},
+        "plugin-appmetrica":{"category":"Analytics/Attribution", "name":"Appmetrica", "legacyFormat":true},
+        "plugin-searchAds":{"category":"Analytics/Attribution", "name":"Search Ads", "legacyFormat":true},
+        "plugin-firebaseAnalytics":{"category":"Analytics/Attribution", "name":"Firebase Analytics", "legacyFormat":true},
+
+        "plugin-firebaseFunctions":{"category":"Business/Data", "name":"Firebase Functions", "legacyFormat":true},
+        "plugin-firestore":{"category":"Business/Data", "name":"Firestore", "legacyFormat":true},
+        "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config", "legacyFormat":true},
+        "plugin-firebaseStorage":{"category":"Business/Data", "name":"Firebase Storage", "legacyFormat":true},
+        "plugin-externalStorage":{"category":"Business/Data", "name":"External Storage", "legacyFormat":true},
+        "plugin-airprint":{"category":"Business/Data", "name":"Airprint", "legacyFormat":true},
+        "plugin-mapbox":{"category":"Business/Data", "name":"Mapbox", "legacyFormat":true},
+        "plugin-cardIO":{"category":"Business/Data", "name":"Card IO", "legacyFormat":true},
+        "plugin-classKit":{"category":"Business/Data", "name":"Class Kit", "legacyFormat":true},
+        "plugin-contacts":{"category":"Business/Data", "name":"Contacts", "legacyFormat":true},
+        "plugin-textbelt":{"category":"Business/Data", "name":"Textbelt", "legacyFormat":true},
+
+        "plugin-gamecenter":{"category":"Gaming", "name":"Gamecenter", "legacyFormat":true},
+        "plugin-dreamlo":{"category":"Gaming", "name":"Dreamlo", "legacyFormat":true},
+        
+        "plugin-controllerHaptics":{"category":"Hardware", "name":"Controller Haptics", "legacyFormat":true},
+        "plugin-datamax":{"category":"Hardware", "name":"Data Max", "legacyFormat":true},
+        "plugin-amplitudeRecorder":{"category":"Hardware", "name":"Amplitude Recorder", "legacyFormat":true},
+        "plugin-torch":{"category":"Hardware", "name":"Torch/Flashlight Plugin", "legacyFormat":true},
+        "plugin-tapticEngine":{"category":"Hardware", "name":"Taptic Engine", "legacyFormat":true},
+        "plugin-androidCameraView":{"category":"Hardware", "name":"Android Camera View", "legacyFormat":true},
+        "plugin-bt":{"category":"Hardware", "name":"Bluetooth", "legacyFormat":true},
+        "plugin-wifiManager":{"category":"Hardware", "name":"Wifi Manager", "legacyFormat":true},
+        "plugin-ibeacon":{"category":"Hardware", "name":"iBeacon", "legacyFormat":true},
+        "plugin-macTrackpad":{"category":"Hardware", "name":"Mac Trackpad", "legacyFormat":true},
+        "plugin-proximitySensor":{"category":"Hardware", "name":"Proximity Sensor", "legacyFormat":true},
+        "plugin-voiceToText":{"category":"Hardware", "name":"Voice To Text", "legacyFormat":true},
+        
+        "plugin-firebaseInAppMessaging":{"category":"Marketing", "name":"Firebase In-App Messaging", "legacyFormat":true},
+        "plugin-helpshift":{"category":"Marketing", "name":"Helpshift", "legacyFormat":true},
+        "plugin-reviewPopUp":{"category":"Marketing", "name":"Review Pop Up", "legacyFormat":true},
+
+        "plugin-videoEditor":{"category":"Media", "name":"Video Editor", "legacyFormat":true},
+        "plugin-pdfImageConverter":{"category":"Media", "name":"Pdf Image Converter", "legacyFormat":true},
+        "plugin-imageCrop":{"category":"Media", "name":"Image Crop", "legacyFormat":true},
+        "plugin-videoShare":{"category":"Media", "name":"Video Share", "legacyFormat":true},
+        "plugin-screenRecorder":{"category":"Media", "name":"Screen Recorder", "legacyFormat":true},
+        "plugin-musicStreaming":{"category":"Media", "name":"Music Streaming", "legacyFormat":true},
+        "plugin-replayKit":{"category":"Media", "name":"Replay Kit", "legacyFormat":true},
+
+        "plugin-appleSignIn":{"category":"Security", "name":"Apple Sign In", "legacyFormat":true},
+        "plugin-fingerprintManager":{"category":"Security", "name":"Fingerprint Manager", "legacyFormat":true},
+        "plugin-firebaseAuth":{"category":"Security", "name":"Firebase Auth", "legacyFormat":true},
+        "plugin-touchId":{"category":"Security", "name":"Face ID/Touch Id", "legacyFormat":true},
+        "plugin-onePassword":{"category":"Security", "name":"One Password", "legacyFormat":true},
+
+        "plugin-firebaseDynamicLinks":{"category":"Social", "name":"Firebase Dynamic Links", "legacyFormat":true},
+
+        "plugin-universalLinks":{"category":"Utilities", "name":"Universal Links", "legacyFormat":true},
+        "plugin-deploy":{"category":"Utilities", "name":"Deploy", "legacyFormat":true},
+        "plugin-androidFilePicker":{"category":"Utilities", "name":"Android File Picker", "legacyFormat":true},
+        "plugin-androidPreview":{"category":"Utilities", "name":"Android Preview", "legacyFormat":true},
+        "plugin-androidShare":{"category":"Utilities", "name":"Android Share", "legacyFormat":true},
+        "plugin-googleSignIn":{"category":"Utilities", "name":"Google Sign In", "legacyFormat":true},
+        "plugin-docPicker":{"category":"Utilities", "name":"Doc Picker", "legacyFormat":true},
+        "plugin-equalizer":{"category":"Utilities", "name":"Equalizer", "legacyFormat":true},
+        "plugin-wallpaper":{"category":"Utilities", "name":"Wallpaper", "legacyFormat":true},
+        "plugin-imageToText":{"category":"Utilities", "name":"Image to Text", "legacyFormat":true},
+        "plugin-safariWebview":{"category":"Utilities", "name":"Safari WebView", "legacyFormat":true},
+        "plugin-volumeControl":{"category":"Utilities", "name":"Volume Control", "legacyFormat":true},
+        "plugin-quickAction":{"category":"Utilities", "name":"Quick Action", "legacyFormat":true},
+        "plugin-moreInfo":{"category":"Utilities", "name":"More Info", "legacyFormat":true}
+    },
+    "categories":["Ads/Monetization", "Analytics/Attribution", "Business/Data", "Gaming", "Hardware", "Marketing", "Media", "Security", "Social", "Utilities"]
+}

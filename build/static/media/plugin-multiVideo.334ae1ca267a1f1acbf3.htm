@@ -1,0 +1,69 @@
+<div id = "main">
+	<h3><a id="multiVideo">Multi Video Plugin</a></h3>
+	<p></p>
+	<p>This plugin allow you to show a video slider and switch between them</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works with iOS and Android</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>multiVideo.init(fullScreenImage)</h4></p>
+	<p>fullScreenBackgroundImage(file) pass in image with <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a> you want to use as you button for full screen viewing, note a 1:1 width to height ratio is recommended</p>
+	<p></p>
+	<p><h4>multiVideo.showView(x, y, videos)-- shows video view</h4></p>
+	<p>x(number) x position of video view</p>
+	<p>y(number) y position of video view</p>
+	<p>videos(array) include array of files(<a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>) and remote url </p>
+	<p></p>
+	<p><h4>multiVideo.removeView()-- remove video view</h4></p>
+	<p></p>
+	<p><h4>multiVideo.hideFullscreenButton()-- hide fullscreen button on view</h4></p>
+	<p></p>
+	<p><h4>multiVideo.showFullscreenButton()-- show fullscreen button on view</h4></p>
+	<p></p>
+	<p><h4>multiVideo.pauseCurrentVideo()-- pause the current showing view</h4></p>
+	<p></p>
+	<p><h4>multiVideo.resumeCurrentVideo()-- resume the current showing view</h4></p>
+	<p></p>
+	<p><h4>multiVideo.setAutoPlay(autoplay)-- sets auto play for videos</h4></p>
+	<p>autoplay(boolean) set to false to prevent videos from autoplaying, true to resume autoplaying</p>
+	<p></p>
+	<p><h4>multiVideo.newVideo(x, y, width, height, url, shouldLoop)-- makes a video (return video object)</h4></p>
+	<p>x(number) x position of new video view</p>
+	<p>y(number) y position of new video view</p>
+	<p>width(number) width of new video view</p>
+	<p>height(number) height of new video view</p>
+	<p>url(string) file path (<a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">pathForFile<a>) or http url</p>
+	<p>shouldLoop(boolean)(optional) default is false</p>
+	<p></p>
+	<p><h4>Video Object:</h4></p>
+	<p><h5>properties:</h5></p>
+	<p>x(number)</p>
+	<p>y(number)</p>
+	<p>width(number)</p>
+	<p>height(number)</p>
+	<p>xScale(number)</p>
+	<p>yScale(number)</p>
+	<p><h5>methods:</h5></p>
+	<p>.resume()-- resume video</p>
+	<p>.pause()-- pause video</p>
+	<p>.destroy()-- remove video</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.multiVideo"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?MultiVideoPlugin_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/multiVideo-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

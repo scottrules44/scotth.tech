@@ -1,0 +1,39 @@
+<div id = "main">
+	<h3><a id="yelp">Yelp Plugin</a></h3>
+	<p>This plugins uses <a href="http://www.yelp.com/"> Yelp</a>. Which is a places search enigine.</p>
+	<h3>Functions:</h3>
+	<p></p>
+	<p>yelp.init("Consumer Key", "Consumer Secret", "Token", "Token Secret")</p>
+	<p>-- all this info can be found in yelp dev page under (https://www.yelp.com/developers/manage_api_keys)</p>
+	<p></p>
+	<p>yelp.search({term= "food", location= "San Francisco"}, listener)</p>
+	<p>The search table ({term= "food", location= "San Francisco"} this part) can contain all the following (must include location of some sort)</p>
+	<p>--term(search word)</p>
+	<p>--limit(how many we want)</p>
+	<p>--offset( the list of returned business results by this amount)</p>
+	<p>--sort(0=Best matched (default), 1=Distance, 2=Highest Rated)</p>
+	<p>--category_filter( see list https://www.yelp.com/developers/documentation/v2/all_category_list )</p>
+	<p>--radius_filter( meter around area, you may get an error if larger than 4000 meter or 25 miles)</p>
+	<p>--deals_filter(Whether to exclusively search for businesses with deals)</p>
+	<p>--location (address, neighborhood, city, state or zip, optional country)</p>
+	<p>--cll ( all one word no spaces, but commas separating ("11.99,11.99") of latitude and longitude )</p>
+	<p>--bounds ( all one word no spaces, but commas separating of sw_latitude, sw_longitude, ne_latitude, and ne_longitude )</p>
+	<p>--ll (all one word no spaces, but commas separating latitude,longitude,accuracy,altitude,altitude_accuracy)</p>
+	<p>-- for more detail vist https://www.yelp.com/developers/documentation/v2/search_api , but there are all the params supported (which is all of them at this time)</p>
+	<p>-- listener(function) returns event.status , event.response</p>
+	<p>event.response = returns a table with all the data which can be found at https://www.yelp.com/developers/documentation/v2/search_api</p>
+	<p>event.status = network status</p>
+	<p>
+	<p></p>
+	<h3><a id="YelpATS">App transport securtiy url(s):</a></h3>
+	<p>--yelp.com</p>
+	<p>Set NSIncludesSubdomains = true, check out Corona's guide <a href="https://docs.coronalabs.com/guide/hardware/appleATS/index.html">here</a></p>
+	<p></p>
+	<p><h3>Build.settings</h3></p>
+	<script src="https://gist.github.com/scottrules44/93187fcd5ed2a08237b0e7545b9e7eef.js"></script>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://marketplace.coronalabs.com/plugin/yelp">Get Plugin</a> </p>
+	<p> <a href="https://github.com/scottrules44/yelpCorona">Example</a> </p>
+	<p> <a href="https://forums.coronalabs.com/forum/654-corona-store-plugins/">Support</a> </p>
+</div>

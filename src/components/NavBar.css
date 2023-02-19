@@ -1,0 +1,39 @@
+#navBar{
+    background-color: #728FCE;
+    padding-left: 10px;
+    border-style: solid;
+    border-width: 2px;
+}
+#title{
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#buttonGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+@media screen and (max-width: 540px) {
+    #buttonGroup {
+        flex-direction: column;
+    }
+}
+.button{
+    margin-right: 5px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+.active{
+    background-color: lightblue;
+}
+.button:hover { 
+    background-color: lightblue;
+}
+.logo{
+    display: flex;
+    flex-direction:row;
+    align-items:center; 
+    margin-bottom:20px;
+}
