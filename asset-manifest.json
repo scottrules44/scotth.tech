@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/scotth.tech/static/css/main.57867e1a.css",
-    "main.js": "/scotth.tech/static/js/main.22958c98.js",
+    "main.js": "/scotth.tech/static/js/main.d293f48c.js",
     "static/js/496.e280207e.chunk.js": "/scotth.tech/static/js/496.e280207e.chunk.js",
     "static/media/appStore.png": "/scotth.tech/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/plugin-gamecenter.htm": "/scotth.tech/static/media/plugin-gamecenter.771c4c5dd0d01d460a65.htm",
@@ -88,11 +88,11 @@
     "static/media/plugin-orientation.htm": "/scotth.tech/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/scotth.tech/index.html",
     "main.57867e1a.css.map": "/scotth.tech/static/css/main.57867e1a.css.map",
-    "main.22958c98.js.map": "/scotth.tech/static/js/main.22958c98.js.map",
+    "main.d293f48c.js.map": "/scotth.tech/static/js/main.d293f48c.js.map",
     "496.e280207e.chunk.js.map": "/scotth.tech/static/js/496.e280207e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57867e1a.css",
-    "static/js/main.22958c98.js"
+    "static/js/main.d293f48c.js"
   ]
 }
