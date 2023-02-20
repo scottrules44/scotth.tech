@@ -1,6 +1,7 @@
 {
   "name": "scotth.tech",
   "version": "1.0.0",
+  "homepage": "https://scotth.tech",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@rocktimsaikia/github-card": "^3.0.1",
