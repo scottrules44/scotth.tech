@@ -1,0 +1,130 @@
+<div id = "main">
+	<h3><a id="storeView">StoreView Plugin</a></h3>
+	<p></p>
+	<p>The Store View plugin presents a store that allows the user to purchase other media from the Apple App Store. For example, your app might display the store view to allow the user to purchase another app, a book, etc. This is all done via a popup, so your users don't need to leave your app.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>supports iOS devices running iOS 7 or later. It does not work on the iOS simulator.</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>storeView.init(listener)</h4></p>
+	<p></p>
+	<p>listener(function)-- returns the following events</p>
+	<p></p>
+	<unordered-list-item>
+		<li>Init(Dispatched upon the plugin successfully initialising): event.phase = "init", event.name = "store", and event.type = "storeView"</li>
+		<dl>
+		<li>loaded(Dispatched upon the StoreView popup loading successfully. This means that the StoreView is ready to be displayed instantly via storeView.show()):</li>
+		<li>event.phase = "loaded", event.name = "store", and event.type = "storeView"</li>
+		<dl>
+		<li>Hidden(Dispatched upon the StoreView popup hiding successfully after previously being displayed. This means that the StoreView is closed and ready to be loaded again via storeView.load()):</li>
+		<li>event.phase = "hidden", event.name = "store", and event.type = "storeView"</li>
+		<dl>
+		<li>Failed(Dispatched upon the StoreView popup failing to load. Potential reasons for failure: Lack of internet connectivity, incorrect app id, and/or incorrect tokens):</li>
+		<li>event.phase = "hidden", event.name = "store", and event.type = "storeView"</li>
+	</unordered-list-item>
+	<p></p>
+	<p>Example:</p>
+	<p></p>
+<code><pre>
+-- Require the StoreView plugin<br/>
+local storeView = require("plugin.storeView")<br/>
+local json = require("json")<br/>
+<br/>
+-- StoreView event listener<br/>
+local function storeViewEventListener(event)<br/>
+	print(json.prettify(event))<br/>
+end<br/>
+<br/>
+-- Initialize StoreView<br/>
+storeView.init(storeViewEventListener)<br/>
+</pre></code>
+	<p></p>
+	<p><h4>storeView.load(appId, [tokens])</h4></p>
+	<p></p>
+	<p>appId(string)(required) This is the iTunes app id for your app. You can retrieve your iTunes app id via iTunes connect, or by snipping it from the iTunes store url for your app. For example this is Angry Birds store url https://itunes.apple.com/ie/app/angry-birds/id343200656?mt=8 - The app id is every character after id and before the ? symbol. In this example, the app id is: "343200656".</p>
+	<p></p>
+	<p>tokens(table) This is an optional set of tokens used for tracking purposes. In order to get your tokens, you need to join the <a href="https://affiliate.itunes.apple.com/resources/documentation/itunes_app_store_affiliate_program/">iTunes App Store Affiliate Program</a>.</p>
+	<p></p>
+	<p>Contains the following key values</p>
+	<unordered-list-item>
+		<li>campaign(string) This is your campaign token. This token allows you to track the effectiveness of your Affiliate Program link and your App Analytics campaign. For more information about the Affiliate Program, see the <a href="https://www.apple.com/itunes/affiliates/">Affiliate Program</a>. For more information about iTunes Connect Analytics, see <a href= "https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/ViewingAnalytics/ViewingAnalytics.html#//apple_ref/doc/uid/TP40011225-CH39">Viewing App Analytics</a> in <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225">iTunes Connect Developer Guide</a>.</li>
+		<dl>
+		<li>affiliate(string) This is your affiliate token. You receive an affiliate identifier when you sign up for the Affiliate Program. The affiliate associated with this view controller is paid a commission for any items purchased using the controller.</li>
+		<dl>
+		<li>provider(string) This is your provider token. Use your own provider token when cross promoting your own apps. This token lets you track the effectiveness of the cross promotion effort separate from any affiliate campaign that shares the same campaign token. When promoting apps for other developers, use their provider token instead. In this case, the token lets the developer track the effectiveness of your App Analytics campaign for their apps. The key must be used in combination with your advertisingPartner token (see below). For more information, see <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/ViewingAnalytics/ViewingAnalytics.html#//apple_ref/doc/uid/TP40011225-CH39">Viewing App Analytics</a> in the <a href="https://developer.apple.com/library/content/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/About.html#//apple_ref/doc/uid/TP40011225">iTunes Connect Developer Guide</a>.</li>
+		<li>event.phase = "hidden", event.name = "store", and event.type = "storeView"</li>
+		<dl>
+		<li>advertisingPartner(string) This is your advertisingPartner token. This must be set if using the provider token above. </li>
+	</unordered-list-item>
+	<p></p>
+	<p>Example:</p>
+	<p></p>
+<code><pre>
+-- Require the StoreView plugin<br/>
+local storeView = require("plugin.storeView")<br/>
+local json = require("json")<br/>
+<br/>
+-- StoreView event listener<br/>
+local function storeViewEventListener(event)<br/>
+	print(json.prettify(event))<br/>
+end<br/>
+<br/>
+-- Initialize StoreView<br/>
+storeView.init(storeViewEventListener)<br/>
+<br/>
+-- Set your advertising tokens<br/>
+local tokens =<br/>
+{<br/>
+	campaign = "CAMPAIGN_TOKEN_HERE",<br/>
+	affiliate = "AFFILIATE_TOKEN_HERE",<br/>
+	provider = "PROVIDER_TOKEN_HERE",<br/>
+	advertisingPartner = "ADVERTISING_PARTNER_TOKEN_HERE",<br/>
+}<br/>
+<br/>
+-- Load a StoreView popup<br/>
+storeView.load("343200656", tokens)<br/>
+</pre></code>
+	<p></p>
+	<p><h4>storeView.show()</h4></p>
+	<p>This function is responsible for showing the StoreView popup that was previously loaded via storeView.load().</p>
+	<p></p>
+	<p>Example:</p>
+	<p></p>
+<code><pre>
+-- Require the StoreView plugin<br/>
+local storeView = require("plugin.storeView")<br/>
+local json = require("json")<br/>
+<br/>
+-- StoreView event listener<br/>
+local function storeViewEventListener(event)<br/>
+    print(json.prettify(event))<br/>
+end<br/>
+<br/>
+-- Show the StoreView popup (must be loaded first)<br/>
+storeView.show()<br/>
+</pre></code>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+	<p></p>
+<code><pre>settings =
+{
+	plugins =
+	{
+		["plugin.storeView"] =
+		{
+			publisherId="tech.scotth",
+			marketplaceId = "insert marketplace account ID",
+		},
+	},
+}</pre></code>
+	<p></p>
+	<p><h3>Credits:</h3></p>
+	<p></p>
+	<p>this plugin was made and created by <a href="http://infusedreams.com">Infuse Dreams</a> aka <a href="https://twitter.com/infusedreams">Danny Glover</a></p>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p> <a href="https://solar2dmarketplace.com/plugins?StoreView_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/storeView-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

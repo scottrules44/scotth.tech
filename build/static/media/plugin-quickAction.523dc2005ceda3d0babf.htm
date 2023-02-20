@@ -1,0 +1,82 @@
+<div id = "main">
+
+	<h3><a id="start">Quick Action plugin</a></h3>
+	<p></p>
+	<p>Quick Action Plugin(App shortcuts) allows you handle and set shortcuts for your app.</p>
+	<p></p>
+	<p><h3>Platforms:</h3> only works with iOS 9+</p>
+	<p></p>
+	<p><h3>Limitations:</h3> please note not all built in icons will work with ios devices running bellow ios 9.1. List of icons <a href="https://developer.apple.com/reference/uikit/uiapplicationshortcuticontype">here</a></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>quickAction.getShortcuts()</h4></p>
+	<p></p>
+	<p>--return a array of tables with title, subtitle, and type inside each table</p>
+	<p></p>
+<code><pre>
+print(json.prettify( quickAction.getShortcuts()))
+</pre></code>
+	<p></p>
+	<p><h4>quickAction.setShortcuts(icons)</h4></p>
+	<p>icons (required)(array) </p>
+	<p>Please insert tables into table. In each table should be type( used to as id for example play game), icon( should be " " for default which is a dot, an image file( Icons should be square, only black, and 35x35 pixels), or one of apples build in icons (see list <a href="https://developer.apple.com/reference/uikit/uiapplicationshortcuticontype"> here</a> and make sure the first letter is capitalized) ), title, and subtitle(optional) </p>
+	<p>If you want to clear all Dynamic Action(see guide below) just call quickAction.setShortcuts({})</p>
+	<p></p>
+<code><pre>
+local loadIcons = {
+	{type = "com.CoolButton", title ="Cool Tile", subtitle= "Cool subtitle", icon = "Message"},
+	{type = "com.CoolButton2", title ="Cool Tile2", subtitle= "Cool subtitle2", icon = "iCon1.png"},
+}
+quickAction.setShortcuts(loadIcons)
+</pre></code>
+	<p></p>
+	<img src="/pluginDocs/quickAction1.png" style="width:266px;height:299px;">
+	<p></p>
+	<p><h3>Runtime listener:</h3></p>
+	<p>To listen for actions when an app is opened (or in background) add a runtime listener to "quickAction". the listener will return localizedTitle, type, openType("background launch" or "fresh launch"),and subtitle</p>
+	<p></p>
+<code><pre>
+local function lis( e )
+	print(e.localizedTitle, e.type, e.openType, e.subtitle)
+end
+Runtime:addEventListener("quickAction", lis)
+</pre></code>
+	<p></p>
+	<p><h3>Dynamic Action Vs Static Actions:</h3></p>
+	<p>Dynamic: If you make actions via quickAction.setShortcuts they are considered dynamic and can be deleted or changed</p>
+	<p>Static: actions that are defined in build.settings( see build.setting bellow for example) cannot be deleted or changed</p>
+	<p></p>
+	<p><h3>build.settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	iphone =<br/>
+	{<br/>
+		plist =<br/>
+		{<br/>
+<br/>
+			UIApplicationShortcutItems = {<br/>
+				{ <br/>
+					UIApplicationShortcutItemTitle = "New message",<br/>
+					UIApplicationShortcutItemType = "com.mycompany.myapp.newmessage",<br/>
+				},<br/>
+				{<br/>
+					UIApplicationShortcutItemTitle = "Play",<br/>
+					UIApplicationShortcutItemType = "com.mycompany.myapp.play",<br/>
+				}<br/>
+			},<br/>
+		},<br/>
+	}<br/>
+	plugins= {<br/>
+		["plugin.quickAction"] =<br/>
+		{<br/>
+		    publisherId="tech.scotth",<br/>
+		    marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	}<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?QuickAction_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/quickAction-Sample">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

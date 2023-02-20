@@ -1,0 +1,24 @@
+	<div id = "main">
+		<h3><a id="nativeMusic"></a>Native Music Plugin</h3>
+		<p>This plugin handle playback controls and create use native music apis for a Platfrom</p>
+		<p></p>
+		<p></p>
+		<p><h3>Limitations:</h3> Only works on iOS, tvOS, and MacOS</p>
+		<p></p>
+		<p><h3>Functions:</h3></p>
+		<p></p>
+		<p><h5>nativeAudio.init(controlCallback)<h5> --setups up control callbacks(remote events from control center and headphones)</p>
+		<p>^(Note the Native Audio Plugin handles all control events i.e when pause button is pressed from external source, the player will pause automatically )</p>
+		<p>controlCallback(function)(required) -- triggers event.status which can be "playPause"(triggers from play pause button i.e headphones), "pause", "play", "nextTrack"(tiggered from skip button), "previousTrack", and "songEnded"(triggers when song end naturally i.e not from hitting skip button ) </p>
+		<p></p>
+		<p><h5>nativeAudio.newTrack(fileParams)<h5> --returns a track object</p>
+		<p></p>
+		<p><h3>Build.settings</h3></p>
+		<script src="https://gist.github.com/scottrules44/5de9f30829dc6463b41b93baac7153c0.js"></script>
+		<h5> Helpful Links:</h5>
+		<p></p>
+		<p><a href="https://solar2dmarketplace.com/plugins?VideoShare_tech-scotth">Get Plugin</a></p>
+		<p><a href="https://github.com/scottrules44/videoShare-demo">Example</a></p>
+		<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+	</div>
+</div>

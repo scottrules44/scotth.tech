@@ -1,0 +1,37 @@
+
+<div id = "main">
+	<h3><a id="hcModule">HC Module Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you to detect accelerometer data from HC-05 chip( note this plugin is only used for accelerometer data) </p>
+	<p></p>
+	<p><h3>Platforms:</h3>Android Only</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>hcModule.init(listener)</h4> -- start searching</p>
+	<p>listener(function)- fires events: event.type = "device found" event.address=bluetooth device address event.name=bluetooth device name, event.type = "data" accelerometerX accelerometerY accelerometerZ angleX angleY angleZ angularVelocityX angularVelocityY angularVelocityZ</p>
+	<p></p>
+	<p><h4>hcModule.isConnected()</h4> -- returns boolean true if connected</p>
+	<p></p>
+	<p><h4>hcModule.disconnect()</h4> -- disconnect from device</p>
+	<p></p>
+	<p><h4>hcModule.connect(address)</h4> -- connect to device with mac address(string)</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.hcModule"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?HcModule_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/hcModule-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>
