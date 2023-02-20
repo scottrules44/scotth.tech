@@ -1,0 +1,42 @@
+<div id = "main">
+	<h3><a id="nativeSockets">Native Sockets</a></h3>
+	<p></p>
+	<p>This plugin allows you to open, send, read, and close sockets native.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only iOS 13+ and Android</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>nativeSockets.init(listener)--init native sockets</h4></p>
+	<p>listener(function) e.status = "didClose"(has e.closeCode(init) and e.reason(string)) or "didOpen"(has e.protocol(string))</p>
+	<p></p>
+	<p><h4>nativeSockets.connect(url, listener)--returns socket object</h4>
+	<p>url(string) url for socket</p>
+	<p>listener(function) e.status = "didReceiveMessage", e.isError(boolean), e.error(string returns if e.isError= true), e.message(string message from socket) </p>
+	<p></p>
+	<p><h4>nativeSockets.send(socketObj, message,listener)--socket to send message</h4>
+	<p>socketObj(socket) socket to send message to</p>
+	<p>message(string) message to send</p>
+	<p>listener(function) e.isError(boolean), e.error(string returns if e.isError= true) </p>
+	<p></p>
+	<p><h4>nativeSockets.disconnect(socketObj)--close socket</h4>
+	<p>socketObj(socket) close socket</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.nativeSockets"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?NativeSockets_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/nativeSockets-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

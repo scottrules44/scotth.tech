@@ -1,0 +1,138 @@
+
+<div id = "main">
+	<h3><a id="firebase">Firebase (Legacy)</a></h3>
+	<p>This plugins uses <a href="https://www.firebase.com">Firebase</a>. Which is place to store information. Note this plugin only supports login and database management</p>
+	<p></p>
+	<p><h3>Legacy:</h3> This plugin is no longer being maintained please see <a href="https://github.com/scottrules44/firebase-plugin-source">source code</a> and consider using my <a href="https://marketplace.coronalabs.com/search?search=firebase">other firebase plugins</a></p>
+	<p></p>
+	<h3>Fill before you start:</h3>
+	<p></p>
+	<p>firebase.myUrl = "myUrl"</p>
+	<p>--myUrl is found under console.firebase.google.com>your app> database> the only url you should see (https://PojectIdHere.firebaseio.com/) </p>
+	<p></p>
+	<p>firebase.databaseSecret = "databaseSecret"</p>
+	<p>--databaseSecret is found under console.firebase.google.com>you app> settings(gear icon)>project settiings> database( in tab bar at top)> Database secrets> drag mouse down click show> copy and paste here </p>
+	<p></p>
+	<p>firebase.myKey = "myKey"</p>
+	<p>--myKey is found under console.firebase.google.com>you app> settings(gear icon)>project settiings> cloud messaging( in tab bar at top)> server key> copy and paste here </p>
+	<p></p>
+	<h3>Functions:</h3>
+	<p></p>
+	<p>firebase.quickLogin(lis)</p>
+	<p>--lis(function optional) This function does a quick login if a refresh token is stored.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then thier will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.login(email, password, lis, haveVerf)</p>
+	<p>--email (string required) this is the email of the person you would like to login in with</p>
+	<p>--password (string required) the password of the account</p>
+	<p>--lis (function optional(recommend)) lets you know if the login was successful. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p>--haveVerf (boolean optional (default is false)) will check if user has verified email and will return error if not</p>
+	<p></p>
+	<p>firebase.loginWithSocial(access_token, providerId, requestUri, lis)</p>
+	<p>Firebase supports facebook, twitter, github and google plus. This has been tested with google and twitter but should work with facebook and github aswell. The current twitter plugin (by jason) on the marketplace will not work because firebase requires a specific return url. If you want to add this you will need a webview (popup or browser)</p>
+	<p>--access_token (string required) the access token from a provider</p>
+	<p>--providerId (string required) firebase supports "google.com" , "facebook.com", "twitter.com", or "github.com". Make sure each social login serivce you use is on in your firebase console (Develop>Auth>Sign In Method)</p>
+	<p>--requestUri (string required) found on console.firebase.google.com> auth > sign in method click on a service and a callback url should be there grab it and paste it here.</p>
+	<p>--lis (function optional(recommend)) lets you know if the login was successful. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.signOut(lis)</p>
+	<p>--lis (function optional(recommend)) lets you know if the sign out was successful. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.createAccount(email, password, lis, haveVerf, signinAfterCreate)</p>
+	<p>--email (string required) the email which you want to create an email with</p>
+	<p>--password (string required) the password to go with the account</p>
+	<p>--lis (function optional(recommend)) lets you know if the account was successfully ade. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p>--verfiyEmail (boolean optional (default is true)) will send a verification email</p>
+	<p>--signinAfterCreate (boolean optional (default is true)) will sign in after the account is made</p>
+	<p></p>
+	<p>firebase.resetPassword(email, lis)</p>
+	<p>--email (string required) the email of the account you would like to reset</p>
+	<p>--lis (function optional(recommend)) lets you know if the password reset was successful. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.setAccountInfo(displayName, email, password, lis)</p>
+	<p>--displayName (string optional) the display name you would use</p>
+	<p>--email (string optional) email you would like to use</p>
+	<p>--password (string optional) password you would like to use</p>
+	<p>--lis (function optional(recommend)) lets you know if the info was successfully changed. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.getAccountInfo(lis)</p>
+	<p>--lis (function optional(recommend)) account info is in event.response. This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.uploadUserData(data,lis)</p>
+	<p>--data (table required) the data you would like to upload to a users storage</p>
+	<p>--lis (function optional(recommend)) let you know if upload was sucessful This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.deleteUserData(lis)</p>
+	<p>--lis (function optional(recommend)) lets you know if delete was sucessful This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.updateUserData(data,lis)</p>
+	<p>--data (table required) the data you would like to update to a users storage</p>
+	<p>--lis (function optional(recommend)) lets you know if update was sucessful This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.getUserData(lis)</p>
+	<p>--lis (function optional(recommend)) Data is returned via e.response.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.deleteAccount(lis)</p>
+	<p>--lis (function optional(recommend)) lets you know if account was deleted.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.uploadData(path, data,lis)</p>
+	<p>--path (string required) where to the data in the database</p>
+	<p>--data (table required) data you would to at the path specified</p>
+	<p>--lis (function optional(recommend)) lets you know if data was uploaded.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.updateData(path, data,lis)</p>
+	<p>--path (string required) where to the data in the database</p>
+	<p>--data (table required) data you would to at the path specified</p>
+	<p>--lis (function optional(recommend)) lets you know if data was updated.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.deleteData(path,lis)</p>
+	<p>--path (string required) where to the delete data in the database</p>
+	<p>--lis (function optional(recommend)) lets you know if data was deleted.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	<p></p>
+	<p>firebase.getData(path,lis)</p>
+	<p>--path (string required) where to the get data from the database</p>
+	<p>--lis (function optional(recommend)) data is returned via event.response.This function returns (error = string, isError = boolean, response = string) if isError is true then there will be no (nil) response and if isError is false then there will be no (nil) error.</p>
+	error.</p>
+	<p></p>
+	<p>firebase.encodeFile(filename,dir )</p>
+	<p>--filename (string required) where file is located</p>
+	<p>--dir (Directory) (constant optional(default is system.ResourceDirectory)) what directory the file is located in </p>
+	<p>function returns file as string, this string can be stored in database</p>
+	<p></p>
+	<p>firebase.decodeFile(txt,dir )</p>
+	<p>--txt (string required) the txt from firebase.encodeFile to turn back into a file</p>
+	<p>--dir (Directory) (constant optional(default is system.DocumentsDirectory)) what directory the file is located in </p>
+	<p>function returns filename, directory. There is no build in way to put a file in a specific folder, there are plenty of ways to do this yourself.</p>
+	<p></p>
+	<h3>Variables:</h3>
+	<p></p>
+	<p>firebase.isLoginedIn: tells you if the user can make request</p>
+	<p></p>
+	<p>firebase.get: handy for GET sendType</p>
+	<p></p>
+	<p>firebase.put: handy for PUT sendType</p>
+	<p></p>
+	<p>firebase.post: handy for POST sendType</p>
+	<p></p>
+	<p>firebase.delete: handy for DELETE sendType</p>
+	<p></p>
+	<p>firebase.patch: handy for PATCH sendType</p>
+	<p></p>
+	<p>firebase.haveRefreshToken: can tell you if a refesh token is stored or not.</p>
+	<p></p>
+	<p></p>
+	<h3><a id="firebaseATS">App transport securtiy url(s):</a></h3>
+	<p>--googleapis.com</p>
+	<p>--google.com</p>
+	<p>--firebaseapp.com</p>
+	<p>--firebaseio.com</p>
+	<p>Set NSIncludesSubdomains = true, check out Corona's guide <a href="https://docs.coronalabs.com/guide/hardware/appleATS/index.html">here</a></p>
+	<p></p>
+	<p><h3>build.settings</h3></p>
+	<script src="https://gist.github.com/scottrules44/324e0615fce9c0f79be7132de8068054.js"></script>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://github.com/scottrules44/firebase-plugin-source">Get Source</a> </p>
+	<p> <a href="https://github.com/scottrules44/firebase-demo">Example</a> </p>
+	<p> <a href="https://forums.coronalabs.com/forum/654-corona-store-plugins/">Support</a> </p>
+</div>
