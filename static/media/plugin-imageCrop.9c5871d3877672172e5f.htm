@@ -1,0 +1,46 @@
+<div id = "main">
+	<h3><a id="imageCrop">Image Crop Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you crop, compress, and set the resolution of images outside of the scope of Corona's APIs.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works with iOS and Android</p>
+	<p></p>
+	<p><h3>Limitations:</h3>On android you can not crop images greater than width or height, </p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>imageCrop.crop(pathOfImage,x,y, width, height, destinationPath)</h4></p>
+	<p>pathOfImage(string) path of image you would like crop (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile)</a></p>
+	<p>x(number) x point where crop image</p>
+	<p>y(number) y point where crop image</p>
+	<p>width(number) width at which to crop image</p>
+	<p>height(number) height at which to crop image</p>
+	<p>destinationPath(number) destination for path cropped image (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)</p>
+	<p></p>
+	<p><h4>imageCrop.setResolution(pathOfImage, width, height, destinationPath)</h4></p>
+	<p>pathOfImage(string) path of image you would like scale (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)</a></p>
+	<p>width(number) width at which to scale image</p>
+	<p>height(number) height at which to scale image</p>
+	<p>destinationPath(number) destination for path scaled image (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)</p>
+	<p></p>
+	<p><h4>imageCrop.compress(pathOfImage, destinationPath)</h4></p>
+	<p>pathOfImage(string) path of image you would like compress (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)</p>
+	<p>destinationPath(number) destination for path compressed image (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins = {<br/>
+		["plugin.imageCrop"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?ImageCrop_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/imageCrop-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

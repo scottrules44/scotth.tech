@@ -1,0 +1,50 @@
+<div id = "main">
+	<h3><a id="physicsBody">Physics Body Editor Plugin</a></h3>
+	<p></p>
+	<p>This plugins uses <a href=" http://www.aurelienribon.com/blog/projects/physics-body-editor"> Physics Body Editor</a> to edit shapes of objects in Corona Sdk.</p>
+	<p>Click <a href="https://forums.solar2d.com/t/physic-body-editor-plugin/336811"> here</a> to learn how to install</p>
+	<p></p>
+	<p><h3>Limitations:</h3> Requires physics engine in Corona Sdk to use (to see those limitation click<a href="https://docs.coronalabs.com/guide/physics/limitations/index.html"> here</a>). Also you have to install the Physics Body Editor.</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p>physicsBodyEditor.loadShape(name of object in json file, json file, object, [friction], [density], [bounce], [filter], [directory] )</p>
+	<p><h4>name of object in json file</h4></p>
+	<p>(required)(string) This is the name of the physics body you made in the Phyics body editor.</p>
+	<p><h4>json file</h4></p>
+	<p>(required)(string) This is what you named the file.</p>
+	<p><h4>object</h4></p>
+	<p>(required)(Display Object) the display object your want to give the physics shape to.</p>
+	<p><h4>friction</h4></p>
+	<p>(optional)(number) what you would like the friction to be on the physics body. If set to nil it will be .3</p>
+	<p><h4>density</h4></p>
+	<p>(optional)(number) what you would like the density to be on the physics body. If set to nil it will be 1</p>
+	<p><h4>bounce</h4></p>
+	<p>(optional)(number) what you would like the bounce to be on the physics body. If set to nil it will be .2</p>
+	<p><h4>filter</h4></p>
+	<p>(optional)(table) Filter values. To find out more check out Corona sdk's guide <a href="https://docs.coronalabs.com/daily/guide/physics/collisionDetection/index.html#collision-filtering">here</a></p>
+	<p><h4>directory</h4></p>
+	<p>(optional)(constant) the path of the json file, the default system.ResourceDirectory </p>
+	<p></p>
+	<p></p>
+	<p><h3>Build.settings</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.physicsBodyEditor"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://github.com/scottrules44/physics-body-editor-example/"> Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/t/physic-body-editor-plugin/336811"> Fourms Post and how to install</a> </p>
+	<p><a href="https://docs.coronalabs.com/api/library/physics/addBody.html#multi-element-body"> About Physics Bodies</a></p>
+	<p> <a href="https://forums.solar2d.com">Support</a> </p>
+	<p> <a href="https://store.coronalabs.com/plugin/physics-body-editor">Get Plugin</a> </p>
+</div>
+			

@@ -1,0 +1,61 @@
+<div id = "main">
+	<h3><a id="wifiManager"></a>Wifi Manager Plugin</h3>
+	<p>This plugin allows you to connect to wifi manually on android</p>
+	<p></p>
+	<p></p>
+	<p><h3>Limitations:</h3> Only works on iOS (these function only work on iOS connectNetwork,addNetwork, disconnect, isEnabled, enableLocation, isLocationEnabled, isLocationEnabled) and Android </p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p>wifiManager.isEnabled()-- returns boolean true if wifi enabled, false if not</p>
+	<p></p>
+	<p>wifiManager.setEnabled(enable)</p>
+	<p>enable(boolean) true to turn wifi on, false to turn off wifi</p>
+	<p></p>
+	<p>wifiManager.addNetwork(networkType, ssid, password)</p>
+	<p>networkType(string) the type of wifi (types are: "WPA2", "WPA", "WEP", or "NONE")</p>
+	<p>ssid(string) the name of the wifi network</p>
+	<p>password(string)(optional) password for wifi network</p>
+	<p></p>
+	<p>wifiManager.disableNetwork(ssid) -- returns boolean (true for error), string ("network disabled" or "network not found")</p>
+	<p>ssid(string) the name of the wifi network</p>
+	<p></p>
+	<p>wifiManager.connectNetwork(ssid, networkLis) </p>
+	<p>ssid(string) the name of the wifi network</p>
+	<p>networkLis(function) will return event on network connection on event.type == "disconnecting", "suspended", "disconnected", "connecting", "unknown" or "connected" and event.didFail(boolean)</p>
+	<p></p>
+	<p>wifiManager.removeNetwork(ssid) -- returns boolean (true for error), string ("cannot connect to network" or "connected")</p>
+	<p>ssid(string) the name of the wifi network</p>
+	<p></p>
+	<p>wifiManager.disconnect()</p>
+	<p></p>
+	<p>wifiManager.listNetworks() (list of preconnected networks) -- returns array of tables which contain ssid(string) and bssid(string)</p>
+	<p></p>
+	<p>wifiManager.startScan() -- required before getting getScanResults</p>
+	<p></p>
+	<p>wifiManager.getScanResults() (list of networks) -- returns array of tables which contain ssid(string), capabilities(string), frequency(number), level(number),and bssid(string)</p>
+	<p></p>
+	<p>wifiManager.getCurrentNetwork() --returns strings ssid(string), bssid(string) for current network</p>
+	<p></p>
+	<p>wifiManager.getMacAddress() -- returns string</p>
+	<p></p>
+	<p>wifiManager.ping() -- returns boolean(true if connected)</p>
+	<p></p>
+	<p><h3>Build.settings</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.wifiManager"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p><a href="https://solar2dmarketplace.com/plugins?WifiManager_tech-scotth">Get Plugin</a></p>
+	<p><a href="https://github.com/scottrules44/wifiManager-demo">Example</a></p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

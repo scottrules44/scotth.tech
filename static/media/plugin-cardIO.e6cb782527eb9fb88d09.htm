@@ -1,0 +1,60 @@
+<div id = "main">
+	<h3><a id="cardIO">Card IO Plugin</a></h3>
+	<p>This plugin allows you can scan credit cards via <a href="https://www.card.io">cardIO</a> popup</p>
+	<p></p>
+	<p></p>
+	<p><h3>Limitations:</h3> Only works on iOS and Android</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p>cardIO.show(listener, reason) </p>
+	<p>--listener (Required)(function) this will return event.status. Statuses are "succeeded" and "cancelled". Also returns these events if status == "succeeded", note not all events are returned</p>
+	<p>
+		<unordered-list-item>
+			<li>event.expiry (string) expiry on card example "01/2020"</li>
+			<li>event.cvv (string) Card verification value example "911"</li>
+			<li>event.cardNumber (string)  example "5105105105105100"</li>
+			<li>event.cardType (string) credit card types: "Ambiguous"(ios only), "Unknown", "Amex", "Japan Credit Bureau", "Visa", "Mastercard", "Discover", or "Maestro"(android only) type example "Amex"</li>
+			<li>event.redactedCardNumber (string)  example "...........1111"</li>
+			<li>event.postalCode (string) required by certain countries example "73301"</li>
+			<li>event.cardholderName (string) name on card example "John Smith"</li>
+		</unordered-list-item>
+	</p>
+	<p>--cardScaning (optional)(table) set the following keys in the table to true to allow that data to be returned</p>
+	<p><unordered-list-item>
+		<li>cardholderName</li>
+		<li>expiry</li>
+		<li>postalCode</li>
+		<li>cvv</li>
+	</unordered-list-item></p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<pre><code>settings = <br/>
+{ <br/>
+	iphone = <br/>
+	{ <br/>
+		plist = <br/>
+		{ <br/>
+			NSCameraUsageDescription = "Used to Scan Cards", <br/>
+			CFBundleDevelopmentRegion = "en", <br/>
+		}, <br/>
+	}, <br/>
+	android = { <br/>
+		usesPermissions = { <br/>
+			"android.permission.CAMERA", <br/>
+		} <br/>
+	}, <br/>
+	plugins = { <br/>
+		["plugin.cardIO"] = <br/>
+		{ <br/>
+			publisherId="tech.scotth", <br/>
+			marketplaceId = "insert marketplace account ID", <br/>
+		}, <br/>
+	}, <br/>
+}</code></pre>
+	<h5>Helpful Links:</h5>
+	<p></p>
+	<p><a href="https://solar2dmarketplace.com/plugins?CardIO_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/cardIO-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>

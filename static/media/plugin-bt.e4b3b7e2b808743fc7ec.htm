@@ -1,0 +1,119 @@
+<div id = "main">
+	<h3><a id="bt">Bluetooth Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you search, connect, send, and communicate with bluetooth devices.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works on android and iOS (not simulator)</p>
+	<p></p>
+	<p><h3>Limitations:</h3> You have to ask for location on android 6.0+</p>
+<pre><code>
+native.showPopup( "requestAppPermission", {
+	appPermission = "Location", urgency = "Critical", listener= function ( e )
+end} )
+</code></pre>	
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>bt.init(listener)</h4>-- handles all events</p>
+	<unordered-list-item>
+		<li>event.type==<h5>"discovery finished"</h5> -- returned when .search() is complete</li>
+		<dl></dl>
+		<li>event.type==<h5>"device found"</h5>-- device found on .search()</li>
+		<unordered-list-item>
+			<li>event.deviceName --(string) name of device found</li>
+			<dl></dl>
+			<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+			<dl></dl>
+			<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+		</unordered-list-item>
+		<dl></dl>
+		<li>event.type==<h5>"device paired"</h5>-- device paired with .connect()</li>
+		<unordered-list-item>
+			<li>event.deviceName --(string) name of device found</li>
+			<dl></dl>
+			<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+			<dl></dl>
+			<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+		</unordered-list-item>
+		<dl></dl>
+		<li>event.type==<h5>"device unpaired"</h5></li>
+		<unordered-list-item>
+			<li>event.deviceName --(string) name of device found</li>
+			<dl></dl>
+			<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+			<dl></dl>
+			<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+		</unordered-list-item>
+		<dl></dl>
+		<li>event.type==<h5>"error"</h5></li>
+		<unordered-list-item>
+			<li>event.error --(string) error message</li>
+		</unordered-list-item>
+		<dl></dl>
+		<li>event.type==<h5>"connected"</h5> -- connected to device</li>
+		<unordered-list-item>
+			<li>event.deviceName --(string) name of device found</li>
+			<dl></dl>
+			<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+			<dl></dl>
+			<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+		</unordered-list-item>
+		<dl></dl>
+		<li>event.type==<h5>"message"</h5> -- message received</li>
+		<unordered-list-item>
+			<li>event.message --(string) message received</li>
+		</unordered-list-item>
+		<dl></dl>
+		<li>event.type==<h5>"connection error"</h5></li>
+		<unordered-list-item>
+			<li>event.deviceName --(string) name of device found</li>
+			<dl></dl>
+			<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+			<dl></dl>
+			<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+			<dl></dl>
+			<li>event.error --(string) error message</li>
+		</unordered-list-item>
+		<dl></dl>
+	</unordered-list-item>
+	<p></p>
+	<p><h4>bt.isEnabled()</h4>-- returns boolean, if true bluetooth is enabled</p>
+	<p></p>
+	<p><h4>bt.search()</h4>-- search for bluetooth devices</p>
+	<p></p>
+	<p><h4>bt.send(message, deviceID)</h4>-- send message to devices (deviceID is only supported on iOS)</p>
+	<p></p>
+	<p><h4>bt.enable(enabled)</h4>-- enable bluetooth (android only)</p>
+	<p>enabled(boolean) if true bluetooth will be enabled, if false bluetooth will be disabled</p>
+	<p></p>
+	<p><h4>bt.connect(deviceID)</h4>-- connect with with deviceID(string)</p>
+	<p></p>
+	<p><h4>bt.disconnect(deviceID)</h4>-- disconnect from device with deviceID(string)</p>
+	<p></p>
+	<p><h4>bt.getDevices()</h4>-- get configured devices, returns array with data in each table (only works on Android)</p>
+	<unordered-list-item>
+			<li>event.deviceName --(string) name of device found</li>
+			<dl></dl>
+			<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+			<dl></dl>
+			<li>event.deviceState --(string) returns "connected"</li>
+			<dl></dl>
+	</unordered-list-item>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<pre><code>settings = <br/>
+{ <br/>
+	plugins = { <br/>
+		["plugin.bt"] = <br/>
+		{ <br/>
+			publisherId="tech.scotth", <br/>
+			marketplaceId = "insert marketplace account ID", <br/>
+		}, <br/>
+	}, <br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?BluetoothPlugin_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/bluetooth-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>

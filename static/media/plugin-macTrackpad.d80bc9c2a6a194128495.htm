@@ -1,0 +1,34 @@
+<div id = "main">
+	<h3><a id="macTrackpad"></a>Mac Trackpad Plugin</h3>
+	<p>This plugin allows you to handle multitouch events on the mac trackpad.</p>
+	<p></p>
+	<p></p>
+	<p><h3>Limitations:</h3> Only works on MacOS</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p>macTrackpad.init(listener)</p>
+	<p>listener(function)(required) returns following events</p>
+	<p></p>
+	<p>event.phase(string) returns "began","moved", "ended"(note multiple event.phase maybe returned) </p>
+	<p>event.type(string) returns "pressure", "magnify", or "rotation"</p>
+	<p>event.pressue(number) returns number between 0-1(only returned on event.type "pressure")</p>
+	<p>event.rotation(number) returns degree of rotation(only returned on event.type "rotation")</p>
+	<p>event.magnification(number) returns number between 0-1(only returned on event.type "magnify")</p>
+	<p><h3>Build.settings</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.macTrackpad"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p><a href="https://github.com/scottrules44/macTrackpad-demo">Example</a></p>
+	<p> <a href="https://forums.solar2d.com/forum/654-corona-store-plugins/">Support</a> </p>
+</div>
