@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/physicsBodyTool/static/css/main.e22cc1d1.css",
+    "main.js": "/physicsBodyTool/static/js/main.a8b2648a.js",
+    "index.html": "/physicsBodyTool/index.html",
+    "main.e22cc1d1.css.map": "/physicsBodyTool/static/css/main.e22cc1d1.css.map",
+    "main.a8b2648a.js.map": "/physicsBodyTool/static/js/main.a8b2648a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e22cc1d1.css",
+    "static/js/main.a8b2648a.js"
+  ]
+}

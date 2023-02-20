@@ -1,0 +1,118 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+
+					<h3><a id="start">Voice to text plugin</a></h3>
+					<p></p>
+					<p>This plugins uses this allows you to get voice input from microphone and covert it to text</p>
+					<p></p>
+					<p><h3>Platforms:</h3> only works with iOS 10.0+  and android requires 2.2+ </p>
+					<p></p>
+					<p><h3>Limitations:</h3> requires internet access  to convert voice to text. Also andorid is "stopped" when a user stops speaking vs iOS contines to play until .stopRecording is called.</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>voiceToText.init(listener)</h4></p>
+					<p></p>
+					<p>listener (required)</p>
+					<ul>
+						<li>event.speech -- the coverted text</li>
+						<li>event.response</li>
+						<ul>
+							<li>"started"</li>
+							<li>"error"</li>
+							<li>"stopped"</li>
+						</ul>
+					</ul>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/5b1a80e7d0534c91c01a4f4f70ccb8a6.js"></script>
+					<p></p>
+					<p><h4>voiceToText.startRecording(language, muteAllAudio, inputSilenceLength, inputMinimumLength, inputPossibleSilenceLength)</h4></p>
+					<p></p>
+					<p>language(string)(optional) language you like to recognizer to use note not setting this will use default settings of device. On apple it based on <a href="https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html">this</a> and android <a href="https://tools.ietf.org/html/bcp47">this</a>. Those are what each plaforms docs recommend for setting language. I recommend <a href="http://www.science.co.il/Language/Locale-codes.php"> this</a>. example "en-US"</p>
+					<p>muteAllAudio(boolean)(optional) note this only works android, is used to mute audio while recording, note this will also mute google now voice alerts</p>
+					<p>inputSilenceLength(number, in millseconds)(optional) note this only works android, the amount of time that it should take after we stop hearing speech to consider the input complete</p>
+					<p>inputMinimumLength(number, in millseconds)(optional) note this only works android, The minimum length of an utterance. We will not stop recording before this amount of time.</p>
+					<p>inputPossibleSilenceLength(number, in millseconds)(optional) The amount of time that it should take after we stop hearing speech to consider the input possibly complete.</p>
+					<p></p>
+					<p>start recording</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/776616659cd5a9484596d80bd1f0f898.js"></script>
+					<p></p>
+					<p><h4>voiceToText.stopRecording()</h4></p>
+					<p></p>
+					<p>stop recording</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/e9ffd4c897fb5639e5fab3cf8d9032e3.js"></script>
+					<p></p>
+					<p><h4>voiceToText.isRecording()</h4></p>
+					<p></p>
+					<p>return boolean, true = recoding, false = not recoding</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/2ee617874b2cfae7b328495eed8e4e11.js"></script>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/724f890545027141e1f19509683453c6.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p> <a href="https://solar2dmarketplace.com/plugins?VoiceToText_tech-scotth">Get plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/voiceToText-Demo">Example</a> </p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2020 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

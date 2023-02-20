@@ -1,0 +1,123 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<p></p>
+					<h3><a id="firebaseCrashlytics">Firebase Crashlytics Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you log crash in Firebase Crashlytics (Note that it only it real only optizied for Java(Android) and ObjC/Swift(ios) but some lua code logged)</p>
+					<p></p>
+					<p><h3>Platforms:</h3>iOS and Android</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.init(enableDebug, optInReporting)</h4>-- setup Firebase Crashlytics</p>
+					<p>enableDebug(boolean) -- default is false</p>
+					<p>optInReporting(boolean)--Enable opt-in reporting</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.addLog(log)</h4>--add log to be sent with crash data</p>
+					<p>log(string) log data</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.setUserIdentifier(userId)</h4>--Specify a user identifier which will be visible in the Crashlytics UI.</p>
+					<p>userId(string) id of user</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.setUserName(username)</h4>--Specify a user name which will be visible in the Crashlytics UI.</p>
+					<p>username(string) username to specify in UI</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.setUserEmail(email)</h4>--Specify a user email which will be visible in the Firebase Crashlytics UI.</p>
+					<p>email(string) email to specify in UI</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.sendCrash(error)</h4>--The easiest way to cause a crash</p>
+					<p>error(string) error description</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.setStringValue(key,string)</h4>--Set a string value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.</p>
+					<p>key(string) key associated with string</p>
+					<p>string(string) string to associated with crash</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.setIntValue(key,int)</h4>--Set an interger value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.</p>
+					<p>key(string) key associated with interger</p>
+					<p>int(number) interger to associated with crash</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.setBoolValue(key,boolean)</h4>--Set a boolean value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.</p>
+					<p>key(string) key associated with boolean</p>
+					<p>boolean(boolean) boolean to associated with crash</p>
+					<p></p>
+					<p><h4>firebaseCrashlytics.recordError(error, errorCode, stackTrace)</h4>--log error</p>
+					<p>error(string) error description</p>
+					<p>errorCode(number) error code</p>
+					<p>stackTrace(array, android only required) custom stack trace, include array of tables {methodName = "string", fileName = "fileName", lineNumber = number, declaringClass = "string"}</p>
+					<p></p>
+					<p><h3>Crashlytics Setup:</h3> add google-services.json and GoogleService-Info.plist from firebase console</p>
+					<p></p>
+						<img <a class="screenshoot" src="newFirebaseProjectSettings.png" style="width:600px;height:500;">
+						<a class="screenshoot" src="googleSevicesInfo.png" style="width:600px;height:500;">
+						<a class="screenshoot" src="googleSevicesJson.png" style="width:600px;height:500;">
+					<p></p>
+					<p>Add .DSYM generated when build an app iOS build in Corona Simulator to Firebase Crashlytics Console</p>
+					<p></p>
+					<a class="screenshoot" src="dsymFirebaseCrash.png" style="width:600px;height:500;">
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/862cb33cc13dcf1cccaca54112ad6857.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?FirebaseCrashlytics_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/firebaseCrashlytics-demo">Example</a> </p>
+					<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

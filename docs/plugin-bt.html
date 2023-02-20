@@ -1,0 +1,165 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="bt">Bluetooth Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you search, connect, send, and communicate with bluetooth devices.</p>
+					<p></p>
+					<p><h3>Platforms:</h3>this plugin only works on android and iOS (not simulator)</p>
+					<p></p>
+					<p><h3>Limitations:</h3> You have to ask for location on android 6.0+</p>
+					<script src="https://gist.github.com/scottrules44/c65c641f58897dfd8a42d0943ac2f1c6.js"></script>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>bt.init(listener)</h4>-- handles all events</p>
+					<ul>
+						<li>event.type==<h5>"discovery finished"</h5> -- returned when .search() is complete</li>
+						<dl></dl>
+						<li>event.type==<h5>"device found"</h5>-- device found on .search()</li>
+						<ul>
+							<li>event.deviceName --(string) name of device found</li>
+							<dl></dl>
+							<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+							<dl></dl>
+							<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+						</ul>
+						<dl></dl>
+						<li>event.type==<h5>"device paired"</h5>-- device paired with .connect()</li>
+						<ul>
+							<li>event.deviceName --(string) name of device found</li>
+							<dl></dl>
+							<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+							<dl></dl>
+							<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+						</ul>
+						<dl></dl>
+						<li>event.type==<h5>"device unpaired"</h5></li>
+						<ul>
+							<li>event.deviceName --(string) name of device found</li>
+							<dl></dl>
+							<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+							<dl></dl>
+							<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+						</ul>
+						<dl></dl>
+						<li>event.type==<h5>"error"</h5></li>
+						<ul>
+							<li>event.error --(string) error message</li>
+						</ul>
+						<dl></dl>
+						<li>event.type==<h5>"connected"</h5> -- connected to device</li>
+						<ul>
+							<li>event.deviceName --(string) name of device found</li>
+							<dl></dl>
+							<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+							<dl></dl>
+							<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+						</ul>
+						<dl></dl>
+						<li>event.type==<h5>"message"</h5> -- message received</li>
+						<ul>
+							<li>event.message --(string) message received</li>
+						</ul>
+						<dl></dl>
+						<li>event.type==<h5>"connection error"</h5></li>
+						<ul>
+							<li>event.deviceName --(string) name of device found</li>
+							<dl></dl>
+							<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+							<dl></dl>
+							<li>event.deviceState --(string) state of device: "connected", "connecting", or "not connected"</li>
+							<dl></dl>
+							<li>event.error --(string) error message</li>
+						</ul>
+						<dl></dl>
+					</ul>
+					<p></p>
+					<p><h4>bt.isEnabled()</h4>-- returns boolean, if true bluetooth is enabled</p>
+					<p></p>
+					<p><h4>bt.search()</h4>-- search for bluetooth devices</p>
+					<p></p>
+					<p><h4>bt.send(message, deviceID)</h4>-- send message to devices (deviceID is only supported on iOS)</p>
+					<p></p>
+					<p><h4>bt.enable(enabled)</h4>-- enable bluetooth (android only)</p>
+					<p>enabled(boolean) if true bluetooth will be enabled, if false bluetooth will be disabled</p>
+					<p></p>
+					<p><h4>bt.connect(deviceID)</h4>-- connect with with deviceID(string)</p>
+					<p></p>
+					<p><h4>bt.disconnect(deviceID)</h4>-- disconnect from device with deviceID(string)</p>
+					<p></p>
+					<p><h4>bt.getDevices()</h4>-- get configured devices, returns array with data in each table (only works on Android)</p>
+					<ul>
+							<li>event.deviceName --(string) name of device found</li>
+							<dl></dl>
+							<li>event.deviceID --(string) mac address on android and UDID on iOS</li>
+							<dl></dl>
+							<li>event.deviceState --(string) returns "connected"</li>
+							<dl></dl>
+					</ul>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/612890cbfb078de2bedada6f57c1c0fe.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?BluetoothPlugin_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/bluetooth-demo">Example</a> </p>
+					<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

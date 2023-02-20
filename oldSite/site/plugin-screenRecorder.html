@@ -1,0 +1,121 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="start">Screen Recorder plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you to record the devices screen and save to corona's file system to be played and shared.</p>
+					<p></p>
+					<p><h3>Platforms:</h3> only works with iOS and android 5.0+ </p>
+					<p></p>
+					<p><h3>Limitations:</h3> No audio is recorded unless mic is turned on(audio is recorded though mic). In order to record with mic checking .micAccess is probably a good idea. You can only record portrait or landscape not both. (note screen rotations are handled automatically when flipped). Also screen recordings should be stopped if you app suspends(see below). Also android will capture the whole screen including native alerts like volume controller, on screen buttons, and push notfication, which is not the case on iOS.</p>
+					<script src="https://gist.github.com/scottrules44/39a7d6c4ed2c7ae274bc15d207f88654.js"></script>
+					<p><h3>Where is file saved?:</h3> the file is saved in TemporaryDirectory under "screenCapture.mp4". If you want to move it somewhere else you can easily do with things like the <a href="https://docs.coronalabs.com/plugin/zip/compress.html#example">zip plugin</a> to compress, move, and decompress to location of choice</p>
+					<p><h3>Video Specs:</h3> 30fps,  iOS is depended on device and android is 720, 1280 (portrait), 1280, 720 (landscape), or 720, 720 (square). In the future, there will be an option to set quality</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>screenRecorder.record(listener, params)</h4></p>
+					<p>starts screen recording</p>
+					<p>listener(function)(recommended)-- handles all recording statuses</p>
+					<ul>
+						<li>event.response</li>
+						<ul>
+							<li>"permission denied(Record Display)"(android only)</li>
+							<li>"recording started"</li>
+							<li>"recording stopped"</li>
+						</ul>
+					</ul>
+					<p>params(boolean)(optional)-- {recordHD =boolean(default is true), recordAudio=boolean(default is false)}</p>
+					<script src="https://gist.github.com/scottrules44/9b148e836d52ae10ba5b6867924e45d9.js"></script>
+					<p><h4>screenRecorder.stopRecording() -- stop screen recording</h4></p>
+					<p><h4>screenRecorder.micAccess()</h4></p>
+					<p>return the following values</p>
+					<ul>
+						<li>event.response</li>
+						<ul>
+							<li>"access granted"</li>
+							<li>"denied"</li>
+							<li>"undetermined"(iOS only) need to request with .micRequest</li>
+							<li>"missing from build.settings"(android only)</li>
+						</ul>
+					</ul>
+					<script src="https://gist.github.com/scottrules44/822fa866738702700c8bafa9e9250dc0.js"></script>
+					<p><h4>screenRecorder.micRequest(listener)</h4></p>
+					<p>listener(function)(recommended)-- handles all recording statuses</p>
+					<ul>
+						<li>event.response</li>
+						<ul>
+							<li>"access granted"</li>
+							<li>"denied"</li>
+							<li>"missing from build.settings"(android only)</li>
+						</ul>
+					</ul>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<p>iOS requires NSMicrophoneUsageDescription(= "cool description here") in Plist if you want to record from mic during recordings</p>
+					<p>Android requires "android.permission.RECORD_AUDIO" and "android.permission.CAPTURE_VIDEO_OUTPUT"</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/eec403b5723527b29a673ac170d66305.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?ScreenRecorder_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/screenRecorder-demo">Example</a> </p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

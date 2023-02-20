@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Loading....</title>
+</head>
+<body>
+<p>Loading....</p>
+<p id="status"></p>
+
+
+</body>
+
+<script>
+   
+    var url = document.URL;
+
+    var status = "";
+    var code = "";
+    var state = "";
+    if (url.includes("?") == true) {
+        var splitUrl = url.split('=');
+        for (var i = splitUrl.length - 1; i >= 0; i--) {
+            if (splitUrl[i].includes("&") == true) {
+                var info = splitUrl[i].split('&');
+                if (i == 1) {
+                    status = info[0];
+                }
+                if (i == 2) {
+                    code = info[0];
+                }
+                
+            }else{
+                if (i == 3) {
+                    state = splitUrl[i];
+                }
+            }
+        }
+    }
+    if (status == "NOT_AUTHENTICATED") {
+        window.location = "https://scotth.tech/login#failed";
+    }
+    if (status == "PARTIALLY_AUTHENTICATED") {
+        var config = {
+            apiKey: "AIzaSyCKyBAFeEVRML-IlaPjO5FFgsRm3U7DpDY",
+            authDomain: "https://scott-h-tech-b9dc2.firebaseapp.com",
+            databaseURL: "https://scott-h-tech-b9dc2.firebaseio.com",
+            storageBucket: "gs://scott-h-tech-b9dc2.appspot.com"
+        };
+        
+        firebase.initializeApp(config);
+
+        firebase.database().ref('/facebookData').once('value').then(function(snapshot) {
+
+          if (snapshot.val()) {
+                var facebookID = snapshot.val().facebookId;
+                var facebookSecret = snapshot.val().facebookSecret;
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open( "GET", "https://graph.accountkit.com/v1.1/access_token?grant_type=authorization_code&code="+code+"&access_token=AA|"+facebookID+"|"+facebookSecret, false );
+                xmlHttp.send(null);
+                var object = JSON.parse(xmlHttp.responseText);
+                localStorage.setItem("scottAccessToken", object.access_token);                
+                window.location = "https://dev.scotth.tech/account";
+          }else{
+            window.location = "https://scotth.tech/login#failed";
+          }
+              
+        });
+
+        
+    }
+    if (status == "BAD_PARAMS") {
+        window.location = "https://scotth.tech/login#failed";
+    }
+    
+</script>
+</html>

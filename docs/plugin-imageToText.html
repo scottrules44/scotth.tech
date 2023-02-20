@@ -1,0 +1,111 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="imageToText"></a>Image to Text Plugin</h3>
+					<p>This plugin allows you to use ocr to get text from an image.</p>
+					<p></p>
+					<p></p>
+					<p><h3>Limitations:</h3> Only works on iOS and Android.</p>
+					<p></p>
+					<p><h3>How Do I add a Traineddata or Language?:</h3> on iOS due to limitation of the Tessract Api on iOS, you are limited to</p>
+					<ul>
+						<li>"chi_sim" aka chinese simplified</li>
+						<li>"eng" aka english</li>
+						<li>"fra" aka french</li>
+						<li>"jpn" aka japanese</li>
+						<li>"kor" aka korean</li>
+						<li>"por" aka portuguese</li>
+						<li>"rus" aka russian</li>
+						<li>"spa" aka spanish</li>
+					</ul>
+					<p></p>
+					<p>if you want to use your own traineddata on iOS, please use <a href="https://coronalabs.com/products/enterprise/">Corona Enterpise</a> and Contact me for Plugin Binaries. If you using android you need to load the traineddata data manually, traineddata I use for iOS are found <a href="https://github.com/scottrules44/Traineddata-for-image-To-text-plugin">here</a> and can be used for Android if wanted. In order to load traineddata on android, the data is moved to the phones hard drive , which is required by tessarct Api on android, it is put in phoneHardDrivePath/OCRFolder. In order to load traineddata in just use the following snippet of code</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/171310d9f4a5c18527b7aa1e41892c47.js"></script>
+					<p></p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p>imageToText.init(listener) </p>
+					<p>listener (function) returns event.response with the converted text.</p>
+					<p></p>
+					<p>imageToText.convert(pathToImage, language) </p>
+					<p>pathToImage (path) path to png or jpeg via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile()</a></p>
+					<p>language (string) the language or traineddata to scan for in image</p>
+					<p></p>
+					<p>imageToText.listLanguages()</p>
+					<p>returns an array of strings of languages loaded on the app (note .traineddata is not included)</p>
+					<p></p>
+					<p>imageToText.transferLanguage(path)     (Used for android)</p>
+					<p>path (path) path to .traineddata to be loaded for converting via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile()</a></p>
+					<p>also returns string for status, this includes: "file saved", "could not find language folder", "could not save file to language folder", or "unable to create language directory"</p>
+					<p></p>
+					<p></p>
+					<p>imageToText.deleteLanguage(language)     (Used for android)</p>
+					<p>language (string) language or traineddata to be removed from phone hard drive. (note should not include .traineddata in string)</p>
+					<p></p>
+					<p><h3>Build.settings</h3></p>
+					<script src="https://gist.github.com/scottrules44/5685e20e5868d6658b4117c287d572ba.js"></script>
+					<h5> Helpful Links:</h5>
+					<p></p>
+					<p> <a href="https://solar2dmarketplace.com/plugins?ImageToText_tech-scotth">Get Plugin</a></p>
+					<p><a href="https://github.com/scottrules44/imageToText-demo">Example</a></p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2020 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

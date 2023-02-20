@@ -1,0 +1,200 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>IronSource Plugin</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="ironSource">IronSource Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you use IronSource ads and mediation</p>
+					<p></p>
+					<p><h3>Platforms:</h3>works on Android and iOS</p>
+					<p></p>
+					<p><h3>Setup:</h3>Go to Iron Source website (<a
+						href="https://www.ironsrc.com">https://www.ironsrc.com</a>) and create account. Then go to apps and create an app for android and/or iOS</p>
+					<p></p>
+					<p>If you want to setup mediation go here and setup each network
+					<a href="https://platform.ironsrc.com/partners/monetize/mediation/setup">https://platform.ironsrc.com/partners/monetize/mediation/setup</a> </p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>ironSource.init(listener, params) </h4>— init function</p>
+					<p></p>
+					<p>listener(function) returns and event in the Events section bellow </p>
+					<p>params(table) androidAppKey = app key for android(string), iOSAppKey = app key for iOS(string), clientSideCallback= boolean (default is false), GDPR = boolean (default is false), enableATT = boolean(shows App Tracking Transparency pop up before initing and returns events (default is true)),<br>
+					enableRewardVideo(boolean) = boolean (init reward videos(default is true)), enableInterstitial(boolean) = boolean (should init interstitial(default is true)), enableOfferwall(boolean) = boolean (should init offerwall(default is true)), enableBanner(boolean) = boolean (should init banner(default is true))</p>
+					<p></p>
+					<p><h4>ironSource.load(type, params)</h4>— load ad</p>
+					<p>type(string) “banner”(note show banners before loading), “interstitial”</p>
+					<p>params (table) on “banner”, the param “placement” can be added, also tablet(boolean)(default if false), can be added.</p>
+					<p></p>
+					<p><h4>ironSource.show(type, params)</h4>— show ads</p>
+					<p>type(string) “banner”, “interstitial”, “offerwall”, “rewardedVideo”</p>
+					<p>params (table) on “banner” position(string)= “top” or “bottom”. On “interstitial”, “offerwall”, “rewardedVideo” the param “placement” can be added</p>
+					<p></p>
+					<p><h4>ironSource.hide(type)</h4>— hides banners until .show is called again</p>
+					<p>type(string) “banner”</p>
+					<p></p>
+					<p><h4>ironSource.isLoaded(type)</h4>— returns boolean</p>
+					<p>type(string) “banner”, “interstitial”, “offerwall”, “rewardedVideo”</p>
+					<p></p>
+					<p><h4>ironSource.setMetaData(key, value)</h4>— set meta data for Iron Source</p>
+					<p>key(string) </p>
+					<p>value(string) </p>
+					<p>Examples: (for CCPA)ironSource.setMetaData("do_not_sell", "true"), (Apps with Age Gates) ironSource.setMetaData("is_child_directed","true")</p>
+					<p>(COPPA AdColony)ironSource.setMetaData("AdColony_COPPA","true"), (AppLovin Age Restriction) ironSource.setMetaData("AppLovin_AgeRestrictedUser","true")</p>
+					<p>(CacheFlag Facebook) ironSource.setMetaData("Facebook_IS_CacheFlag","IMAGE"), (Admob Ad Content filtering) ironSource.setMetaData("AdMob_MaxContentRating","MAX_AD_CONTENT_RATING_G")(other values MAX_AD_CONTENT_RATING_G, MAX_AD_CONTENT_RATING_PG, MAX_AD_CONTENT_RATING_T, MAX_AD_CONTENT_RATING_MA)</p>
+					<p></p>
+					<p><h4>ironSource.setProperties(properties)</h4>— properties(table) key values pairs can be</p>
+					<p>type(string) “banner”, “interstitial”, “offerwall”, “rewardedVideo”</p>
+					<p>age = number,</p>
+					<p>dynamicUserId (“The Dynamic UserID is a parameter that can be changed throughout the session and will be received in the server-to-server ad rewarded callbacks.”) = string ,</p>
+					<p>gender = “male”, “female”, “unknown”,</p>
+					<p>userId = string,</p>
+					<p>mediationSegment = string,</p>
+					<p>mediationType = string</p>
+					<p></p>
+					<p><h4>ironSource.getRewardVideoPlacementInfo(placement)</h4>— returns table with rewardAmount(number), rewardName(string), isRewardedVideoPlacementCapped(boolean)</p>
+					<p>placement(string)</p>
+					<p></p>
+					<p><h4>ironSource.getOfferwallCredits()</h4></p>
+					<p></p>
+					<p><h4>ironSource.getSize()</h4>— gets size of banners (note banner must be showing and loaded to get size) returns height(number)</p>
+					<p></p>
+					<p><h4>ironSource.getAdId()</h4>return ad id for <a href="https://developers.is.com/ironsource-mobile/air/integration-testing/#step-1">test mode</a> (string)</p>
+					<p></p>
+					<p><h4>ironSource.debugMode()</h4>-- prints sdk intergration for validation</p>
+					<p></p>
+					<p><h4>ironSource.destroyBanner() </h4>— destroy banner</p>
+					<p></p>
+					<p><h4>ironSource.setFBTrackingEnabled(shouldEnable) </h4>— Only for iOS (Use for Facebook Ads iOS 14+)</p>
+					<p>shouldEnable(boolean) set based on ATT Preference</p>
+					<p></p>
+					<p><h3>Events:</h3> return in lis function on .init()</p>
+					<p></p>
+					<p><h4>App Tracking Transparency events(if enableATT is true and iOS 14+):</h4></p>
+					<p>phase == “att event”, status == “not determined”</p>
+					<p>phase == “att event”, status == “authorized”</p>
+					<p>phase == “att event”, status == "denied"</p>
+					<p>phase == “att event”, status == "restricted"</p>
+					<p></p>
+					<p><h4>Banner:</h4></p>
+					<p>phase == “adLoaded”, isError == false, type == “banner”</p>
+					<p>phase == “adLoadedFailed”,isError == true,error == error message(string),type == “banner”</p>
+					<p>phase == “adClicked”, isError == false, type == “banner”</p>
+					<p>phase == “adScreenPresented”, isError == false, type == “banner”</p>
+					<p>phase == “adScreenDismissed”, isError == false, type == “banner”</p>
+					<p>phase == “adLeftApplication”, isError == false, type == “banner”</p>
+					<p></p>
+					<p><h4>Interstitial:</h4></p>
+					<p>phase == “adReady”,isError == false,type == “interstitial”</p>
+					<p>phase == “adLoadFailed”, isError == true, error == error message(string), type == “interstitial”</p>
+					<p>phase == “adOpened”, isError == false, type == “interstitial”</p>
+					<p>phase == “adClosed”, isError == false, type == “interstitial”</p>
+					<p>phase == “adShowSucceeded”, isError == false, type == “interstitial”</p>
+					<p>phase == “adShowFailed”, isError == false, type == “interstitial”, error == error message(string)</p>
+					<p>phase == “adClicked”, isError == false, type == “interstitial”</p>
+					<p></p>
+					<p><h4>Offerwall:</h4></p>
+					<p>phase == “wallAvailable”, isError == false, available == boolean(could be false or true), type == “offerwall”</p>
+					<p>phase == “wallOpened”, isError == false, type == “offerwall”</p>
+					<p>phase == “wallShowFailed”, isError == true, type == “offerwall”, error == error message(string)</p>
+					<p>phase == “wallCredited”, isError == false, type == “offerwall”, credits == (number) credits user has earned, totalCredits == (number) total credits user has earned, totalCreditsFlag == (boolean) if credits will be equal to total credits </p>
+					<p>phase == “wallCreditsFailed”, isError == true, type == “offerwall”, error == error message(string)</p>
+					<p>phase == “wallClosed”, isError == false, type == “offerwall”</p>
+					<p></p>
+					<p><h4>Reward Video:</h4></p>
+					<p>phase == “availabilityChanged”, isError == false, type == “rewardedVideo”, available == boolean(could be false or true)</p>
+					<p>phase == “adClosed”, isError == false, type == “rewardedVideo”</p>
+					<p>phase == “adOpened”, isError == false, type == “rewardedVideo”</p>
+					<p>phase == “adStarted”, isError == false, type == “rewardedVideo”</p>
+					<p>phase == “adEnded”, isError == false, type == “rewardedVideo”</p>
+					<p>phase == “adRewarded”, isError == false, type == “rewardedVideo”, rewardName == reward name from video ad(string), rewardAmount == reward amount from video ad(number)</p>
+					<p>phase == “adShowError”, isError == true, type == “rewardedVideo”, error == error message(string)</p>
+					<p>phase == "didClickRewardedVideo", isError == false, type == “rewardedVideo”</p>
+					<p></p>
+					<p><h4>Impression Data:</h4></p>
+					<p>adSource == the ad network used for impression(string), adFormat == also know as the ad unit(string), type == "impressionData", adUnitName == also know as the instance name (string), value == revenue of impression (string), adPlatfrom== "ironSource", isError == false</p>
+					<p><a href="https://scotth.tech/plugin-firebaseAnalytics#ironsrc">Firebase Analytics docs for logging impression to Firebase</a></p>
+
+					<p></p>
+					<p><h3>iOS 14:</h3></p>
+					<p>Iron Source Plugin has been updated for iOS 14. Please add SKAdNetworkItems listed below in build.settings.</p>
+					<p>As for App Tracking Transparency(ATT) in iOS 14, Iron Source recommends showing a pop up and requesting permission before .init().</p>
+					<p>To show/request ad tracking please use and read info about the <a href="http://docs.coronalabs.com/plugin/att/">ATT Plugin</a>. If you don't request permission or permission is denied, Iron Source's ads will not be targeted via the devices identity for Advertisers (IDFA).</p>
+					<p>For showing Facebook Ads please use .setFBTrackingEnabled api above</p>
+					<p></p>
+					<p><h3>Google Play Families programs:</h3></p>
+					<p>In order to be in the Families section on Google Play you must do the following</p>
+					<p>1. Rebuild and use the lastest Iron Source Plugin(3/23/2022, 1.20)</p>
+					<p>2. add remove "com.google.android.gms.permission.AD_ID" by adding the following to you Build.settings</p>
+					<script src="https://gist.github.com/scottrules44/40a00dbb763eeb0a8292ea1b1d1d6180.js"></script>
+					<p>3. Set MetaData "IS_DeviceID_OptOut" and "IS_Child_Directed" to "true" before init </p>
+					<script src="https://gist.github.com/scottrules44/f01301736e5fca24001ad70afd224d04.js"></script>
+					<p><h4>For mixed audience:</h4></p>
+					<p>1. Rebuild and use the lastest Iron Source Plugin(3/23/2022, 1.20)</p>
+					<p>2. If the user is a children or is an unknown age set MetaData "IS_DeviceID_OptOut" and "IS_Child_Directed" to "true" before init </p>
+					<script src="https://gist.github.com/scottrules44/a9b52c33b54f782a5ebc45e48ce41a68.js"></script>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/9ba38361f7515404c909d0eddbcf9d45.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p> <a href="https://developers.is.com">Iron Source Knowledge Center</a> </p>
+					<p><a href="https://solar2dmarketplace.com/plugins?IronSource_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/ironSourceDemo">Example</a> </p>
+					<p> <a href="https://forums.coronalabs.com/forum/654-corona-store-plugins/">Support</a> </p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2023 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

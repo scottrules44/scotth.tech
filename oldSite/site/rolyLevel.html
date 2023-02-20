@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loading...</title>
+</head>
+<body>
+<h2><a href="https://scotth.tech/index">Return Home</a></h2>
+</body>
+<script language="javascript">
+    window.location = 'rolyArmadillo://'+window.location.href; // will result in error message if app not installed
+	setTimeout(function() {
+	   // Link to the App Store should go here -- only fires if deep link fails
+	}, 500);
+</script>
+</html>

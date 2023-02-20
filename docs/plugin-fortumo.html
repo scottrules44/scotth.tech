@@ -1,0 +1,93 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="Fortumo">Fortumo Plugin</a></h3>
+					<p></p>
+					<p>The Fortumo plugin enables developers to charge for premium features and sell virtual credits inside their Android applications.</p>
+					<p></p>
+					<p><h3>Platforms:</h3>this plugin only works with Android. Note on tablets and devices without sim cards you have to have service live to test.</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>fortumo.pay(displayName, productName, purchaseType, serviceId, appSecret, params, listener)-- make payment</h4></p>
+					<p>displayName(string) what to tell user they are buying</p>
+					<p>productName(string) product name, used when restoring</p>
+					<p>purchaseType(string)(optional default is "nonconsumable") types are "consumable"(coins, food), "nonconsumable"(remove ads, coin doublers), or "subscription"(Netflix, Spotify)</p>
+					<p>serviceId(string) the service id of a service setup in Fortumo Dashboard</p>
+					<p>appSecret(string) the app secret of a service setup in Fortumo Dashboard</p>
+					<p>params(table)(optional) Params: isLightBackground (boolean, default is false, which will give a dark background), price(string)(optional) sets price amount, priceCurrency(string)(optional) sets price currency, setButtonBackgroundColor(array) rgb of button background {1,0,0}(red), setButtonTextColor (array) rgb of text color {0,1,0}(green), isRounded(boolean) is box rounded, creditsMultiplier(integer) the amount to multiply credits by, </p>
+					<p>listener(funtion) returns event.error(string), event.isError(boolean), event.billingStatus(string could be "pending", "not send", "failed", or "billed"), event.creditAmount(string amount to credit), event.creditAmount(string amount to credit), event.creditName(string), event.messageId(string), event.paymentCode(string), event.paymentAmmount(string), event.serviceId(string), and event.userId(string)</p>
+					<p></p>
+					<p><h4>fortumo.paymentStatus(serviceId, appSecret, productName, listener)--used to get non consumable payment</h4></p>
+					<p>serviceId(string) the service id of a service setup in Fortumo Dashboard</p>
+					<p>appSecret(string) the app secret of a service setup in Fortumo Dashboard</p>
+					<p>displayName(string) what to tell user they are buying</p>
+					<p>listener(funtion) returns event.billingStatus (string) "pending", "not send", "failed", or "billed"</p>
+					<p></p>
+					<p><h3>Fortumo Setup:</h3></p>
+					<p>Go to the <a href="https://fortumo.com">Fortumo website</a>, create an account, and setup an android in app purchase service.s</p>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/8f26b3614933b61826dc1f06847d22f9.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://marketplace.coronalabs.com/plugin/fortumo">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/fortumo-demo">Example</a> </p>
+					<p> <a href="https://forums.coronalabs.com/forum/654-corona-store-plugins/">Support</a> </p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

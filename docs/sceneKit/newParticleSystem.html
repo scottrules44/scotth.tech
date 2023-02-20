@@ -1,0 +1,206 @@
+<html>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="https://www.scotth.tech">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="https://scotth.tech/index">Home</a></li>
+						<li><a class="buttonLinks selected" href="https://scotth.tech/plugins">Plugins</a></li>
+						<li><a class="buttonLinks" href="https://scotth.tech/projects">Projects</a></li>
+						<li><a class="buttonLinks" href="https://scotth.tech/contact">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<p><a href="https://scotth.tech/sceneKit"><h5>< Back</h5></a></p>
+					<p></p>
+					<h3><a id="sceneKit"></a>sceneKit.newParticleSystem()</h3>
+					<p></p>
+					<p><a id="overview"></a><h3>Overview:</h3></p>
+					<hr>
+					<p></p>
+					<p>Creates a new blank particle system or one from a scene kit particle file</p>
+					<p></p>
+					<p><a id="syntax"></a><h3>Syntax:</h3></p>
+					<hr>
+					<p></p><script src="https://gist.github.com/scottrules44/aecd1f0c4c09963467212bc64a55d56e.js"></script>
+					<p></p>
+					<p>directory (string) (optional) path from root</p>
+					<p></p>
+					<p>fileName (string) (optional) name of particle file</p>
+					<p></p>
+					<p><a id="methods"></a><h3>Methods:</h3></p>
+					<hr>
+					<p></p>
+					<p>particle:setColor(red(number), green(number), blue(number), alpha(number) ) -- set color (0-1)</p>
+					<p></p>
+					<p>particle:setColorVariation(red(number), green(number), blue(number), alpha(number) ) -- set color variation(0-1)</p>
+					<p></p>
+					<p>particle:setImage(path)-- path(via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathToFile()</a>) to image for particles</p>
+					<p></p>
+					<p>particle:addCollisonNode(node) add node whose geometry the system’s particles can collide with.</p>
+					<p></p>
+					<p>particle:removeCollisonNode(node) remove node whose geometry the system’s particles can collide with.</p>
+					<p></p>
+					<p>particle:remove()-- remove particles</p>
+					<p></p>
+					<p><h4>Use these methods on nodes to add particles to any node type (<a href="https://scotth.tech/sceneKit/newModel">newModel</a>, <a href="https://scotth.tech/sceneKit/newBox">newBox</a>, <a href="https://scotth.tech/sceneKit/newNode">newNode</a>, etc)</h4></p>
+					<p></p>
+					<p>node:addParticleSystem(particle), add particle obj(made via sceneKit.newParticleSystem()) </p>
+					<p></p>
+					<p>node:removeParticleSystem(particle), remove particle obj(made via sceneKit.newParticleSystem()) </p>
+					<p></p>
+					<p>node:removeAllParticleSystems(), remove all particle systems</p>
+					<p></p>
+					<p><a id="properties"></a><h3>Properties:</h3></p>
+					<hr>
+					<p></p>
+					<p>emissionDuration(number) -- The duration, in seconds, over which the system spawns new particles.</p>
+					<p></p>
+					<p>emissionDurationVariation(number) -- The range, in seconds, of randomized emission duration values.</p>
+					<p></p>
+					<p>idleDuration(number) -- The duration, in seconds, of periods when the system emits no particles.</p>
+					<p></p>
+					<p>idleDurationVariation(number) -- The range, in seconds, of randomized idle duration values.</p>
+					<p></p>
+					<p>loops(boolean) -- A Boolean value that determines whether the system repeats its emission and idle periods.</p>
+					<p></p>
+					<p>warmupDuration(number) -- The duration, in seconds, for which particles are spawned before the system is first rendered.</p>
+					<p></p>
+					<p>birthRate(number) -- The number of particles spawned during each emission period.</p>
+					<p></p>
+					<p>birthRateVariation(number) -- The range of randomized particle birth rate values.</p>
+					<p></p>
+					<p>emittingDirectionX(number) -- The possible initial directions for newly spawned particles, relative to the emitter shape x.</p>
+					<p></p>
+					<p>emittingDirectionY(number) -- The possible initial directions for newly spawned particles, relative to the emitter shape y.</p>
+					<p></p>
+					<p>emittingDirectionZ(number) -- The possible initial directions for newly spawned particles, relative to the emitter shape z.</p>
+					<p></p>
+					<p>spreadingAngle(number) -- The range, in degrees, of randomized initial particle directions.</p>
+					<p></p>
+					<p>particleAngle(number) -- The rotation angle, in degrees, of newly spawned particles.</p>
+					<p></p>
+					<p>particleAngleVariation(number) -- The range, in degrees of randomized initial particle angles.</p>
+					<p></p>
+					<p>particleVelocity(number) -- The initial speed, in units per second, for newly spawned particles.</p>
+					<p></p>
+					<p>particleVelocityVariation(number) -- The range, in units per second, of randomized initial particle speeds.</p>
+					<p></p>
+					<p>particleAngularVelocity(number) -- The initial spin rate, in degrees per second, of newly spawned particles.</p>
+					<p></p>
+					<p>particleAngularVelocityVariation(number) -- The range, in degrees per second, of randomized initial angular velocities for particles.</p>
+					<p></p>
+					<p>particleLifeSpan(number) -- The duration, in seconds, for which each particle is rendered before being removed from the scene.</p>
+					<p></p>
+					<p>particleLifeSpanVariation(number) -- The range, in seconds, of randomized particle life spans.</p>
+					<p></p>
+					<p>particleSize(number) -- The rendered size, in units of the scenes world coordinate space, of the particle image.</p>
+					<p></p>
+					<p>particleSizeVariation(number) -- The range of randomized particle sizes.</p>
+					<p></p>
+					<p>fresnelExponent(number) -- The reflectivity exponent SceneKit uses when rendering the particles image as a cube map.</p>
+					<p></p>
+					<p>stretchFactor(number) -- A multiplier for stretching particle images along their direction of motion.</p>
+					<p></p>
+					<p>imageSequenceRowCount(number) -- The number of rows for treating the particle image as a grid of animation frames.</p>
+					<p></p>
+					<p>imageSequenceColumnCount(number) -- The number of columns for treating the particle image as a grid of animation frames.</p>
+					<p></p>
+					<p>imageSequenceInitialFrame(number) -- The index of the first frame in a particle image animation.</p>
+					<p></p>
+					<p>imageSequenceInitialFrameVariation(number) -- The range of randomized initial frames for particle image animation.</p>
+					<p></p>
+					<p>imageSequenceFrameRate(number) -- The rate, in frames per second, of particle image animation.</p>
+					<p></p>
+					<p>imageSequenceFrameRateVariation(number) -- The range, in frames per second, of randomized frame rates for particle image animation. </p>
+					<p></p>
+					<p>imageSequenceAnimationMode(string)(default "repeat") -- modes "repeat"(The animation loops after displaying all of its images), "clamp"(The animation stops after displaying all of its images), and "autoReverse" (After the animation displays all of its images, it plays again in reverse order.)</p>
+					<p></p>
+					<p>affectedByGravity(boolean)(default false) -- A Boolean value that determines whether gravity, as defined by the scene’s physics simulation, affects the motion of particles.</p>
+					<p></p>
+					<p>particleDiesOnCollision(boolean)(default false) -- A Boolean value that determines whether particles are removed from the scene upon colliding with another object.</p>
+					<p></p>
+					<p>accelerationX(number) -- The constant acceleration vectodr, in units per second per second, applied to all particles in the system. affects x value</p>
+					<p></p>
+					<p>accelerationY(number) -- The constant acceleration vector, in units per second per second, applied to all particles in the system. affects y value</p>
+					<p></p>
+					<p>accelerationZ(number) -- The constant acceleration vector, in units per second per second, applied to all particles in the system. affects y value</p>
+					<p></p>
+					<p>dampingFactor(number) -- A factor that slows particles relative to their velocity.</p>
+					<p></p>
+					<p>particleMass(number) -- The mass, in kilograms, of each particle in the system.</p>
+					<p></p>
+					<p>particleMassVariation(number) -- The range, in kilograms, of randomized particle masses.</p>
+					<p></p>
+					<p>particleCharge(number) -- The electric charge, in coulombs, of each particle in the system.</p>
+					<p></p>
+					<p>particleChargeVariation(number) -- The range, in coulombs, of randomized particle charges.</p>
+					<p></p>
+					<p>particleBounce(number) -- The restitution coefficient of each particle in the system.</p>
+					<p></p>
+					<p>particleBounceVariation(number) -- The range of randomized restitution coefficients for particles.</p>
+					<p></p>
+					<p>particleFriction(number) -- The friction coefficient of each particle in the system.</p>
+					<p></p>
+					<p>particleFrictionVariation(number) -- The range of randomized friction coefficients for particles.</p>
+					<p></p>
+					<p>blendMode(string)(default "additive") -- values are "additive" (the source and destination colors are added together), "subtract"(The source color is subtracted from the destination color), "multiply"(The source color is multiplied by the destination color).</p>
+					<p></p>
+					<p>orientationMode(string)(default "billboardScreenAligned") -- values "billboardScreenAligned"(Each particles orientation is always fixed with respect to the point of view camera), "billboardViewAligned"(Each particle always faces the point of view camera (but may rotate about an axis parallel to the view direction)), "free"(Particle orientations are not restricted; they may rotate freely in all axes), and "billboardYAligned"(The y-axis direction of each particle is always fixed with respect to the point of view camera)</p>
+					<p></p>
+					<p>sortingMode(string)(default "none") -- values "none"(Particles are not sorted; they may be rendered in any order), "distance"(Particles farther from the point of view (as measured using distance from the camera in scene space) are rendered before closer particles), "oldestFirst"(Particles emitted earlier are rendered before particles emitted more recently), "youngestFirst"(Particles emitted more recently are rendered before particles emitted earlier), or "projectedDepth"(Particles farther from the point of view (as measured using projected depth) are rendered before closer particles.) </p>
+					<p></p>
+					<p>lightingEnabled(boolean) --A Boolean value that determines whether SceneKit applies lighting to particle images when rendering</p>
+					<p></p>
+					<p>blackPassEnabled(boolean) --A Boolean value that determines whether SceneKit renders particles in black before rendering the particle image</p>
+					<p></p>
+					<p><a id="Example"></a><h3>Example:</h3></p>
+					<hr>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/124da384efdf78d28558212cd3b8388f.js"></script>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

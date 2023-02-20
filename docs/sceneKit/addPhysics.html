@@ -1,0 +1,149 @@
+<html>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="https://www.scotth.tech">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="https://scotth.tech/index">Home</a></li>
+						<li><a class="buttonLinks selected" href="https://scotth.tech/plugins">Plugins</a></li>
+						<li><a class="buttonLinks" href="https://scotth.tech/projects">Projects</a></li>
+						<li><a class="buttonLinks" href="https://scotth.tech/contact">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<p><a href="https://scotth.tech/sceneKit"><h5>< Back</h5></a></p>
+					<p></p>
+					<h3><a id="sceneKit"></a>sceneKit.addPhysics()</h3>
+					<p></p>
+					<p><a id="overview"></a><h3>Overview:</h3></p>
+					<hr>
+					<p></p>
+					<p>Adds physics body to nodes</p>
+					<p></p>
+					<p><a id="syntax"></a><h3>Syntax:</h3></p>
+					<hr>
+					<script src="https://gist.github.com/scottrules44/e9dd5481879c558cd17d8b220f777713.js"></script>
+					<p></p>
+					<p>node (node) 3d display node to add physics to</p>
+					<p></p>
+					<p>bodyType (string) values are: "static" (a physics body that is unaffected by forces or collisions and that cannot move), "dynamic" (a physics body that can be affected by forces and collisions), or "kinematic" (a physics body that is unaffected by forces or collisions but that can cause collisions affecting other bodies when moved)</p>
+					<p></p>
+					<p><a id="methods"></a><h3>Methods:</h3></p>
+					<hr>
+					<p></p>
+					<p>node:isResting() returns boolean, true = resting, flase = not resting</p>
+					<p></p>
+					<p>node:getVelocity() returns x velocity, y velocity, and z velocity</p>
+					<p></p>
+					<p>node:getAngularVelocity() returns x angular velocity, y angular velocity, z angular velocity, and w(rotation in radians) angular velocity</p>
+					<p></p>
+					<p>node:applyForceImpulse(x,y,z) apply impuse force to phyics body</p>
+					<p></p>
+					<p>node:applyForce(x,y,z) apply force to phyics body</p>
+					<p>node:applyForceAtPosImpulse(posX,posY,posZ,forceX,forceY,forceZ) apply impulse force to phyics body at position(posX,posY,posZ)</p>
+					<p></p>
+					<p>node:applyForceAtPos(posX,posY,posZ,forceX,forceY,forceZ) apply force to phyics body at position(posX,posY,posZ)</p>
+					<p></p>
+					<p>node:applyTorqueImpulse(forceX,forceY,forceZ, forceW) apply impulse torque at x axis, y axis, z axis, and w (rotation in radians example 3.1459/4)</p>
+					<p></p>
+					<p>node:applyTorque(forceX,forceY,forceZ, forceW) apply torque at x axis, y axis, z axis, and w (rotation in radians example 3.1459/4)</p>
+					<p></p>					
+					<p>node:reset() Updates the position and orientation of a body in the physics simulation to match that of the node to which the body is attached</p>
+					<p></p>
+					<p>node:removePhysics() removes physics body attached to node</p>
+					<p></p>
+					<p><a id="properties"></a><h3>Properties:</h3></p>
+					<hr>
+					<p></p>
+					<p>bodyType(string) -- values are: "static" (a physics body that is unaffected by forces or collisions and that cannot move), "dynamic" (a physics body that can be affected by forces and collisions), or "kinematic" (a physics body that is unaffected by forces or collisions but that can cause collisions affecting other bodies when moved)</p>
+					<p></p>
+					<p>affectedByGravity(boolean)(default is true) -- is body affected by gravity</p>
+					<p></p>
+					<p>velocityFactorX(number) -- A multiplier affecting how SceneKit applies translations along x axis computed by the physics simulation to the node containing the physics body.</p>
+					<p></p>
+					<p>velocityFactorY(number) -- A multiplier affecting how SceneKit applies translations along y axis computed by the physics simulation to the node containing the physics body.</p>
+					<p></p>
+					<p>velocityFactorZ(number) -- A multiplier affecting how SceneKit applies translations along z axis computed by the physics simulation to the node containing the physics body.</p>
+					<p></p>
+					<p>angularVelocityFactorX(number) -- A multiplier affecting how SceneKit applies rotations yx axis computed by the physics simulation to the node containing the physics body.</p>
+					<p></p>
+					<p>angularVelocityFactorY(number) -- A multiplier affecting how SceneKit applies rotations along y axis computed by the physics simulation to the node containing the physics body.</p>
+					<p></p>
+					<p>angularVelocityFactorZ(number) -- A multiplier affecting how SceneKit applies rotations along z axis computed by the physics simulation to the node containing the physics body.</p>
+					<p></p>
+					<p>mass(number) -- The mass of the body, in kilograms.</p>
+					<p></p>
+					<p>charge(number) -- The electric charge of the body, in coulombs.</p>
+					<p></p>
+					<p>friction(number) -- The body’s resistance to sliding motion.</p>
+					<p></p>
+					<p>rollingFriction(number) -- The body’s resistance to rolling motion.</p>
+					<p></p>
+					<p>restitution(number) -- A factor that determines how much kinetic energy the body loses or gains in collisions.</p>
+					<p></p>
+					<p>damping(number) --A factor that reduces the body’s linear velocity.</p>
+					<p></p>
+					<p>angularDamping(number) --A factor that reduces the body’s angular velocity.</p>
+					<p></p>
+					<p>momentOfInertiaX(number) --The body’s moment of inertia, expressed in the local coordinate system of x axis of the node that contains the body.</p>
+					<p></p>
+					<p>momentOfInertiaY(number) --The body’s moment of inertia, expressed in the local coordinate system of y axis of the node that contains the body.</p>
+					<p></p>
+					<p>momentOfInertiaZ(number) --The body’s moment of inertia, expressed in the local coordinate system of z axis of the node that contains the body.</p>
+					<p></p>
+					<p>usesDefaultMomentOfInertia(boolean)(default is true) --A Boolean value that determines whether SceneKit automatically calculates the body’s moment of inertia or allows setting a custom value.</p>
+					<p></p>
+					<p>collisionBitMask(number) --A mask that defines which categories of physics bodies can collide with this physics body.</p>
+					<p></p>
+					<p>allowsResting(boolean)(default is true) --A Boolean value that specifies whether SceneKit can automatically mark the physics body at rest.</p>
+					<p></p>
+					<p><a id="Example"></a><h3>Example:</h3></p>
+					<hr>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/bb5cd4fcd124c9673e73e610eb67445c.js"></script>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

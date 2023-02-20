@@ -1,0 +1,121 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="androidCameraView">Android Camera View Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you to show one camera preview as a native object on android.</p>
+					<p></p>
+					<p><h3>Platforms:</h3>this plugin only works android 4.3+, Please note this plugin allows you to display one camera view</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>androidCameraView.enableFlash(enable)</h4>-- note camera view must be displayed first</p>
+					<p>enable(boolean)(optional) deafult is true, use false to disable</p>
+					<p></p>
+					<p><h4>androidCameraView.hasFlash(path)</h4>-- retruns boolean</p>
+					<p></p>
+					<p><h4>androidCameraView.capturePhoto(path, listener, quality)</h4>-- note camera view must be displayed first</p>
+					<p>path(string) path to save the .jpg photo via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a></p>
+					<p></p>
+					<p>listener(function)(optional) returns event.status == "complete" when photo is taken</p>
+					<p></p>
+					<p>quality(number)(optional) value between 1-100, default is 100</p>
+					<p></p>
+					<p><h4>androidCameraView.getCameraSize()</h4>-- returns numbers width, height</p>
+					<p></p>
+					<p><h4>androidCameraView.newView(params)</h4>-- returns androidCameraView Object(see bellow)</p>
+					<p>params(table) contain the folling params</p>
+					<li>
+						<ui>x(number) x point of camera view</ui>
+						<ui>y(number) y point of camera view</ui>
+						<ui>width(number) width of camera view</ui>
+						<ui>height(number) height of camera view</ui>
+						<ui>frontCamera(boolean)(optional) should use front camera (default is false)</ui>
+					</li>
+					<p></p>
+					<p><h3>androidCameraView properties:</h3></p>
+					<p></p>
+					<p>x(number) x point of camera view (example myView.x = 20)</p>
+					<p></p>
+					<p>y(number) y point of camera view (example myView.y = 20)</p>
+					<p></p>
+					<ui>width(number) width of camera view(example myView.width = 100)</ui>
+					<p></p>
+					<ui>height(number) height of camera view(example myView.height = 100)</ui>
+					<p></p>
+					<p><h3>androidCameraView methods:</h3></p>
+					<p>:destroy() -- destory the camera view</p>
+					<p></p>
+					<p>:hide() -- hide the camera view</p>
+					<p></p>
+					<p>:unhide() -- unhide the camera view</p>
+					<p></p>
+					<p>:setRotation(rotation) -- unhide the camera view</p>
+					<p>rotation(number) degrees to rotate the view</p>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/08ac90337bb98c9ad927eec62387b838.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?AndroidCameraView_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/androidCameraView-demo">Example</a> </p>
+					<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

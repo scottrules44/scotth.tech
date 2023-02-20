@@ -1,0 +1,29 @@
+/* CSS Styles */
+.externalS1{
+  background-color: lightgrey;
+  color: purple;
+  text-shadow: 2px 2px red;
+  font-size: 30px;
+}
+
+.externalS2{
+  border: 20px dotted red;
+  margin: 10px;
+  padding-top: 30px;
+  width: 200px;
+}
+
+.externalS3{
+  position: relative;
+  left: 50%;
+  border: 20px dotted green;
+}
+
+/* CSS Box/position */
+@media only screen and (max-width: 400px) {
+  .main {
+    width: 80%;
+    margin: 10%;
+    border: 5px solid blue;
+  }
+}

@@ -1,0 +1,114 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Google Sign In</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="googleSignIn">Google Sign In Plugin</a></h3>
+					<p></p>
+					<p>Get users into your apps quickly and securely, using a registration system they already use and trust with Google Sign In</p>
+					<p></p>
+					<p><h3>Platforms:</h3>this plugin only works iOS and Android</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>googleSignIn.init(options)</h4> initialize google sign in</p>
+					<p>options(table) -- {
+					<p>ios={clientId(string)= "clientID for google sign (found in google console, see setup)", hostedDomain(string)(optional) = "The Google Apps domain to which users must belong to sign in.", serverClientID(string)(optional) Web client (Auto-created for Google Sign-in)},</p>
+					<p>android={clientId(string)= "clientID for google sign (found in google console, see setup)", scopes(array of strings)(optional) The API scopes requested by the app. example {"https://www.googleapis.com/auth/drive.appdata"} (see <a href="https://developers.google.com/identity/protocols/googlescopes">docs</a>)", hostedDomain(string)(optional) = "The Google Apps domain to which users must belong to sign in.", serverClientID(string)(optional) Web client (Auto-created for Google Sign-in)}</p>
+					<p>}</p>
+					<script src="https://gist.github.com/scottrules44/2e6f6ca2b1bb1110c1808e0ff2055c81.js"></script>
+					<p></p>
+					<p><h4>googleSignIn.signIn(listener)</h4> sign in to google</p>
+					<p>listener(function) event.status== "signed in", "cancelled", "error". if event.isError(boolean) is true, then event.error(string) will be returned. If event.isError is false, then event.email(string), event.userId(string), event.idToken(string), event.photoUrl(string), event.displayName(string), event.givenName(string) event.familyName(string), event.accessToken(string), event.serverAuthCode(string), event.scopes(array of strings) will be returned</p>
+					<p></p>
+					<p></p>
+					<p><h4>googleSignIn.silentSignIn(listener)</h4> sign in to google without popup</p>
+					<p>listener(function) event.status== "signed in", "cancelled", "error". if event.isError(boolean) is true, then event.error(string) will be returned. If event.isError is false, then event.email(string), event.userId(string), event.idToken(string), event.photoUrl(string), event.displayName(string), event.givenName(string), event.familyName(string), event.accessToken(string), event.serverAuthCode(string), and event.scopes(array of strings) will be returned</p>
+					<p></p>
+					<p><h4>googleSignIn.signOut(listener)</h4> sign out of google</p>
+					<p>listener(function) event.status== "signed out", "error". if event.isError(boolean) is true, then event.error(string) will be returned.</p>
+					<p></p>
+					<p><h4>googleSignIn.disconnect(listener)</h4> disconnect current google user from app</p>
+					<p>listener(function) event.status== "signed out", "error", "disconnected". if event.isError(boolean) is true, then event.error(string) will be returned.</p>
+					<p></p>
+					<p><h4>googleSignIn.getCurrentUser(listener)</h4> returns the current user infomation if signed in</p>
+					<p>listener(function) event.status== "account data found", "not signed in". if event.isError(boolean) is true, then event.error(string) will be returned and if event.isError is false, then event.email(string), event.userId(string), event.idToken(string), event.photoUrl(string), event.displayName(string), event.givenName(string) event.familyName(string), event.accessToken(string), event.serverAuthCode(string), event.scopes(array of strings)</p>
+					<p></p>
+					<p><h4>googleSignIn.requestScope(scope, listener)</h4> requests scopes for a signed in user</p>
+					<p>scope(array of strings) The API scopes requested by the app. example {"https://www.googleapis.com/auth/drive.appdata"} (see <a href="https://developers.google.com/identity/protocols/googlescopes">docs</a>)"]</p>
+					<p>listener(function) event.status== "scope request successful", "scope request canceled", "request scope failed", "error". if event.isError(boolean) is true, then event.error(string) will be returned and if event.isError is false, then event.email(string), event.userId(string), event.idToken(string), event.photoUrl(string), event.displayName(string), event.givenName(string) event.familyName(string), event.accessToken(string), event.serverAuthCode(string), event.scopes(array of strings)</p>
+					<p></p>
+					<p><h3>Setup:</h3></p>
+					<p>Go to <a href="https://console.developers.google.com">google console</a>, create new project or open an existing project, enable go to credentials(Under APIs & Services), create a new credential, select OAuth client ID (Will have you setup OAuth consent screen first if new project), make one for Android/iOS, on Applcation type "Android" make sure to add SHA-1(<a href="https://support.google.com/cloud/answer/6158849#installedapplications&android&zippy=%2Cnative-applications%2Candroid">learn more here</a>) and Package Name (see example below), on iOS click your created client id under OAuth 2.0 client IDs, you want to use this client id on iOS (see example below),and put "iOS URL scheme" into build.settings(see below). Also you need google service enabled in your build.settings (see below) and you need a google-services.json file( if you are using not using firebase you can skip this step). Go to <a href="https://developers.google.com/mobile/add?platform=android&cntapi=signin&cnturl=https:%2F%2Fdevelopers.google.com%2Fidentity%2Fsign-in%2Fandroid%2Fsign-in%3Fconfigured%3Dtrue&cntlbl=Continue%20Adding%20Sign-In">this link</a>, follow the steps, and put the file(google-services.json) in the root of your project(again this is only needed if use Firebase).</p>
+					<p></p>
+					<p><h3>Firebase setup:</h3></p>
+					<p>go into authentication page on firebase and
+					enable google sign in. Then you need to add you fingerprint under
+					settings> general > your apps> select app> add fingerprint.
+					Whats a fingerprint and how do I get it? Go <a href="https://developers.google.com/android/guides/client-auth">here</a> and get your
+					fingerprint. Download google services files for iOS and Android. For android you have to include google services json file in the project. On iOS you don't have to for google sign in. On iOS you just need the "CLIENT_ID" from the google services plist for the client id .init() (also put into "iOS URL scheme" into build.settings(see below) ). On android the client id is in the google servies json under client>oauth_client>client_type = 3. </p>
+					<script src="https://gist.github.com/scottrules44/cdc9ed7f2f1cc9849c6d830e76efc000.js"></script>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/28e0d38c075bea1e1bc3f29ca0e9a582.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?GoogleSignIn_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/googleSignIn-demo">Example</a> </p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

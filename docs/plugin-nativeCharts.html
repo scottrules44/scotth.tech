@@ -1,0 +1,117 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Native Charts Plugin</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="nativeCharts"></a>Native Charts Plugin</h3>
+					<p>This plugin allows you create and display charts with native objects</p>
+					<p></p>
+					<p></p>
+					<p><h3>Limitations:</h3> Only works on iOS and Android. Also the plugin using native objects, all charts are on top Corona Display Objects(Display)</p>
+					<p></p>
+					<p><h3>Function:</h3></p>
+					<p></p>
+					<p><h4>nativeCharts.newChart(chartType, params)</h4>--returns chartObj</p>
+					<p>chartType(string)(required)--supported types: "pie", "line", and "bar"</p>
+					<p>params(table)-- x(number), y(number), width(number), height(number), listener(function)(see Events section)</p>
+					<p></p>
+					<p><h3>ChartObj Functions:</h3></p>
+					<p></p>
+					<p><h4>chartObj:setData(dataSet)</h4>-- set chart data</p>
+					<p><h5>dataSet(array of tables) for "pie" chartType</h5></p>
+					<p>dataSet tables inside array can have: colors(array of hex colors(strings)), color(string hex color), axisDependency(string "left" or "right"), label(string), enableLabelOutside(boolean), valueTextSize(number), valueTextColor(string hex color), data(array of tables) </p>
+					<p>data tables inside array can have: value(number), label(string), data(string passed into Events)</p>
+					<script src="https://gist.github.com/scottrules44/ea2466ad12751049a9c09dd1564fad4a.js"></script>
+					<p></p>
+					<p><h4>dataSet(array of tables) for "line" chartType</h4></p>
+					<p>dataSet tables inside array can have: colors(array of hex colors(strings)), color(string hex color), alpha(number), barBorderWidth(number), formLineWidth(number), barBorderColor(string hex), barShadowColor(string hex),  axisDependency(string "left" or "right"), label(string), valueTextSize(number), valueTextColor(string hex color), data(array of tables) </p>
+					<p>data tables inside array can have: x(number), y(number), data(string passed into Events)</p>
+					<script src="https://gist.github.com/scottrules44/4817e9cc9cd5fc8466e803f376ff2b84.js"></script>
+					<p></p>
+					<p><h4>dataSet(array of tables) for "bar" chartType</h4></p>
+					<p>dataSet tables inside array can have: colors(array of hex colors(strings)), color(string hex color), circleColor(string hex color), lineWidth(number), alpha(number),  axisDependency(string "left" or "right"), mode(string "stepped", "cubicBezier", "horizontalBezier" default:"linear") label(string), valueTextSize(number), valueTextColor(string hex color), data(array of tables passed) </p>
+					<p>data tables inside array can have: x(number), y(number), data(string passed into Events)</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/b9547ed1c5fb07dc172d607433958522.js"></script>
+					<p><h4>chartObj:setProperties(props)</h4>-- set chart properties</p>
+					<p>props(table) for "pie": pieHoleRadiusPercent(number 0-1), pieHoleColor(string hex color), pieHoleVisible(boolean), enableRotation(boolean), rotation(number), pieShowPercentValue(boolean)</p>
+					<p></p>
+					<p>props(table) for "line" and "bar": gridLines(boolean, true is default), dragEnabled(boolean, true is default), pinchZoomEnabled(boolean, true is default), enableRightAxisGridLines(boolean), enableRightAxisLabels(boolean), setRightAxisLabelSize(number), setRightAxisLabelColor(string color hex), setRightAxisMin(number), setRightAxisMax(number), setRightAxisLabels(table with [key being the number to place label]="label text here"),  enableLeftAxisGridLines(boolean), enableLeftAxisLabels(boolean), setLeftAxisLabelSize(number), setLeftAxisLabelColor(string hex color), setLeftAxisMin(number), setLeftAxisMax(number), setLeftAxisLabels(table with [key being the number to place label]="label text here")</p>
+					<p></p>
+					<p>props(table) for all charts: enableXAxisGridLines(boolean), setXAxisLabelSize(number), enableXAxisLabels(boolean), setXAxisLabelColor(string hex color), setXAxisMin(number), setXAxisMax(number), setXAxisLabels(table with [key being the number to place label]="label text here"), legendEnabled(boolean), backgroundColor(string hex color), legendTextColor(string hex color), legendFontSize(number), chartDescription(string), chartDescriptionEnabled(boolean), chartDescriptionColor(string hex color), enableInteraction(boolean)</p>
+					<script src="https://gist.github.com/scottrules44/af48ac2dbd42a6efaa283fae3fc29f31.js"></script>
+					<p></p>
+					<p><h4>chartObj:clearSelection()</h4>-- set clear selection for chart</p>
+					<p></p>
+					<p><h4>chartObj:destroy()</h4>-- destory/remove the chart</p>
+					<p></p>
+					<p><h3>Events:</h3></p>
+					<p></p>
+					<p>The following user interaction event data are returned for listener set .newChart: event.phase(string either "selected" or "unselected" ) and event.data(string set data tables in chartObj:setData() ), event.description(string)</p>
+					<p>if the chart type is "pie" there is also: event.value(number), event.label(string)</p>
+					<p>if the chart type is "line" or "bar": event.x(number), event.y(number)</p>
+					<p>Note: no other event data is returned when event.phase == "unselected" </p>
+					<p></p>
+					<p><h3>Build.settings</h3></p>
+					<script src="https://gist.github.com/scottrules44/8f566f461dc37fb84beb3b7fad42f6f5.js"></script>
+					<h5> Helpful Links:</h5>
+					<p></p>
+					<p><a href="https://solar2dmarketplace.com/plugins?NativeCharts_tech-scotth">Get Plugin</a></p>
+					<p><a href="https://github.com/scottrules44/nativeCharts-demo">Example</a></p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2022 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

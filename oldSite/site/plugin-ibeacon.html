@@ -1,0 +1,130 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="ibeacon">iBeacon Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you to find ibeacons nearby and create an beacons from your device</p>
+					<p></p>
+					<p><h3>Platforms:</h3>the ibeacon plugin only works with iOS 7.0+(not simulator due to ibeacon not being testable in simulator)</p>
+					<p></p>
+					<p><h3>Limitations:</h3>please use two device to test demo project</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>ibeacon.search(uuids,listener)</h4></p>
+					<p></p>
+					<p>uuids(array)(required) uuids to seach for example {"00000000-0000-0000-0000-000000000000", ""00000000-0000-0000-0000-000000000001"}</p>
+					<p>listener(function) (required)</p>
+					<ul>
+						<li>event.accuracy(string)-- possible values are</li>
+						<ul>
+							<li>"best"</li>
+							<li>"kilometer"</li>
+							<li>"hundred meters"</li>
+							<li>"three kilometers"</li>
+							<li>"nearest ten meters"</li>
+							<li>"best for navigation"</li>
+							<li>"unknown"</li>
+						</ul>
+						<li>event.major(integer)-- The most significant value in the beacon</li>
+						<li>event.minor(integer)-- The least significant value in the beacon</li>
+						<li>event.uuid(string)-- the uuid of the beacon</li>
+						<li>event.proximity(string)-- how close the user is</li>
+						<ul>
+							<li>"immediate"</li>
+							<li>"near"</li>
+							<li>"far"</li>
+							<li>"unknown"</li>
+						</ul>
+						<li>event.rssi(number)-- The received signal strength of the beacon, measured in decibels</li>
+					</ul>
+					<script src="https://gist.github.com/scottrules44/483376adfe447474561b4220db26c555.js"></script>
+					<p></p>
+					<p><h4>ibeacon.setTimer(seconds)</h4></p>
+					<p>seconds(integer)(required) how often the device should search</p>
+					<script src="https://gist.github.com/scottrules44/cca1f4ed8da3b44dd06ff142ffc922d0.js"></script>
+					<p></p>
+					<p><h4>ibeacon.stopUUIDSearch(uuid)</h4></p>
+					<p>uuid(string)(required) stop search for a particular uuid</p>
+					<script src="https://gist.github.com/scottrules44/316f072bf33163fd78d6f2246e9c0e9a.js"></script>
+					<p></p>
+					<p><h4>ibeacon.stopAllSearchs()</h4> -- stop all searching for beacons</p>
+					<script src="https://gist.github.com/scottrules44/7652f126e3579873385e8c9810be323a.js"></script>
+					<p></p>
+					<p><h4>ibeacon.startTransmitting(uuid, major, minor)</h4> -- turns device into iBeacon</p>
+					<p>uuid(string)(optional) the uuid to broadcast</p>
+					<p>major(integer)(required) the major to broadcast</p>
+					<p>minor(integer)(required) the minor to broadcast</p>
+					<script src="https://gist.github.com/scottrules44/d36f6251260f72a22d80a6d44235b45d.js"></script>
+					<p></p>
+					<p><h4>ibeacon.stopTransmitting()</h4> -- stop device broadcasting</p>
+					<script src="https://gist.github.com/scottrules44/919951a22f6fcd048957cc1c1eb13322.js"></script>
+					<p></p>
+					<p><h4>ibeacon.canAccess()</h4> --used to check if location services is on, returns string "services disabled", "denied", "authorized", or "not determined"</p>
+					<script src="https://gist.github.com/scottrules44/33d195761ef4432a60d6ecb013a5417c.js"></script>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/cc93d92078a73cb8cd20ae4c65e55605.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?IbeaconPlugin_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/ibeacon-demo">Example</a> </p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

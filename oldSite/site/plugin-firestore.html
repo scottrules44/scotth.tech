@@ -1,0 +1,117 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Firestore Plugin</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="firestore">Firestore Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you connect with firebase firestore (please use corona 2019.3497+)</p>
+					<p></p>
+					<p><h3>Platforms: iOS 8+, macOS 10.13, and Android 6+</h3></p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>firestore.init()</h4>-- setup firebase</p>
+					<p></p>
+					<p><h4>firestore.setData(collection, document, data, listener)</h4></p>
+					<p>collection(string) path to collection</p>
+					<p>document(string) document name to set data</p>
+					<p>data(table) table of what to set the data as</p>
+					<p>listener(function) returns event.isError and event.error if isError == true</p>
+					<p></p>
+					<p><h4>firestore.updateData(collection, document, data, listener)</h4></p>
+					<p>collection(string) path to collection</p>
+					<p>document(string) document name to update data</p>
+					<p>data(table) table of what to update the data as</p>
+					<p>listener(function) returns event.isError and event.error if isError == true</p>
+					<p></p>
+					<p><h4>firestore.readDataInDocument(collection, document, listener)</h4></p>
+					<p>collection(string) path to collection</p>
+					<p>document(string) document name to read data</p>
+					<p>listener(function) returns event.isError and event.error if isError == true and returns event.data if isError == false</p>
+					<p></p>
+					<p><h4>firestore.readDataInCollection(collection, listener, field, isDescending, limitedTo, quereyType, querey)</h4></p>
+					<p>collection(string) path to collection</p>
+					<p>listener(function) returns event.isError and event.error if isError == true and returns event.data if isError == false</p>
+					<p>field(string)(optional) sorts data by field</p>
+					<p>isDescending(boolean)(optional) set desending with boolean</p>
+					<p>limitedTo(number)(optional) limit results by a number</p>
+					<p>quereyType(string)(optional) querey types are "=", ">", "<", "<=", and ">="</p>
+					<p>querey(number or string)(optional) querey for quereyType</p>
+					<p></p>
+					<p><h4>firestore.deleteData(collection, document, field, listener)</h4></p>
+					<p>collection(string) path to collection to delete</p>
+					<p>document(string)(optional) document to delete</p>
+					<p>field(string)(optional) field to delete</p>
+					<p>listener(function) returns event.isError and event.error if isError == true </p>
+					<p></p>
+					<p><h4>firestore.checkRealtime(collection, document, listener)</h4>-- listener will fire everytime a selected document is updated</p>
+					<p>collection(string) path to collection</p>
+					<p>document(string) document name to listen for data</p>
+					<p>listener(function) returns event.isError and event.error if isError == true and returns event.data if isError == false</p>
+					<p></p>
+					<p><h4>firestore.stopRealtime()</h4>-- stops checking real time for new data</p>
+					<p></p>
+					<p><h3>Build Settings:</h3> -- make sure you add firebase setting to plugin (google-services.json and GoogleService-Info.plist)</p>
+					<script src="https://gist.github.com/scottrules44/c3f044ec14972051abeb5955cc507002.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?Firestore_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/firestore-demo">Example</a> </p>
+					<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2019 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

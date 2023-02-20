@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+    <script src="https://npmcdn.com/parse/dist/parse.js"></script>
+    <title>Account</title>
+</head>
+<body>
+<p id= "welcome">Welcome</p>
+<p></p>
+    <p><h4>Quick Links:</h4></p>
+    <p></p>
+    <p><a href="https://dev.scotth.tech/luaHost"><button>Lua Host</button></a></p>
+    <p></p>
+    <p><h3>Settings</h3></p>
+    <p></p>
+    <p>New Name:<input type="text" id="nameChange" name="nameChange"></p>
+    <button type="submit" onclick="changeName();">Change Name</button>
+    <p></p>
+    <button type="submit" onclick="signOut();">Sign Out</button>
+</body>
+
+<script>
+    function changeName() {
+      document.getElementById('nameChange').innerHTML;
+    }
+    function signOut() {
+      localStorage.setItem("scottAccessToken", "");
+      window.location = "https://scotth.tech/login#signOut";
+    }
+   if(localStorage.getItem("scottAccessToken") == null){
+        window.location = "https://scotth.tech/login#noAccessToken";
+   }else{
+
+   }
+   
+   
+
+  var Parse = require('parse');
+  Parse.initialize("4rhqR4YnYf8YPUodJAXwwkhgtCPp6NGDRbhQVM4G");
+  Parse.serverURL = 'http://parseapi.back4app.com/parse'
+    
+</script>
+</html>

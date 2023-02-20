@@ -1,0 +1,126 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="marketplace/index.html">Marketplace</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="classKit">Class Kit Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows use Class Kit on iPad 11.4, add assignable content and grade and log it</p>
+					<p></p>
+					<p><h3>Platforms:</h3>this plugin only works with iOS 11.4+, You can only test on iPad physical device.</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>classKit.addContent(content) -- adds assignable content to schoolwork app (called contexts)</h4></p>
+					<p>content(table) ["type"] (string) = "app", "audio", "book", "challenge", "chapter", "document", "exercise", "game", "lesson", "level", "none", "page", "quiz", "section", and "video" / ["id"](string) = the way to id your content to edit, example "com.myname.mytestname" / ["title"](string) = the title of content which will appear in school work app / ["displayOrder"](integer)(optional) = The position of content relative to its siblings  /  ["universalLinkURL"](string)(optional) = url to app (should be set in build.setting see sample and bellow to see how to handle) / ["child"] (table) attach content to content, for example quiz to chapter 1 this table can contain ["type"],["title"],["id"],["displayOrder"], and ["universalLinkURL"] (see above for more info each type) </p>
+					<p></p>
+					<p><h4>classKit.startContext(id, listener) -- start the context</h4></p>
+					<p>id(string) </p>
+					<p>listener(function), event fired on completion, returns event.error(string) = info about error , event.isError(boolean)</p>
+					<p></p>
+					<p><h4>classKit.stopContext(id, listener) -- stop the context</h4></p>
+					<p>id(string) </p>
+					<p>listener(function), event fired on completion, returns event.error(string) = info about error , event.isError(boolean)</p>
+					<p></p>
+					<p><h4>classKit.removeContext(id, listener) -- remove context from schoolwork app</h4></p>
+					<p>id(string) </p>
+					<p>listener(function), event fired on completion, returns event.error(string) = info about error , event.isError(boolean)</p>
+					<p></p>
+					<p><h4>classKit.saveData() -- save schoolwork data</h4></p>
+					<p></p>
+					<p><h4>classKit.isContextActive(id, listener) -- remove context from schoolwork app</h4></p>
+					<p>id(string) </p>
+					<p>listener(function), event fired on completion, returns event.error(string) = info about error , event.isError(boolean), event.isActive(boolean)</p>
+					<p></p>
+					<p><h4>classKit.createActivity(id, listener) -- create activity for context</h4></p>
+					<p>id(string), create activity for context </p>
+					<p>listener(function), event fired on completion, returns event.error(string) = info about error , event.isError(boolean)</p>
+					<p></p>
+					<p><h4>classKit.startActivity() --start created activity</h4></p>
+					<p></p>
+					<p><h4>classKit.stopActivity() --stop created activity</h4></p>
+					<p></p>
+					<p><h4>classKit.destoryActivity() --destroy created activity</h4></p>
+					<p></p>
+					<p><h4>classKit.addItemActivity(type, info) --add item to activity</h4></p>
+					<p>type(string) type of item: "score", "binary", and "quantity"</p>
+					<p>info(table) ["id"](string) = id item "myapp.myItem", ["title"](string) = title of item example "Multiple Choice score" /Score Type ["score"](double) , ["maxScore"](double) / Binary Type ["binaryType"](string) = "yesNo", "trueFalse", "passFail"/ Quantity Type ["quantity"] (double)</p>
+					<p></p>
+					<p><h4>classKit.addPrimaryItemActivity(type, info) --add primmary item to activity (see above for type and info)</h4></p>
+					<p></p>
+					<p><h4>classKit.setProgressActivity(progress) --set progress</h4></p>
+					<p>progress(double) number between 0-1</p>
+					<p></p>
+					<p><h4>classKit.markComplete(id) --mark assignment</h4></p>
+					<p>id(string), id to mark complete </p>
+					<p></p>
+					<p><h4>classKit.isActivityRunning() -- is an activity running( returns boolean)</h4></p>
+					<p>progress(double) number between 0-1</p>
+					<p></p>
+					<p><h3>Enable classkit on iPad for test mode:</h3></p>
+					<p>go to Setting>Developer(made sure your device has develop mode enabled)>Classkit API> Enable Class kit and set to teacher or student. (You also need the <a href="https://itunes.apple.com/us/app/schoolwork/id1355112526?mt=8">schoolwork app</a> to test and create assignments)</p>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/155159d9422315f25fd93d2984a06c4c.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p><a href="https://solar2dmarketplace.com/plugins?ClassKit_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/classKit-demo">Example</a> </p>
+					<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2019 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

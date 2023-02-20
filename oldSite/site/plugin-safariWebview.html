@@ -1,0 +1,155 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Safari WebView</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h3><a id="safariWebview">Safari WebView Plugin</a></h3>
+					<p></p>
+					<p>The safari webview plugin allows you to create faster and more feature rich webviews</p>
+					<p></p>
+					<p><h3>Platforms:</h3>supports iOS devices running iOS 8 or later.</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>safariWebview.newView(x, y, width, height, lis, enablePersistentWebViews(optional boolean))</h4></p>
+					<p>Creates a new webview, please note width and height are not aligned with coronas width and height, please ajust based on your needs</p>
+					<p></p>
+					<p>lis(function)</p>
+					<ul>
+						<li>event.phase -- string</li>
+						<ul>
+							<li>"finished"</li>
+							<li>"terminate"</li>
+							<li>"loading"</li>
+							<li>"began"</li>
+						</ul>
+						<dl>
+						<li>event.url --string url of request</li>
+						<dl>
+						<li>event.title --string page title</li>
+						<dl>
+						<li>event.isError -- boolean is there was an error</li>
+						<dl>
+						<li>event.error -- string what the error was</li>
+					</ul>
+					<p></p>
+					<p><h4>safariWebview.clearCacheAndStorage(lis)</h4>--clear all webview storage and caches</p>
+					<p>lis(function)</p>
+					<ul>
+						<li>event.phase -- string</li>
+						<ul>
+							<li>"completed"</li>
+						</ul>
+					</ul>
+					<p></p>
+					<p><h3>Webview Properties:</h3></p>
+					<p>x (number) x position(corona point)</p>
+					<p></p>
+					<p>y (number) y position(corona point)</p>
+					<p></p>
+					<p>rotation (number) rotation of webview</p>
+					<p></p>
+					<p>width (number) width of webview</p>
+					<p></p>
+					<p>allowsLinkPreview (boolean) A Boolean value that determines whether pressing on a link displays a preview of the destination for the link</p>
+					<p></p>
+					<p>allowsBackForwardNavigationGestures (boolean) A Boolean value indicating whether horizontal swipe gestures will trigger back-forward navigations</p>
+					<p></p>
+					<p><h3>Webview method:</h3></p>
+					<p>myWebView:getEstimatedProgress() returns number, An estimate of what fraction of the current navigation has been loaded value between 0-1</p>
+					<p></p>
+					<p>myWebView:destory() remove webview</p>
+					<p></p>
+					<p>myWebView:getUrl() returns string, returns current url</p>
+					<p></p>
+					<p>myWebView:getTitle() returns string, returns current title</p>
+					<p></p>
+					<p>myWebView:hasOnlySecureContent() returns boolean, A Boolean value indicating whether all resources on the page have been loaded through securely encrypted connections</p>
+					<p></p>
+					<p>myWebView:isLoading() returns boolean, A Boolean value indicating if loading</p>
+					<p></p>
+					<p>myWebView:canGoBack() returns boolean, A Boolean value indicating whether there is a back item in the back-forward list that can be navigated to</p>
+					<p></p>
+					<p>myWebView:canGoForward() returns boolean, A Boolean value indicating whether there is a forward item in the back-forward list that can be navigated to</p>
+					<p></p>
+					<p>myWebView:request(url) url of page for webview</p>
+					<p></p>
+					<p>myWebView:goBack() go back to previous webpage</p>
+					<p></p>
+					<p>myWebView:goForward() go forward to next webpage</p>
+					<p></p>
+					<p>myWebView:reload() reload webpage</p>
+					<p></p>
+					<p>myWebView:requestFromFile(path) path to html file via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathToFile()</a></p>
+					<p></p>
+					<p>myWebView:requestFromString(html) html (string) code to render on webview</p>
+					<p></p>
+					<p>myWebView:stopLoading() stop loading webview</p>
+					<p></p>
+					<p>Example:</p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/ba90c39b32b8d1de606115be7df5fffd.js"></script>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<p></p>
+					<script src="https://gist.github.com/scottrules44/84c98e7216ce07badadea3d0f3ae1201.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p> <a href="https://solar2dmarketplace.com/plugins?SafariWebview_tech-scotth">Get Plugin</a></p>
+					<p> <a href="https://github.com/scottrules44/safariWebView-Demo">Example</a> </p>
+					<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2020 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>

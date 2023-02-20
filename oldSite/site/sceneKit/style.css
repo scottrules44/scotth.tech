@@ -1,0 +1,158 @@
+body {
+	background-color: #EEE;
+	font-family: Arial, sans-serif;
+}
+#container {
+	overflow: scroll;
+	background-color:#F0F0F0;
+	word-break: normal;
+	overflow-wrap: normal;
+	resize: both;
+	margin-left: auto;
+	margin-right:auto;
+}
+/*#header {
+	clear:both;
+	background-color: #787878;
+	color: white;
+	font-size: 40;
+	text-align: left;
+	padding: 10px;
+	border:0;
+	text-decoration: none;
+}*/
+#content {
+	padding: 10px;
+}
+h1, h2, h3{
+	margin: 0;
+}
+#nav {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0066FF;
+
+}
+
+#nav li a:hover:not(.active) {background-color: #A9D0F5;}
+#nav li {float: right;}
+#nav li{
+	list-style-type: none; 
+	float: left;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#nav .selected{
+	color: black;
+	font-weight:bold;
+	background-color:gray;
+}
+#main{
+	width: 600;
+	float: center;
+	padding: 14px 16px;
+}
+#footer{
+	clear:both;
+	padding: 10px;
+	background-color:#999999;
+	color: white;
+	text-align: right;
+}
+#bold{
+	font-weight:bold;
+}
+.storeLinks{
+	color: black;
+}
+.myEmailText{
+	color: black;
+}
+.buttonLinks{
+	color: black;
+}
+.videoPadding{
+	padding-bottom: 20px;
+}
+.boxed {
+	background-color: #bfbfbf;
+ 	border: 1px solid black ;
+}
+.payButton {
+	text-align: center;
+}
+.video {
+	text-align: center;
+}
+.TopBar{
+	color: black;
+}
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  visibility: hidden;
+  zoom: .0001;
+  transition: .25s ease;
+}
+
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target  {
+  opacity: 1;
+  zoom: 1;
+  font-size: inherit;
+  visibility: visible;
+  max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+}
+
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: .25em;
+}
+
+pre, code{
+	direction: ltr;
+	text-align: center;
+}
+pre {border: solid 1px blue;
+	font-size: 1.3 em; 
+ 	color: blue; 
+	margin: 10px; 
+	padding:10px; 
+	background: #FFFFB3}
+code {font-size:1.2em; 
+	color: #008099}
+
+@media screen and (max-width: 600px){
+    #nav li.right,
+    #nav li {float: none;}
+    #main .right,
+    #main {float: none;}
+}

@@ -1,0 +1,201 @@
+<html>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<head>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		<!--   -->
+		<title>Scott H Tech</title>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+	</head>
+
+	<body>
+		<div id= "container">
+			<div id = "content">
+				<div id= "nav">
+					<a href="index.html">
+					<img <a src="./mylogo.png" style="width:60px;height:60px;float:left;padding: 10px 10px;">
+					</a>
+					<p  style="float:middle;padding: 0px 1px;color: white;font-weight:bold;font-size: 30;">Scott H Tech</p>
+					<p></p>
+					<ul style="padding: 1px 0px;">
+						<li><a class="buttonLinks" href="index.html">Home</a></li>
+						<li><a class="buttonLinks selected" href="plugins.html">Plugins</a></li>
+						<li><a class="buttonLinks" href="projects.html">Projects</a></li>
+						<li><a class="buttonLinks" href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+				<div id = "main">
+					<h2><a id="warning">Fabric will shut down March 31, 2020, Please Migrate to <a href="https://scotth.tech/plugin-firebaseCrashlytics">Firebase Crashlytics Plugin</a></a></h2>
+					<p></p>
+					<h3><a id="fabric">Fabric Plugin</a></h3>
+					<p></p>
+					<p>This plugin allows you log Fabric analytic data (Also known as Fabric Answers). And log crash data via Crashlytics.</p>
+					<p></p>
+					<p><h3>Platforms:</h3>iOS, macOS(not simulator), tvOS, and Android</p>
+					<p></p>
+					<p><h3>Functions:</h3></p>
+					<p></p>
+					<p><h4>fabric.init(enableDebug)</h4>-- setup Fabric and Crashlytics</p>
+					<p>enableDebug(boolean) -- default is false</p>
+					<p></p>
+					<p><h3>Fabric Answers Api:</h3></p>
+					<p></p>
+					<p><h4>fabric.sendPurchase(price, currency, success, itemName, itemType, itemId, customAttributes)</h4>-- log purchase</p>
+					<p>price(number) The item's price</p>
+					<p>currency(string) The ISO4217 currency code</p>
+					<p>success(boolean) succesful or unsuccesful</p>
+					<p>itemName(string) The human-readable form of the item's name</p>
+					<p>itemType(string) The type, or genre of the item</p>
+					<p>itemId(string) The machine-readable, unique item identifier</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendAddToCart(price, currency, itemName, itemType, itemId, customAttributes)</h4>-- log add to cart event</p>
+					<p>price(number) The  item's price</p>
+					<p>currency(string) The ISO4217 currency code</p>
+					<p>itemName(string) The human-readable form of the item's name</p>
+					<p>itemType(string) The type, or genre of the item</p>
+					<p>itemId(string) The machine-readable, unique item identifier</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendStartCheckout(price, currency, itemCount, customAttributes)</h4>-- log checkout</p>
+					<p>price(number) price of item(s)</p>
+					<p>currency(string) The ISO4217 currency code</p>
+					<p>itemCount(number) number of items to checkout</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendSearch(seachQuery, customAttributes)</h4>-- log search</p>
+					<p>seachQuery(string) item searched </p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendShare(method, contentName, contentType, contentId, customAttributes)</h4>-- log share event</p>
+					<p>method(string) where item was shared</p>
+					<p>contentName(string) name of content</p>
+					<p>contentType(string) type of content</p>
+					<p>contentId(string) id of content</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendShare(method, contentName, contentType, contentId, customAttributes)</h4>-- log share event</p>
+					<p>method(string) where item was shared</p>
+					<p>contentName(string) name of content</p>
+					<p>contentType(string) type of content</p>
+					<p>contentId(string) id of content</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendRatedContent(rating, contentName, contentType, contentId, customAttributes)</h4>-- log rating</p>
+					<p>rating(number(whole number)) rating for content</p>
+					<p>contentName(string) name of content</p>
+					<p>contentType(string) type of content</p>
+					<p>contentId(string) id of content</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendSignUp(method, success, customAttributes)</h4>-- log sign up</p>
+					<p>method(string) how user signed in</p>
+					<p>c(boolean) The ultimate success or failure of the login</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendLogIn(method, success, customAttributes)</h4>-- log sign in</p>
+					<p>method(string) how user signed in</p>
+					<p>success(boolean) The ultimate success or failure of the login</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendInvite(method, customAttributes)</h4>-- log invite sent</p>
+					<p>method(string) how user signed in</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendLevelStart(levelName, customAttributes)</h4>-- log level start</p>
+					<p>levelName(string) name of level started</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendLevelEnd(levelName, success, customAttributes)</h4>-- log level ended</p>
+					<p>levelName(string) name of level ended</p>
+					<p>success(boolean) A boolean representing whether or not the level was completed succesfully</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendContentView(contentViewName, contentType, contentId, customAttributes)</h4>-- log content viewed</p>
+					<p>contentViewName(string) name of content viewed</p>
+					<p>contentType(string) type of content</p>
+					<p>contentId(string) id of content</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>
+					<p></p>
+					<p><h4>fabric.sendCustomEvent( eventName, customAttributes)</h4>-- log event</p>
+					<p>eventName(string) name of event</p>
+					<p>customAttributes(table)(optional) table of custom attributes</p>  
+					<p></p>
+					<p><h3>Crashlytics Api:</h3></p>
+					<p></p>
+					<p><h4>fabric.addLog(log)</h4>--add log to be sent with crash data</p>
+					<p>log(string) log data</p>  
+					<p></p>
+					<p><h4>fabric.setUserIdentifier(userId)</h4>--Specify a user identifier which will be visible in the Crashlytics UI.</p>
+					<p>userId(string) id of user</p> 
+					<p></p>
+					<p><h4>fabric.setUserName(username)</h4>--Specify a user name which will be visible in the Crashlytics UI.</p>
+					<p>username(string) username to specify in UI</p>
+					<p></p>
+					<p><h4>fabric.setUserEmail(email)</h4>--Specify a user email which will be visible in the Crashlytics UI.</p>
+					<p>email(string) email to specify in UI</p>
+					<p></p>
+					<p><h4>fabric.sendCrash(error)</h4>--The easiest way to cause a crash</p>
+					<p>error(string) error description</p>
+					<p></p>
+					<p><h4>fabric.setStringValue(key,string)</h4>--Set a string value for a key to be associated with your crash data which will be visible in the Crashlytics UI.</p>
+					<p>key(string) key associated with string</p>
+					<p>string(string) string to associated with crash</p>
+					<p></p>
+					<p><h4>fabric.setIntValue(key,int)</h4>--Set an interger value for a key to be associated with your crash data which will be visible in the Crashlytics UI.</p>
+					<p>key(string) key associated with interger</p>
+					<p>int(number) interger to associated with crash</p>
+					<p></p>
+					<p><h4>fabric.setBoolValue(key,boolean)</h4>--Set a boolean value for a key to be associated with your crash data which will be visible in the Crashlytics UI.</p>
+					<p>key(string) key associated with boolean</p>
+					<p>boolean(boolean) boolean to associated with crash</p>
+					<p></p>
+					<p><h4>fabric.recordError(error, errorCode)</h4>--log error</p>
+					<p>error(string) error description</p>
+					<p>errorCode(number) error code</p>
+					<p></p>
+					<p><h3>Fabric Setup:</h3> go to <a href="https://fabric.io/kits/ios/crashlytics/install">https://fabric.io/kits/ios/crashlytics/install</a>, sign in (or create an account), select apple, scroll down to this part(see image below), grab the fabric api key (if you signed in your code will apear), and paste in plist template below. Make sure to open and enable events you apps dashboard. If your app does not appear contact support@fabric.io</p>
+					<img <a class="screenshoot" src="fabricSetup.png" style="width:600px;height:500;">
+					<p></p>
+					<p><h3>Crashlytics Setup:</h3> first make sure you have setup Fabric (see above). For android you are already setup. On iOS, when you build your project thought Corona Simulator, it creates your app file and an appname.dysm file. That dsym need to be uploaded to fabric. Go to your <a href="https://fabric.io/home">fabric dashboard</a>, click settings icon in top left, click apps, then your iOS app(associated with the symbols), missing DSYM, and upload the appname.dysm. When submiting you app to app store on iOS make sure include symbols. (As for tvOS(probably similar to iOS) and macOS, I don't have guides for setup but they are supported). On Android make sure you add the string bellow in build.settings.</p>
+					<p></p>
+					<p><h3>Build Settings:</h3></p>
+					<script src="https://gist.github.com/scottrules44/0fca9c276d4f613163887899eb38b999.js"></script>
+					<p></p>
+					<h5> Helpful Links:</h5>
+					<p> <a href="https://github.com/scottrules44/fabric-demo">Example</a> </p>
+					<p> <a href="https://forums.coronalabs.com/forum/654-corona-store-plugins/">Support</a> </p>
+					<p><a href="https://marketplace.coronalabs.com/plugin/fabric">Get Plugin</a></p>
+				</div>
+			</div>
+			<div id= "footer">
+				<a href="https://github.com/scottrules44">
+					<img <a class="github" src="./github.png" style="width:40;height:40px" >
+				</a>
+				<a href="https://www.twitter.com/scottrules44">
+					<img <a class="twitter" src="./twitter.png" style="width:40px;height:30px;">
+				</a>
+				<a href="https://www.youtube.com/channel/UCNe1LPJoZTDB4d2JY-UHFvA">
+					<img <a class="youtube" src="./youtube.png" style="width:40px;height:40px;">
+				</a>
+				Copyright &copy; 2017 Scott Harrison
+			</div>
+		</div>
+	</body>
+</html>
