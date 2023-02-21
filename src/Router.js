@@ -35,7 +35,9 @@ const router = createBrowserRouter([
     path:"*",
     element:<ErrorHandlePage/>,
   }
-]);
+], {
+  //basename: "/scotth.tech",
+});
 
 
 export default router;

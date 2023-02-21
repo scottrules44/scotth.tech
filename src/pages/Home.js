@@ -1,12 +1,14 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "../pages/GlobalPageStyles.css";
-import '@rocktimsaikia/github-card'
+import { UserCard, RepoCard } from 'react-github-cards';
+import 'react-github-cards/dist/default.css';
+
 import AppViewer from "../components/AppViewer";
 function Home() {
     document.title = "Home";
     return (
-        <>
+          <>
             <NavBar/>
             <div className="Page">
                 <h1>Home</h1>
@@ -24,10 +26,10 @@ function Home() {
                 <h3>Iron Source</h3>
                 <p><a href="/plugin/ironSource"><button>Check out this plugin</button></a></p>
                 <h2>More on Github:</h2>
-                <github-card data-user="scottrules44" ></github-card>
+                <UserCard username="scottrules44" />
             </div>
             <Footer/>
-        </>
+          </>
     );
 }
 

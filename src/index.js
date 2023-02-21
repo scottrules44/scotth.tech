@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Home from './Pages/Home';
 import router from './Router';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import ErrorHandlePage from "./pages/ErrorHandlePage";
 const root = ReactDOM.createRoot(document.getElementById('root'));
-document.title = "Scott H Tech";
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} fallbackElement={<ErrorHandlePage/>}/>
