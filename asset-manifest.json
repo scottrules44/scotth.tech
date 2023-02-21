@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/scotth.tech/static/css/main.84bb7ea9.css",
-    "main.js": "/scotth.tech/static/js/main.7338a62f.js",
+    "main.js": "/scotth.tech/static/js/main.d7b34ebd.js",
     "static/js/787.28cb0dcd.chunk.js": "/scotth.tech/static/js/787.28cb0dcd.chunk.js",
     "static/media/appStore.png": "/scotth.tech/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/googlePlay.png": "/scotth.tech/static/media/googlePlay.fb8308a84de42fb9d9ca.png",
     "static/media/logo.svg": "/scotth.tech/static/media/logo.5e8ecabbc3f765811c4c1b0d05a61a6c.svg",
     "index.html": "/scotth.tech/index.html",
     "main.84bb7ea9.css.map": "/scotth.tech/static/css/main.84bb7ea9.css.map",
-    "main.7338a62f.js.map": "/scotth.tech/static/js/main.7338a62f.js.map",
+    "main.d7b34ebd.js.map": "/scotth.tech/static/js/main.d7b34ebd.js.map",
     "787.28cb0dcd.chunk.js.map": "/scotth.tech/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.84bb7ea9.css",
-    "static/js/main.7338a62f.js"
+    "static/js/main.d7b34ebd.js"
   ]
 }
