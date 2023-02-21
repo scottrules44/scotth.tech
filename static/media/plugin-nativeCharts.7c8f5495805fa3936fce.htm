@@ -1,0 +1,96 @@
+<div id = "main">
+	<h3><a id="nativeCharts"></a>Native Charts Plugin</h3>
+	<p>This plugin allows you create and display charts with native objects</p>
+	<p></p>
+	<p></p>
+	<p><h3>Limitations:</h3> Only works on iOS and Android. Also the plugin using native objects, all charts are on top Corona Display Objects(display.*)</p>
+	<p></p>
+	<p><h3>Function:</h3></p>
+	<p></p>
+	<p><h4>nativeCharts.newChart(chartType, params)</h4>--returns chartObj</p>
+	<p>chartType(string)(required)--supported types: "pie", "line", and "bar"</p>
+	<p>params(table)-- x(number), y(number), width(number), height(number), listener(function)(see Events section)</p>
+	<p></p>
+	<p><h3>ChartObj Functions:</h3></p>
+	<p></p>
+	<p><h4>chartObj:setData(dataSet)</h4>-- set chart data</p>
+	<p><h5>dataSet(array of tables) for "pie" chartType</h5></p>
+	<p>dataSet tables inside array can have: colors(array of hex colors(strings)), color(string hex color), axisDependency(string "left" or "right"), label(string), enableLabelOutside(boolean), valueTextSize(number), valueTextColor(string hex color), data(array of tables) </p>
+	<p>data tables inside array can have: value(number), label(string), data(string passed into Events)</p>
+<code><pre>
+--Pie Chart Set Data Example<br/>
+local pieChart = nativeCharts.newChart("pie", {listener=chartCallback,x = display.contentCenterX, y=display.contentCenterY,  width=200, height=200})<br/>
+pieChart:setData({{colors={"#046681", "#337AFF"}, label="Cool Pie Chart", data={{value=20, label = "Profit", data="profitPart" }, {value=80, label="Losses", data="lossesPart" }}}})	<br/>
+</pre></code>	
+	<p></p>
+	<p><h4>dataSet(array of tables) for "line" chartType</h4></p>
+	<p>dataSet tables inside array can have: colors(array of hex colors(strings)), color(string hex color), alpha(number), barBorderWidth(number), formLineWidth(number), barBorderColor(string hex), barShadowColor(string hex),  axisDependency(string "left" or "right"), label(string), valueTextSize(number), valueTextColor(string hex color), data(array of tables) </p>
+	<p>data tables inside array can have: x(number), y(number), data(string passed into Events)</p>
+<code><pre>
+--Line Chart Set Data Example<br/>
+local lineChart = nativeCharts.newChart("line", {listener=chartCallback, x = display.contentCenterX, y=display.contentCenterY,  width=150, height=200})<br/>
+lineChart:setData({{color="#046681", lineWidth=2, circleColor="#09FF7D", label="Mexico", data={{x=20, y=20 }, {x=30, y=30}, {x=50, y=50, data="mexicoBigNumber" }}}, {color="#337AFF", lineWidth=1.5,  circleColor="#FF0909", label="USA", data={{x=10, y=10 }, {x=20, y=15}, {x=30, y=20 }}}})	<br/>
+</pre></code>
+	<p></p>
+	<p><h4>dataSet(array of tables) for "bar" chartType</h4></p>
+	<p>dataSet tables inside array can have: colors(array of hex colors(strings)), color(string hex color), circleColor(string hex color), lineWidth(number), alpha(number),  axisDependency(string "left" or "right"), mode(string "stepped", "cubicBezier", "horizontalBezier" default:"linear") label(string), valueTextSize(number), valueTextColor(string hex color), data(array of tables passed) </p>
+	<p>data tables inside array can have: x(number), y(number), data(string passed into Events)</p>
+	<p></p>
+<code><pre>
+--Bar Chart Set Data Example<br/>
+local barChart = nativeCharts.newChart("bar", {listener=chartCallback, x = display.contentCenterX, y=display.contentCenterY,  width=150, height=200})<br/>
+barChart:setData({{color="#046681", barBorderWidth=2,formLineWidth=5, label="2020", data={{x=20, y=20 }, {x=30, y=30}, {x=40, y=50, data="bigNumber2020" }}}, {color="#FF0909", barBorderWidth=2,formLineWidth=5, label="2021", data={{x=22, y=30 }, {x=32, y=40}, {x=42, y=60 }}}})	<br/>
+</pre></code>
+	<p><h4>chartObj:setProperties(props)</h4>-- set chart properties</p>
+	<p>props(table) for "pie": pieHoleRadiusPercent(number 0-1), pieHoleColor(string hex color), pieHoleVisible(boolean), enableRotation(boolean), rotation(number), pieShowPercentValue(boolean)</p>
+	<p></p>
+	<p>props(table) for "line" and "bar": gridLines(boolean, true is default), dragEnabled(boolean, true is default), pinchZoomEnabled(boolean, true is default), enableRightAxisGridLines(boolean), enableRightAxisLabels(boolean), setRightAxisLabelSize(number), setRightAxisLabelColor(string color hex), setRightAxisMin(number), setRightAxisMax(number), setRightAxisLabels(table with [key being the number to place label]="label text here"),  enableLeftAxisGridLines(boolean), enableLeftAxisLabels(boolean), setLeftAxisLabelSize(number), setLeftAxisLabelColor(string hex color), setLeftAxisMin(number), setLeftAxisMax(number), setLeftAxisLabels(table with [key being the number to place label]="label text here")</p>
+	<p></p>
+	<p>props(table) for all charts: enableXAxisGridLines(boolean), setXAxisLabelSize(number), enableXAxisLabels(boolean), setXAxisLabelColor(string hex color), setXAxisMin(number), setXAxisMax(number), setXAxisLabels(table with [key being the number to place label]="label text here"), legendEnabled(boolean), backgroundColor(string hex color), legendTextColor(string hex color), legendFontSize(number), chartDescription(string), chartDescriptionEnabled(boolean), chartDescriptionColor(string hex color), enableInteraction(boolean)</p>
+<code><pre>
+--Pie Chart<br/>
+local pieChart = nativeCharts.newChart("pie", {listener=chartCallback,x = display.contentCenterX, y=display.contentCenterY,  width=200, height=200})<br/>
+pieChart:setData({{colors={"#046681", "#337AFF"}, label="Cool Pie Chart", data={{value=20, label = "Profit", data="profitPart" }, {value=80, label="Losses", data="lossesPart" }}}})<br/>
+pieChart:setProperties({pieHoleRadiusPercent=0, pieHoleColor="#ffffff", pieHoleVisible=false, rotation=190, enableRotation=false, pieShowPercentValue=true })-- radius between 0-1<br/>
+<br/>
+<br/>
+--Line Chart<br/>
+local lineChart = nativeCharts.newChart("line", {listener=chartCallback, x = display.contentCenterX, y=display.contentCenterY,  width=150, height=200})<br/>
+lineChart:setData({{color="#046681", lineWidth=2, circleColor="#09FF7D", label="Mexico", data={{x=20, y=20 }, {x=30, y=30}, {x=50, y=50, data="mexicoBigNumber" }}}, {color="#337AFF", lineWidth=1.5,  circleColor="#FF0909", label="USA", data={{x=10, y=10 }, {x=20, y=15}, {x=30, y=20 }}}})<br/>
+lineChart:setProperties({gridLines=false, pinchZoomEnabled=false, dragEnabled=false, enableRightAxisGridLines=false, setRightAxisLabelSize=20, setRightAxisLabelColor ="#337AFF", setRightAxisMin=2,setRightAxisMax=100, setRightAxisLabels={[20]="test1", [40]="test2", [60]="test3"}, enableLeftAxisGridLines=false, setLeftAxisLabelSize=20, setLeftAxisLabelColor ="#337AFF", setLeftAxisMin=2,setRightAxisMax=100, setLeftAxisLabels={[20]="test1", [40]="test2", [60]="test3"}   })<br/>
+<br/>
+--Bar Chart<br/>
+local barChart = nativeCharts.newChart("bar", {listener=chartCallback, x = display.contentCenterX, y=display.contentCenterY,  width=150, height=200})<br/>
+barChart:setData({{color="#046681", barBorderWidth=2,formLineWidth=5, label="2020", data={{x=20, y=20 }, {x=30, y=30}, {x=40, y=50, data="bigNumber2020" }}}, {color="#FF0909", barBorderWidth=2,formLineWidth=5, label="2021", data={{x=22, y=30 }, {x=32, y=40}, {x=42, y=60 }}}})<br/>
+barChart:setProperties({gridLines=false, pinchZoomEnabled=false, dragEnabled=false, enableRightAxisGridLines=true, enableRightAxisLabels=true, setRightAxisLabelSize=8, setRightAxisLabelColor ="#337AFF", setRightAxisMin=2,setRightAxisMax=100, setRightAxisLabels={[20]="test1", [40]="test2", [60]="test3"}, enableLeftAxisGridLines=true, enableLeftAxisLabels=true,  setLeftAxisLabelSize=8, setLeftAxisLabelColor ="#337AFF", setLeftAxisMin=2,setRightAxisMax=100, setLeftAxisLabels={[20]="test1", [40]="test2", [60]="test3"}   })	<br/>
+</pre></code>
+	<p></p>
+	<p><h4>chartObj:clearSelection()</h4>-- set clear selection for chart</p>
+	<p></p>
+	<p><h4>chartObj:destroy()</h4>-- destory/remove the chart</p>
+	<p></p>
+	<p><h3>Events:</h3></p>
+	<p></p>
+	<p>The following user interaction event data are returned for listener set .newChart: event.phase(string either "selected" or "unselected" ) and event.data(string set data tables in chartObj:setData() ), event.description(string)</p>
+	<p>if the chart type is "pie" there is also: event.value(number), event.label(string)</p>
+	<p>if the chart type is "line" or "bar": event.x(number), event.y(number)</p>
+	<p>Note: no other event data is returned when event.phase == "unselected" </p>
+	<p></p>
+	<p><h3>Build.settings</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.nativeCharts"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p><a href="https://solar2dmarketplace.com/plugins?NativeCharts_tech-scotth">Get Plugin</a></p>
+	<p><a href="https://github.com/scottrules44/nativeCharts-demo">Example</a></p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

@@ -1,0 +1,37 @@
+<div id = "main">
+	<h3><a id="isAdQuality">Iron Source Ad Quality</a></h3>
+	<p></p>
+	<p>This plugin enables users of <a href="https://scotth.tech/plugin-ironSource">Iron Source Ad plugin</a> to use <a href="https://www.is.com/adquality/">IS Ad Quality SDK<a/></p>
+	<p></p>
+	<p><h3>Platforms/Limitations:</h3>this plugin only works with iOS 10+ and Android 5+. Note this plugin is seprate from the regular IS ad plugin. This plugin does NOT show or control ads</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>isAdQuality.init(listener, params )</h4></p>
+	<p>listener(function) triggers event.phase("init"), event.error(string) , and event.isError(boolean)</p>
+	<p>params(table) supported keys {iOSAppKey=(String)(optional but required for iOS)"IS iOS App Key", androidAppKey=(optional but required for Android)(String)"IS Android App Key", logLevel=(optional)(string)"can be "error", "warning", "debug", or "verbose" ", testMode=(optional)(boolean), userId=(optional)(string) }</p>
+	<p></p>
+	<p><h4>isAdQuality.setUserId(userId)</h4></p>
+	<p>userId(string) change user IDs</p>
+	<p></p>
+	<p><h4>isAdQuality.setUserConsent(hasUserConsent)</h4></p>
+	<p>hasUserConsent(boolean) set GDPR consent</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins= {<br/>
+		["plugin.isAdQuality"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?IronSourceAdQuality_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/isAdQuality-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+
+</div>
