@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/scotth.tech/static/css/main.8173ab87.css",
-    "main.js": "/scotth.tech/static/js/main.962b2cfd.js",
+    "main.js": "/scotth.tech/static/js/main.d4f44fd2.js",
     "static/js/787.28cb0dcd.chunk.js": "/scotth.tech/static/js/787.28cb0dcd.chunk.js",
     "static/media/appStore.png": "/scotth.tech/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/mylogo.png": "/scotth.tech/static/media/mylogo.4c4d9173aa3153cfc0b6.png",
@@ -9,11 +9,11 @@
     "static/media/logo.svg": "/scotth.tech/static/media/logo.5e8ecabbc3f765811c4c1b0d05a61a6c.svg",
     "index.html": "/scotth.tech/index.html",
     "main.8173ab87.css.map": "/scotth.tech/static/css/main.8173ab87.css.map",
-    "main.962b2cfd.js.map": "/scotth.tech/static/js/main.962b2cfd.js.map",
+    "main.d4f44fd2.js.map": "/scotth.tech/static/js/main.d4f44fd2.js.map",
     "787.28cb0dcd.chunk.js.map": "/scotth.tech/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8173ab87.css",
-    "static/js/main.962b2cfd.js"
+    "static/js/main.d4f44fd2.js"
   ]
 }
