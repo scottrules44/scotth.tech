@@ -23,7 +23,7 @@ params(table)(optional)
 
 -- closeTitle(string)(iOS only) text to show close button
 
--- cameraPosition(string)(default "back") "front" or "back" camera scanning</li>
+-- cameraPosition(string)(default "back") "front" or "back" camera scanning
 
 -- listener(function) will return callback event.status="gotCode", "close", "error". If status="gotCode" will return event.code(string data scanned) and status="error" event.error(string)
 

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c3c9cb10.css",
-    "main.js": "/static/js/main.c7e7c06e.js",
+    "main.js": "/static/js/main.f88fd6d3.js",
     "static/js/787.603bce7d.chunk.js": "/static/js/787.603bce7d.chunk.js",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.771c4c5dd0d01d460a65.htm",
@@ -68,7 +68,7 @@
     "static/media/plugin-touchId.htm": "/static/media/plugin-touchId.5d3bd31e85e16f1d9fc6.htm",
     "static/media/plugin-nativeSockets.htm": "/static/media/plugin-nativeSockets.e55c409d51e76a499cc0.htm",
     "static/media/plugin-searchAds.htm": "/static/media/plugin-searchAds.66337d61fe9ba307e89b.htm",
-    "static/media/plugin-scanner.md": "/static/media/plugin-scanner.112d1dbe606fe884d6bc.md",
+    "static/media/plugin-scanner.md": "/static/media/plugin-scanner.98633ebaa7ab7e4e57ae.md",
     "static/media/plugin-universalLinks.htm": "/static/media/plugin-universalLinks.65391c3bb89f1573d4eb.htm",
     "static/media/plugin-reviewPopUp.htm": "/static/media/plugin-reviewPopUp.9db5c5409b75e030ffe7.htm",
     "static/media/plugin-controllerHaptics.htm": "/static/media/plugin-controllerHaptics.af01021682fe2b2a64df.htm",
@@ -89,11 +89,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.c3c9cb10.css.map": "/static/css/main.c3c9cb10.css.map",
-    "main.c7e7c06e.js.map": "/static/js/main.c7e7c06e.js.map",
+    "main.f88fd6d3.js.map": "/static/js/main.f88fd6d3.js.map",
     "787.603bce7d.chunk.js.map": "/static/js/787.603bce7d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c3c9cb10.css",
-    "static/js/main.c7e7c06e.js"
+    "static/js/main.f88fd6d3.js"
   ]
 }
