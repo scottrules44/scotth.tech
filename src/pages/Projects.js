@@ -9,7 +9,7 @@ function Projects() {
         <div className="Page">
             <h1>Projects</h1>
             <h3>Solar2D Marketplace</h3>
-            <p>{"Browse and Purchase dozens of plugins I have created made :)"}</p>
+            <p>{"Browse and Purchase dozens of plugins I have created :)"}</p>
             <p><a href="https://solar2dmarketplace.com" target={"_blank"}><button>Check it out</button></a></p>
             <h3>Physics Body Tool</h3>
             <p>This tool allows you to create and edit hitboxes easily and export it into your game.</p>

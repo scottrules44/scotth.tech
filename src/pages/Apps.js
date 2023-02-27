@@ -12,6 +12,7 @@ function Apps() {
                     <h2>{app.appName}</h2>
                     <h4>{app.description}</h4>
                     <AppViewer appStore={app.appStoreLink} googlePlay={app.googlePlayLink}/>
+                    <h5>{app.madeWith}</h5>
                 </div>
             )
         })
