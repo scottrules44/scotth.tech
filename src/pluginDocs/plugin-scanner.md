@@ -1,6 +1,6 @@
 ## About
 
-This plugin allows you to scan a varity of image code(including qr and barcodes/ean8 images) for iOS and Android
+This plugin allows you to scan a variety of image codes(including QR and barcodes/ean8 images) for iOS and Android.
 
 
 ## Functions
@@ -19,9 +19,11 @@ params(table)(optional)
 
 -- hideFlash(boolean)(default false)
 
--- focusViewQR(boolean)(default true) will show a square view(good for qr scanning) in focus view
+-- hideCloseButton(boolean)(Android only)(default false)
 
--- closeTitle(string)(iOS only) text to show close button
+-- closeTitle(string)(iOS only) text to show in place of "close" button text
+
+-- focusViewQR(boolean)(default true) will show a square view(good for qr scanning) in focus view
 
 -- cameraPosition(string)(default "back") "front" or "back" camera scanning
 
@@ -70,8 +72,8 @@ settings =
 
 
 
-[Get Scanner Plugin](https://solar2dmarketplace.com/plugins?IronSourceAdQuality_tech-scotth)
+[Get Scanner Plugin](https://solar2dmarketplace.com/plugins?Scanner_tech-scotth)
 
-[Get Support In Forum](https://forums.solar2d.com/c/corona-marketplace/13)
+[Get Support In Forums](https://forums.solar2d.com/c/corona-marketplace/13)
 
-[Check Demo](https://forums.solar2d.com/c/corona-marketplace/13)
+[Check Demo](https://github.com/scottrules44/scanner-demo)
