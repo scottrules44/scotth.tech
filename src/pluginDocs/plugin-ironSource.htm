@@ -188,129 +188,56 @@ ironSource.init(listener, params)
     },
 	plugins =
 	{
-	 --Adapters
-           
-		["plugin.adColonyIron"] = {
+	 	--Adapters
+	 	["ironsource.applovin"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=adColony&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=adColony&type=iOS" },
-			},
 		},
-		["plugin.admobIron"] = {
+		["ironsource.adColony"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=admob&type=Android" },
-				iphone = { url="http://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=admob&type=iOS" },
-			},
 		},
-		["plugin.amazonIron"] = {
-				publisherId = "tech.scotth",
-				supportedPlatforms =
-				{
-					android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=amazon&type=Android" },
-					iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=amazon&type=iOS" },
-				},
-			},
-		["plugin.applovinIron"] = {
-				publisherId = "tech.scotth",
-				supportedPlatforms =
-				{
-					android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=applovin&type=Android" },
-					iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=applovin&type=iOS" },
-				},
-			},
-
-		["plugin.chartboostIron"] = {
+		["ironsource.admob"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=chartboost&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=chartboost&type=iOS" },
-			},
 		},
-		["plugin.facebookIron"] = {
+		["ironsource.amazon"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=facebook&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=facebook&type=iOS" },
-			},
 		},
-		--dependencies for Facebook Adapter
-
-		["plugin.facebook.v4a"] =
-		{
-			publisherId = "com.coronalabs"
-		},
-		["plugin.fyberIron"] = {
+		["ironsource.chartboost"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=fyber&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=fyber&type=iOS" },
-			},
 		},
-		["plugin.hypermxIron"] = {
+		["ironsource.facebook"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=hypermx&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=hypermx&type=iOS" },
-			},
 		},
-		["plugin.inmobiIron"] = {
+		["ironsource.fyber"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=inmobi&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=inmobi&type=iOS" },
-			},
 		},
 
-		["plugin.pangleIron"] = {
+		["ironsource.hypermx"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=pangle&type=iOS" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=pangle&type=Android" },
-			},
+		},
+		["ironsource.inmobi"] = {
+			publisherId = "tech.scotth",
+		},
+		["ironsource.myTarget"] = {
+			publisherId = "tech.scotth",
+		},
+		["ironsource.pangle"] = {
+			publisherId = "tech.scotth",
+		},
+		["ironsource.superAwesome"] = {
+			publisherId = "tech.scotth",
+		},
+		["ironsource.tapjoy"] = {
+			publisherId = "tech.scotth",
+		},
+		["ironsource.unityAds"] = {
+			publisherId = "tech.scotth",
+		},
+		["ironsource.vungle"] = {
+			publisherId = "tech.scotth",
 		},
 
-
-		["plugin.tapjoyIron"] = {
+		["ironsource.yahoo"] = {
 			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=tapjoy&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=tapjoy&type=iOS" },
-			},
-		},
-		["plugin.unityAdsIron"] = {
-			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=unityAds&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=unityAds&type=iOS" },
-			},
-		},
-		["plugin.vungleIron"] = {
-			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=vungle&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=vungle&type=iOS" },
-			},
-		},
-		["plugin.yahooAdapter"] = {
-			publisherId = "tech.scotth",
-			supportedPlatforms =
-			{
-				android = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=yahoo&type=Android" },
-				iphone = { url="https://solar2dmarketplace.com/getShared?subFolder=ironsource&sharedName=yahoo&type=iOS" },
-			},
 		},
 		--Core Plugin
 		["plugin.ironSource"] =

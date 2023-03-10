@@ -1,3 +1,4 @@
+import React from 'react';
 import NavBar from "../components/NavBar";
 import emailjs from '@emailjs/browser';
 import { useRef } from "react";

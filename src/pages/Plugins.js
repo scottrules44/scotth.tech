@@ -1,3 +1,4 @@
+import React from 'react';
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import data from "../pluginDocs/pluginList.json";

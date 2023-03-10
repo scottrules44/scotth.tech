@@ -1,5 +1,5 @@
+import React from 'react';
 import '../components/NavBar.css';
-import { Link, useLocation } from 'react-router-dom'
 import { useEffect, useRef } from 'react';
 function NavBar(){
     var homeRef = useRef();
@@ -29,19 +29,19 @@ function NavBar(){
             window.location.href = contactRef.navTo;
         }
 
-        if(window.location.pathname == homeRef.navTo){
+        if(window.location.pathname === homeRef.navTo){
             homeRef.current.className="button active";
         }
-        if(window.location.pathname == appRef.navTo){
+        if(window.location.pathname === appRef.navTo){
             appRef.current.className="button active";
         }
-        if(window.location.pathname == projectRef.navTo){
+        if(window.location.pathname === projectRef.navTo){
             projectRef.current.className="button active";
         }
-        if(window.location.pathname == pluginsRef.navTo){
+        if(window.location.pathname === pluginsRef.navTo){
             pluginsRef.current.className="button active";
         }
-        if(window.location.pathname == contactRef.navTo){
+        if(window.location.pathname === contactRef.navTo){
             contactRef.current.className="button active";
         }
 

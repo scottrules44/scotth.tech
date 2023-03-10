@@ -18,12 +18,16 @@
     #buttonGroup {
         flex-direction: column;
     }
+    .button{
+        align-self: center;
+    }
 }
 .button{
     margin-right: 5px;
     padding: 20px;
     width: 200px;
     text-align: center;
+    
 }
 .active{
     background-color: lightblue;

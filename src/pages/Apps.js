@@ -1,3 +1,4 @@
+import React from 'react';
 import AppViewer from "../components/AppViewer";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";

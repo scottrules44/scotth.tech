@@ -1,3 +1,4 @@
+import React from 'react';
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
@@ -13,7 +14,10 @@ function Projects() {
             <p><a href="https://solar2dmarketplace.com" target={"_blank"}><button>Check it out</button></a></p>
             <h3>Physics Body Tool</h3>
             <p>This tool allows you to create and edit hitboxes easily and export it into your game.</p>
-            <p><a href="https://scottrules44.github.io/physics-body-tool/" target={"_blank"}><button>Check out tool</button></a></p>
+            <p><a href="https://scottrules44.github.io/physics-body-tool/" target={"_blank"}><button>Check out the tool</button></a></p>
+            <h3>SBrowser</h3>
+            <p>Basic Python Based Web browser</p>
+            <p><a href="https://github.com/scottrules44/SBrowser" target={"_blank"}><button>Check it out</button></a></p>
         </div>
         <Footer/>
         </>

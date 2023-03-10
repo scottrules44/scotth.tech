@@ -1,3 +1,4 @@
+import React from 'react';
 import NavBar from "../components/NavBar";
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";

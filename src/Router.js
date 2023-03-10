@@ -1,4 +1,5 @@
-import { createBrowserRouter, createHashRouter } from "react-router-dom";
+import React from 'react';
+import { createBrowserRouter } from "react-router-dom";
 import Apps from "./pages/Apps";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
