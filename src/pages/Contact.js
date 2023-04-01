@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import emailjs from '@emailjs/browser';
 import { useRef } from "react";
 function Contact() {
@@ -12,7 +13,7 @@ function Contact() {
             alert("Email sent");
             console.log(result.text);
         }, (error) => {
-            alert(error.text); 
+            alert(error.text);
         });
     };
     return (
@@ -41,6 +42,7 @@ function Contact() {
                     <p><textarea name="message" required /></p>
                     <p><input type="submit" value="Send" /> </p>
                 </form>
+                <Footer/>
             </div>
         </>
     );

@@ -61,7 +61,7 @@ width(number)(optional), height(number)(optional)
 &nbsp;
 
 ```
-screenRecorder.setCamera({show=true, x=100,y= 100, width=100, height=100  })
+screenRecorder.setCamera({show=true, x=100,y= 100, width=100, height=100 })
 ```
 
 #### screenRecorder.stop()
@@ -104,4 +104,4 @@ settings =
 
 [Get Support In Forums](https://forums.solar2d.com/c/corona-marketplace/13)
 
-[Check Demo](https://github.com/scottrules44/scanner-demo)
+[Check Demo](https://github.com/scottrules44/screenRecorder-v2-demo)

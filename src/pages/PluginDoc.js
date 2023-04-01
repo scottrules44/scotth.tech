@@ -30,10 +30,9 @@ function PluginDoc() {
             pageSubtitle.current.innerText = "Solar2D Plugin Docs";
             var docPath;
             if(pluginInfo.legacyFormat){
-              console.log("run11");
-                docPath =require('../pluginDocs/'+pluginKey+".htm");
+              docPath = require('../pluginDocs/'+pluginKey+".htm");
             }else{
-               docPath=require('../pluginDocs/'+pluginKey+".md");
+               docPath = require('../pluginDocs/'+pluginKey+".md");
             }
             getDocs(docPath);
         }else{

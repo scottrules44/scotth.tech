@@ -1,0 +1,10 @@
+{
+    "privacyPolicies":[
+      {"name":"listbud", "legacy":true},
+      {"name":"notesOnWatch", "legacy":true},
+      {"name":"runRoly", "legacy":true},
+      {"name":"rolyArmadillo", "legacy":true},
+      {"name":"tableTrivia", "legacy":true},
+      {"name":"cloudPaste"}
+    ]
+}

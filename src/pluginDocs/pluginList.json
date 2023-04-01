@@ -25,6 +25,7 @@
         "plugin-gamecenter":{"category":"Gaming", "name":"Gamecenter", "legacyFormat":true},
         "plugin-dreamlo":{"category":"Gaming", "name":"Dreamlo", "legacyFormat":true},
 
+        "plugin-textToSpeech":{"category":"Hardware", "name":"Text To Speech", "legacyFormat":true},
         "plugin-scanner":{"category":"Hardware", "name":"(QR/Barcode)Scanner Plugin"},
         "plugin-controllerHaptics":{"category":"Hardware", "name":"Controller Haptics", "legacyFormat":true},
         "plugin-datamax":{"category":"Hardware", "name":"Data Max", "legacyFormat":true},
@@ -43,11 +44,11 @@
         "plugin-helpshift":{"category":"Marketing", "name":"Helpshift", "legacyFormat":true},
         "plugin-reviewPopUp":{"category":"Marketing", "name":"Review Pop Up", "legacyFormat":true},
 
+        "plugin-screenRecorderV2":{"category":"Media", "name":"Screen Recorder V2"},
         "plugin-videoEditor":{"category":"Media", "name":"Video Editor", "legacyFormat":true},
         "plugin-pdfImageConverter":{"category":"Media", "name":"Pdf Image Converter", "legacyFormat":true},
         "plugin-imageCrop":{"category":"Media", "name":"Image Crop", "legacyFormat":true},
         "plugin-videoShare":{"category":"Media", "name":"Video Share", "legacyFormat":true},
-        "plugin-screenRecorder":{"category":"Media", "name":"Screen Recorder", "legacyFormat":true},
         "plugin-musicStreaming":{"category":"Media", "name":"Music Streaming", "legacyFormat":true},
         "plugin-replayKit":{"category":"Media", "name":"Replay Kit", "legacyFormat":true},
 

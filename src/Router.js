@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import Plugins from "./pages/Plugins";
 import PluginDoc from "./pages/PluginDoc";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ErrorHandlePage from "./pages/ErrorHandlePage";
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/plugin/:pluginName",
     element: <PluginDoc/>,
+  },
+  {
+    path: "/privacyPolicy/:ppName",
+    element: <PrivacyPolicy/>,
   },
   {
     path: "/contact",
