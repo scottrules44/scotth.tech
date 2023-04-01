@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.9fffee61.css",
-    "main.js": "/static/js/main.4157cb4e.js",
-    "static/js/787.603bce7d.chunk.js": "/static/js/787.603bce7d.chunk.js",
+    "main.css": "/static/css/main.dcc9dff9.css",
+    "main.js": "/static/js/main.4a57a1a3.js",
+    "static/js/496.6ae55e45.chunk.js": "/static/js/496.6ae55e45.chunk.js",
+    "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.771c4c5dd0d01d460a65.htm",
     "static/media/mylogo.png": "/static/media/mylogo.4c4d9173aa3153cfc0b6.png",
@@ -11,17 +12,22 @@
     "static/media/plugin-firebaseLegacy.htm": "/static/media/plugin-firebaseLegacy.5eb14dc7bbf61f3df1fb.htm",
     "static/media/plugin-firebaseAuth.htm": "/static/media/plugin-firebaseAuth.6aa0db6340c2cd6670ea.htm",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
+    "static/media/listbud.htm": "/static/media/listbud.40ba414521fa13126827.htm",
     "static/media/plugin-googleSignIn.htm": "/static/media/plugin-googleSignIn.d21aa7dcaee3de85e2e1.htm",
+    "static/media/runRoly.htm": "/static/media/runRoly.81f8dc07e793e067a6b3.htm",
+    "static/media/notesOnWatch.htm": "/static/media/notesOnWatch.0b61c6a1312434bd40d6.htm",
     "static/media/plugin-firebaseDynamicLinks.htm": "/static/media/plugin-firebaseDynamicLinks.9a76279e262fc448867f.htm",
     "static/media/plugin-storeView.htm": "/static/media/plugin-storeView.b9197e41f631144f0c09.htm",
     "static/media/plugin-externalStorage.htm": "/static/media/plugin-externalStorage.7fd0a108639c909629ef.htm",
     "static/media/plugin-storeKit.htm": "/static/media/plugin-storeKit.da49aec0aa375c14820b.htm",
+    "static/media/tableTrivia.htm": "/static/media/tableTrivia.2816f1f8d99967299c19.htm",
     "static/media/plugin-mapbox.htm": "/static/media/plugin-mapbox.8db2d77884c13f45f0a2.htm",
     "static/media/plugin-applePay.htm": "/static/media/plugin-applePay.55a9bed7b73909fa8ed8.htm",
     "static/media/plugin-replayKit.htm": "/static/media/plugin-replayKit.182e7724a2d69ba54c2e.htm",
     "static/media/plugin-screenRecorder.htm": "/static/media/plugin-screenRecorder.d4a975a7de65c666b215.htm",
     "static/media/plugin-firebaseDatabase.htm": "/static/media/plugin-firebaseDatabase.ba898f5443c5fb07b7bc.htm",
     "static/media/plugin-classKit.htm": "/static/media/plugin-classKit.ed3a5c57be50b4052e2f.htm",
+    "static/media/cloudPaste.md": "/static/media/cloudPaste.c533e353d73baafcdb55.md",
     "static/media/plugin-bt.htm": "/static/media/plugin-bt.e4b3b7e2b808743fc7ec.htm",
     "static/media/plugin-multipeerConnectivity.htm": "/static/media/plugin-multipeerConnectivity.085cbab0accee6e85137.htm",
     "static/media/plugin-musicStreaming.htm": "/static/media/plugin-musicStreaming.79193e6d06ac087e2917.htm",
@@ -90,12 +96,12 @@
     "static/media/plugin-passkit.htm": "/static/media/plugin-passkit.4978118fe0c64e3bd7ee.htm",
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
-    "main.9fffee61.css.map": "/static/css/main.9fffee61.css.map",
-    "main.4157cb4e.js.map": "/static/js/main.4157cb4e.js.map",
-    "787.603bce7d.chunk.js.map": "/static/js/787.603bce7d.chunk.js.map"
+    "main.dcc9dff9.css.map": "/static/css/main.dcc9dff9.css.map",
+    "main.4a57a1a3.js.map": "/static/js/main.4a57a1a3.js.map",
+    "496.6ae55e45.chunk.js.map": "/static/js/496.6ae55e45.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fffee61.css",
-    "static/js/main.4157cb4e.js"
+    "static/css/main.dcc9dff9.css",
+    "static/js/main.4a57a1a3.js"
   ]
 }
