@@ -8,9 +8,8 @@
 	<p></p>
 	<p><h3>Functions:</h3></p>
 	<p></p>
-	<p><h4>firebaseCrashlytics.init(enableDebug, optInReporting)</h4>-- setup Firebase Crashlytics</p>
-	<p>enableDebug(boolean) -- default is false</p>
-	<p>optInReporting(boolean)--Enable opt-in reporting</p>
+	<p><h4>firebaseCrashlytics.init(errorListener)</h4>-- setup Firebase Crashlytics</p>
+	<p>errorListener(functions)(optional) -- since this plugin handles and captures error Runtime:addEventListener("unhandledError") will not work, instead this errorListener will return event.error(string) of the error description</p>
 	<p></p>
 	<p><h4>firebaseCrashlytics.addLog(log)</h4>--add log to be sent with crash data</p>
 	<p>log(string) log data</p>
@@ -53,6 +52,12 @@
 	<p>Add .DSYM generated when build an app iOS build in Corona Simulator to Firebase Crashlytics Console</p>
 	<p></p>
 	<a class="screenshoot" src="/pluginDocs/dsymFirebaseCrash.png" style="width:600px;height:500;">
+	<p></p>
+	<p><h3>AndroidNDK Support:</h3></p>
+	<p></p>
+	<p>The plugin automatically log java and lua error, in order to log NDK error you need to upload Android NDK Symbols</p>
+	<p>If you are using the default releases of Corona Sim you can find them <a href="https://github.com/coronalabs/corona/releases">here</a> </p>
+	<p>You must have installed <a href="https://firebase.google.com/docs/cli">Firebase CLI</a> and can upload NDK Symbols via the command "firebase crashlytics:symbols:upload --app=FIREBASE_APP_ID PATH/TO/SYMBOLS"</p>
 	<p></p>
 	<p><h3>Build Settings:</h3></p>
 <code><pre>settings =<br/>
