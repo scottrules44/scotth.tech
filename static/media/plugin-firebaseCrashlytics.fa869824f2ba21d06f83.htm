@@ -9,7 +9,7 @@
 	<p><h3>Functions:</h3></p>
 	<p></p>
 	<p><h4>firebaseCrashlytics.init(errorListener)</h4>-- setup Firebase Crashlytics</p>
-	<p>errorListener(functions)(optional) -- since this plugin handles and captures error Runtime:addEventListener("unhandledError") will not work, instead this errorListener will return event.error(string) of the error description</p>
+	<p>errorListener(functions)(optional) -- since this plugin handles and captures lua errors, Runtime:addEventListener("unhandledError") will not work, instead this errorListener will return event.error(string) of the lua error description when a error is captured</p>
 	<p></p>
 	<p><h4>firebaseCrashlytics.addLog(log)</h4>--add log to be sent with crash data</p>
 	<p>log(string) log data</p>
