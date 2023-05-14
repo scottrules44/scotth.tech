@@ -1,6 +1,6 @@
 {
     "data":[
-        {"appName":"Run Roly", "description":"Roll as far as you can while collecting coins and try see how far you can go with out falling behind", "appStoreLink":"https://apps.apple.com/us/app/roly-armadillo/id1281711301", "madeWith":"Solar2D(Lua)"},
+        {"appName":"Run Roly", "description":"Roll as far as you can while collecting coins and try see how far you can go with out falling behind", "appStoreLink":"https://apps.apple.com/us/app/roly-armadillo/id1281711301", "googlePlayLink": "https://play.google.com/store/apps/details?id=tech.scotth.RunRoly", "madeWith":"Solar2D(Lua)"},
         {"appName":"List Bud", "description":"Easily create and manage your Lists on the go and sync them with your other devices", "appStoreLink":"https://apps.apple.com/ph/app/list-bud/id1493135775", "googlePlayLink":"https://play.google.com/store/apps/details?id=tech.scotth.listBud&hl=en_US&gl=US", "madeWith":"React Native(TS)"},
         {"appName":"Table Trivia", "description":"Trivia for the whole tables", "appStoreLink":"https://apps.apple.com/us/app/table-trivia/id1491998897", "madeWith":"Xamrian(C#)"},
         {"appName":"Roly Armadillo", "description":"Launch your way through Roly Armadillo, you can play 10+ levels or make build your own levels", "appStoreLink":"https://apps.apple.com/us/app/roly-armadillo/id1281711301", "googlePlayLink":"https://play.google.com/store/apps/details?id=tech.scotth.rolyArmadillo&hl=en_US&gl=US", "madeWith":"Solar2D(Lua)"},

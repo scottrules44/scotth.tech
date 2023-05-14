@@ -9,3 +9,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+@media (max-width:620px)  {
+  .pluginCategory{
+      grid-template-columns: repeat(2, 1fr);
+
+  }
+}

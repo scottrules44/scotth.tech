@@ -14,6 +14,7 @@
         "plugin-firestore":{"category":"Business/Data", "name":"Firestore", "legacyFormat":true},
         "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config", "legacyFormat":true},
         "plugin-firebaseStorage":{"category":"Business/Data", "name":"Firebase Storage", "legacyFormat":true},
+        "plugin-firebaseDatabase":{"category":"Business/Data", "name":"Firebase Database", "legacyFormat":true},
         "plugin-externalStorage":{"category":"Business/Data", "name":"External Storage", "legacyFormat":true},
         "plugin-airprint":{"category":"Business/Data", "name":"Airprint", "legacyFormat":true},
         "plugin-mapbox":{"category":"Business/Data", "name":"Mapbox", "legacyFormat":true},
@@ -60,6 +61,7 @@
 
         "plugin-firebaseDynamicLinks":{"category":"Social", "name":"Firebase Dynamic Links", "legacyFormat":true},
 
+        "plugin-appIcon":{"category":"Utilities", "name":"App Icon"},
         "plugin-universalLinks":{"category":"Utilities", "name":"Universal Links", "legacyFormat":true},
         "plugin-deploy":{"category":"Utilities", "name":"Deploy", "legacyFormat":true},
         "plugin-androidFilePicker":{"category":"Utilities", "name":"Android File Picker", "legacyFormat":true},

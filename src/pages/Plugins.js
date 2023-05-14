@@ -15,7 +15,7 @@ function Plugins() {
         }
         sortedPlugins[d.category].push({...d, key:e})
     })
-    
+
     function getPluginsForCategories(category){
         if(sortedPlugins[category]){
             return sortedPlugins[category].map((plugin, i) => {
@@ -27,11 +27,11 @@ function Plugins() {
         }else{
             return <></>
         }
-        
+
     }
 
     function renderCategories(){
-        
+
         return categories.map((category, i) => {
             return (
             <>
