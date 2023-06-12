@@ -38,7 +38,7 @@ end)<br/>
 	<p>gc.isAvailable() -- returns(boolean) true is gamecenter is available and false if not available</p>
 <code><pre>
 print(gc.isAvailable())<br/>
-</pre></code>	
+</pre></code>
 	<p></p>
 	<p><h3>Nodes:</h3></p>
 	<p></p>
@@ -49,7 +49,7 @@ print(gc.isAvailable())<br/>
 		<li></li>
 <code><pre>
 print(gc.leaderboards.show("insert cool leaderboard id here"))--prints "showing"
-</pre></code>	
+</pre></code>
 		<li>gc.leaderboards.loadScores("leaderboardId", listener,{params}) --returns "showing"</li>
 		<li>leaderboardId (string) the id of leaderboard that you want to get scores from</li>
 		<li>listener (function)</li>
@@ -84,7 +84,7 @@ local function lis(e)<br/>
     print("----------")<br/>
 end<br/>
 gc.leaderboards.loadScores("insert leaderboard id here", lis,{timeScope = "today", playerScope= "friends"})<br/>
-</pre></code>		
+</pre></code>
 		<li>gc.leaderboards.loadScore("leaderboardId", listener) --returns (integer) your score from a leaderboard</li>
 		<li>leaderboardId (string) the id of leaderboard that you want to get the signed users score from</li>
 		<li>listener (function)</li>
@@ -214,50 +214,69 @@ print(gc.challenges.show()) --prints "showing"<br/>
 				<li>completionDate(string)-- The date the challenge was completed ("HH:mm yyyy/MMM/d")(timezone GMT)</li>
 			</unordered-list-item>
 		</unordered-list-item>
-<code><pre>
-gc.challenges.load(function(e)<br/>
-    print("challenges load")<br/>
-    print("----------")<br/>
-    print(json.encode(e))<br/>
-    print("----------")<br/>
-end)<br/>
-</pre></code>
+		<code><pre>
+		gc.challenges.load(function(e)<br/>
+		    print("challenges load")<br/>
+		    print("----------")<br/>
+		    print(json.encode(e))<br/>
+		    print("----------")<br/>
+		end)<br/>
+		</pre></code>
+			</unordered-list-item>
+			<p></p>
+			<h3><li>gc.player -- handles player data</li></h3>
+			<unordered-list-item>
+				<li>gc.player.id() (string) --returns the gamecenter id</li>
+		<code><pre>
+		print(gc.player.id())<br/>
+		</pre></code>
+				<li>gc.player.name() (string) --returns the gamecenter username</li>
+		<code><pre>
+		print(gc.player.name())<br/>
+		</pre></code>
+				<li>gc.player.underage() (boolean) --returns a boolean value that indicates whether the local player is underage</li>
+		<code><pre>
+		print(gc.player.underage())<br/>
+		</pre></code>
+				<li>gc.player.multiplayerGamingRestricted() (boolean) --(iOS 13+)returns a Boolean value that indicates whether the player can join multiplayer games.</li>
+		<code><pre>
+		print(gc.player.multiplayerGamingRestricted())<br/>
+		</pre></code>
+				<li>gc.player.friends(listener)</li>
+				<li>listener(function)</li>
+				<unordered-list-item>
+					<li>status(string)-- can be "success" or "error"</li>
+					<li>error(string)-- explains the error</li>
+					<li>friends(array) -- returns array of tables which contain playerID(string) and displayName(string)</li>
+				</unordered-list-item>
+		<code><pre>
+		gc.player.friends(function(e)<br/>
+		    print("player friends")<br/>
+		    print("----------")<br/>
+		    print(json.encode(e))<br/>
+		    print("----------")<br/>
+		end)<br/>
+		</pre></code>
 	</unordered-list-item>
-	<p></p>
-	<h3><li>gc.player -- handles player data</li></h3>
-	<unordered-list-item>
-		<li>gc.player.id() (string) --returns the gamecenter id</li>
-<code><pre>
-print(gc.player.id())<br/>
-</pre></code>
-		<li>gc.player.name() (string) --returns the gamecenter username</li>
-<code><pre>
-print(gc.player.name())<br/>
-</pre></code>			
-		<li>gc.player.underage() (boolean) --returns a boolean value that indicates whether the local player is underage</li>
-<code><pre>
-print(gc.player.underage())<br/>
-</pre></code>	
-		<li>gc.player.multiplayerGamingRestricted() (boolean) --(iOS 13+)returns a Boolean value that indicates whether the player can join multiplayer games.</li>
-<code><pre>
-print(gc.player.multiplayerGamingRestricted())<br/>
-</pre></code>		
-		<li>gc.player.friends(listener)</li>
-		<li>listener(function)</li>
-		<unordered-list-item>
-			<li>status(string)-- can be "success" or "error"</li>
-			<li>error(string)-- explains the error</li>
-			<li>friends(array) -- returns array of tables which contain playerID(string) and displayName(string)</li>
+			<li>gc.player.identityVerificationSignature(listener)-- Generates a signature so that a third-party server can authenticate the local player.</li>
+			<li>listener(function)</li>
+			<unordered-list-item>
+				<li>isError(boolean)</li>
+				<li>error(string)-- explains the error</li>
+				<li>publicKeyURL(string)-- The URL for the public encryption key.</li>
+				<li>signature(string)-- The verification signature data that GameCenter generates</li>
+				<li>salt(string)-- A random string that GameCenter uses to compute the hash and randomize it.</li>
+				<li>timestamp(number)-- The signature’s creation date and time</li>
+			</unordered-list-item>
+		<code><pre>
+		gc.player.identityVerificationSignature(function(e)<br/>
+			print("Identity Verification Signature")<br/>
+			print("----------")<br/>
+			print(json.encode(e))<br/>
+			print("----------")<br/>
+		end)<br/>
+		</pre></code>
 		</unordered-list-item>
-<code><pre>
-gc.player.friends(function(e)<br/>
-    print("player friends")<br/>
-    print("----------")<br/>
-    print(json.encode(e))<br/>
-    print("----------")<br/>
-end)<br/>
-</pre></code>
-	</unordered-list-item>
 	<p></p>
 	<h3><li>gc.multiplayer -- handles multiplayer</li></h3>
 	<unordered-list-item>
@@ -356,7 +375,7 @@ gamecenter.multiplayer.getMatchData(function(e)<br/>
     print(json.encode(e))<br/>
     print("----------")<br/>
 end)<br/>
-</pre></code>	
+</pre></code>
 		<li>gc.multiplayer.getMatchStatus(listener)</li>
 		<li>listener(function)</li>
 		<unordered-list-item>
@@ -618,13 +637,13 @@ gc.accessPoint.setShowHighlights(true)
 			<li>shouldFocus(boolean) --  only tvOS, A Boolean value that indicates whether the access point is in focus on tvOS.</li>
 <code><pre>
 gc.accessPoint.setFocused(true) -- only for apple tv
-</pre></code>			
+</pre></code>
 			<li></li>
 			<li>gc.accessPoint.triggerAccessPoint() -- Displays the Game Center dashboard</li>
 			<li></li>
 <code><pre>
 gc.accessPoint.triggerAccessPoint()
-</pre></code>			
+</pre></code>
 			<li>gc.accessPoint.triggerAccessPointWithType(accessPointType) -- Displays the Game Center dashboard in the specified state</li>
 			<li>accessPointType(string) -- can be "default", "leaderboards","achievements", "challenges", "localPlayer", or "dashboard"</li>
 			<li></li>
