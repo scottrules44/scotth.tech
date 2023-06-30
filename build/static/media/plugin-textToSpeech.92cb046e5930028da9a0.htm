@@ -1,0 +1,72 @@
+<div id = "main">
+	<h3><a id="start">Text To Speech plugin</a></h3>
+	<p></p>
+	<p>This plugin allows your application to speak to a user via native text to speech api on iOS and Android</p>
+	<p></p>
+	<p><h3>Platforms:</h3> only works with iOS 7+ and Android 5+</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>textToSpeech.init(listener)</h4></p>
+	<p></p>
+	<p>listener (required)</p>
+	<unordered-list-item>
+		<li>event.phase</li>
+		<unordered-list-item>
+			<li>"started"</li>
+			<li>"init"</li>
+			<li>"finished"</li>
+		</unordered-list-item>
+	</unordered-list-item>
+	<p></p>
+<code><pre>
+textToSpeech.init(function (e)
+    print(json.encode(e))
+ end)
+</pre></code>
+	<p></p>
+	<p><h4>textToSpeech.speak(textToSpeak, options)</h4></p>
+	<p></p>
+	<p>textToSpeak(string) text to speak to user</p>
+	<p>options(table)(optional) can put key values{rate= (number)rate of speech, language=(string) language of speech(default is users default language), voice=(string), pitch=(number), volume=(number) default is 1 }</p>
+	<p></p>
+<code><pre>textToSpeech.speak("Hello World, how you doing?", {volume=.8, rate=.5})</pre></code>
+	<p></p>
+	<p><h4>textToSpeech.stop()</h4> -- stop .speak</p>
+	<p></p>
+<code><pre>textToSpeech.stop()</pre></code>
+	<p></p>
+	<p><h4>textToSpeech.pause()</h4> --pause .speak </p>
+	<p></p>
+<code><pre>textToSpeech.pause()</pre></code>
+	<p></p>
+	<p><h4>textToSpeech.resume()</h4> --resume .pause </p>
+	<p></p>
+<code><pre>textToSpeech.resume()</pre></code>
+	<p></p>
+	<p><h4>textToSpeech.getVoices()</h4> --returns array of key values {{id=(string) identifier voice option in .speak, language=(string) voice language}}  </p>
+	<p></p>
+<code><pre>print(json.encode(textToSpeech.getVoices()))</pre></code>
+	<p></p>
+	<p><h4>textToSpeech.isSpeaking()</h4> --returns boolean</p>
+	<p></p>
+<code><pre>print(textToSpeech.isSpeaking())</pre></code>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.textToSpeech"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+}</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p> <a href="https://solar2dmarketplace.com/plugins?TextToSpeech_tech-scotth">Get plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/textToSpeech-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

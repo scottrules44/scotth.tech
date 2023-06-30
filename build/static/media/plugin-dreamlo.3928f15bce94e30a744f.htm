@@ -1,0 +1,74 @@
+
+<div id = "main">
+	<h3><a id="dreamlo">Dreamlo Plugin</a></h3>
+	<p>This plugins uses <a href="http://www.dreamlo.com/"> Dreamlo</a>. Which is a free cross platform leaderboard system.</p>
+	<p>
+	<p>Steps</p>
+	<p>1. go to http://www.dreamlo.com/ and click get your button on leaderboards</p>
+	<p>2.save your url(notes, evernote, etc)</p>
+	<p>3. (optional) if you want https(ssl) make sure you donate 5 or more to Carmine T. Guida </p>
+	<p> 4. paste in Public Code , Private Code dreamlo.int</p>
+	<p></p>
+	<p></p>
+	<h3>Functions:</h3>
+	<p></p>
+	<p></p>
+	<p>dreamlo.int( publicCode(string), privateCode(string), alerts(boolean) ,https(boolean) )</p>
+	<p></p>
+	<p></p>
+	<p>dreamlo.add( playerName(string), myData(table){ score(number), seconds(number),text(string) } , listener(function returns isError(network error) , isDone(did action happen) ) )  </p>
+	<p>Note: This also updates player. myData example: {1234, 123, "sometext"}</p>
+	<p></p>
+	<p></p>
+	<p>dreamlo.delete( playerName (string), listener(function returns isError(network error) , isDone(did action happen) ) )  </p>
+	<p>Note: This delete players data</p>
+	<p></p>
+	<p></p>
+	<p>dreamlo.deleteAll( listener(function returns isError(network error) , isDone(did action happen))  )  </p>
+	<p>Note: Clears the leaderboards</p>
+	<p></p>
+	<p></p>
+	<p>dreamlo.getScores( myData(sort(string), ascending(true or false), amount(num), ending(num), name) , listener (function returns isError(network error) , isDone(did action happen))  ) , isData( is there any scores ), data (tables contains: seconds, name, date , text, score) )</p>
+	<p>Note: Gets Score(s). Format of data table:</p>
+	<p></p>
+	<p>[1] => table: 0x7fb327684e30 {</p>
+	<p>	[seconds] => "0"</p>
+	<p>	[name] => "playerName"</p>
+	<p>[date] => "2/10/2016 3:04:38 AM"</p>
+	<p>	[text] => ""</p>
+	<p>	[score] => "1234"</p>
+	<p>}</p>
+	<p>[2] => table: 0x7fb327684e30 {</p>
+	<p>	[seconds] => "5"</p>
+	<p>	[name] => "bob"</p>
+	<p>[date] => "2/10/2016 3:04:38 AM"</p>
+	<p>	[text] => "hello"</p>
+	<p>	[score] => "1235"</p>
+	<p>}</p>
+	<p>
+	<p></p>
+	<h3><a id="dreamloATS">App transport securtiy url(s):</a></h3>
+	<p>--dreamlo.com</p>
+	<p>Set NSIncludesSubdomains = true, check out Corona's guide <a href="https://docs.coronalabs.com/guide/hardware/appleATS/index.html">here</a></p>
+	<p>You do have to donate to enable https(or ssl)</p>
+	<p></p>
+	<p><h3>build.settings</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins = {<br/>
+		["plugin.dreamlo"] =<br/>
+	  	{<br/>
+		  	publisherId="tech.scotth",<br/>
+		  	marketplaceId = "insert marketplace account ID",<br/>
+	  	},<br/>
+	},<br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://github.com/scottrules44/dreamlo-plugin-source/tree/main"></a> Plugin Source Code</a> </p>
+	<p> <a href="https://github.com/scottrules44/Dreamlo-example"> Example</a> </p>
+	<p> <a href="https://forums.coronalabs.com/topic/61595-in-app-promo-codes-with-dreamlo/"> How to add promo code with dreamlo</a> </p>
+	<p> <a href="https://store.coronalabs.com/plugin/dreamlo">Get Plugin</a> </p>
+	<p> <a href="https://forums.coronalabs.com/forum/654-corona-store-plugins/">Support</a> </p>
+</div>

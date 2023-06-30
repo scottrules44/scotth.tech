@@ -1,0 +1,87 @@
+<div id = "main">
+	<p></p>
+	<h3><a id="firebaseCrashlytics">Firebase Crashlytics Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you log crash in Firebase Crashlytics (Note that it only it real only optizied for Java(Android) and ObjC/Swift(ios) but some lua code logged)</p>
+	<p></p>
+	<p><h3>Platforms:</h3>iOS and Android</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.init(errorListener)</h4>-- setup Firebase Crashlytics</p>
+	<p>errorListener(functions)(optional) -- since this plugin handles and captures lua errors, Runtime:addEventListener("unhandledError") will not work, instead this errorListener will return event.error(string) of the lua error description when a error is captured</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.addLog(log)</h4>--add log to be sent with crash data</p>
+	<p>log(string) log data</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.setUserIdentifier(userId)</h4>--Specify a user identifier which will be visible in the Crashlytics UI.</p>
+	<p>userId(string) id of user</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.setUserName(username)</h4>--Specify a user name which will be visible with crashes.</p>
+	<p>username(string) username to specify in UI</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.setUserEmail(email)</h4>--Specify a user email which will be visible in the crashes.</p>
+	<p>email(string) email to specify in UI</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.sendCrash(error)</h4>--(you should only use to test and will only send when you relaunch) The easiest way to cause a crash</p>
+	<p>error(string) error description</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.setStringValue(key,string)</h4>--Set a string value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.</p>
+	<p>key(string) key associated with string</p>
+	<p>string(string) string to associated with crash</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.setIntValue(key,int)</h4>--Set an interger value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.</p>
+	<p>key(string) key associated with interger</p>
+	<p>int(number) interger to associated with crash</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.setBoolValue(key,boolean)</h4>--Set a boolean value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.</p>
+	<p>key(string) key associated with boolean</p>
+	<p>boolean(boolean) boolean to associated with crash</p>
+	<p></p>
+	<p><h4>firebaseCrashlytics.recordError(error, errorCode, stackTrace)</h4>--log error</p>
+	<p>error(string) error description</p>
+	<p>errorCode(number) error code</p>
+	<p>stackTrace(array, android only required) custom stack trace, include array of tables {methodName = "string", fileName = "fileName", lineNumber = number, declaringClass = "string"}</p>
+	<p></p>
+	<p><h3>Crashlytics Setup:</h3> add google-services.json and GoogleService-Info.plist from firebase console</p>
+	<p></p>
+		<img class="screenshoot" src="/pluginDocs/newFirebaseProjectSettings.png" style="width:600px;height:500;"/>
+		<img class="screenshoot" src="/pluginDocs/googleSevicesInfo.png" style="width:600px;height:500;"/>
+		<img class="screenshoot" src="/pluginDocs/googleSevicesJson.png" style="width:600px;height:500;"/>
+	<p></p>
+	<p>Add .DSYM generated when build an app iOS build in Corona Simulator to Firebase Crashlytics Console</p>
+	<p></p>
+	<a class="screenshoot" src="/pluginDocs/dsymFirebaseCrash.png" style="width:600px;height:500;">
+	<p></p>
+	<p><h3>AndroidNDK Support:</h3></p>
+	<p></p>
+	<p>The plugin automatically log java and lua error, in order to log NDK error you need to upload Android NDK Symbols</p>
+	<p>If you are using the default releases of Corona Sim you can find them <a href="https://github.com/coronalabs/corona/releases">here</a> </p>
+	<p>You must have installed <a href="https://firebase.google.com/docs/cli">Firebase CLI</a> and can upload NDK Symbols via the command "firebase crashlytics:symbols:upload --app=FIREBASE_APP_ID PATH/TO/SYMBOLS"</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	android =<br/>
+    {<br/>
+        useGoogleServicesJson = true,<br/>
+    	usesPermissions =<br/>
+    	{<br/>
+        	"android.permission.INTERNET"<br/>
+    	},<br/>
+    },<br/>
+    plugins =<br/>
+    {<br/>
+        ["plugin.firebaseCrashlytics"] =<br/>
+        {<br/>
+          publisherId="tech.scotth",<br/>
+          marketplaceId = "insert marketplace account ID"<br/>
+        }<br/>
+    },<br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?FirebaseCrashlytics_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/firebaseCrashlytics-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>

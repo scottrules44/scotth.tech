@@ -1,0 +1,45 @@
+<div id = "main">
+	<h3><a id="firebaseFunctions">Firebase Functions Plugin</a></h3>
+	<p>This Firebase Functions plugin allows you call Cloud Functions with in your app for iOS(8+) and Android(6+)</p>
+	<p></p>
+	<h3>Functions:</h3>
+	<p></p>
+	<p><h5>firebaseFunctions.init()</h3></p>
+	<p>-- initialize firebase functions</p>
+	<p></p>
+	<p><h5>firebaseFunctions.call(functionName, [data], callback)</h3></p>
+	<p>-- call function</p>
+	<p>functionName(string) name of function to call</p>
+	<p>data(table)(optional) data to send to the function</p>
+	<p>callback(function) trigger callback with event.data(table,string,number,boolean) return data from function, event.isError(boolean), and event.error(string)</p>
+	<p></p>
+	<p><a id="setup"><h3>Setup:</h3></a></h3></p>
+	<p>Make sure you download and include GoogleServices-Info.plist and put in root folder of solar2d project. Also add your google-services.json to your root folder and useGoogleServicesJson = true in build.settings.</p>
+	<p></p>
+	<img src="/pluginDocs/projectSettings.png">
+	<p></p>
+	<img src="/pluginDocs/androidJson.png">
+	<p></p>
+	<img src="/pluginDocs/iosPlist.png">
+	<p></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins= {<br/>
+		["plugin.firebaseFunctions"] =<br/>
+		{<br/>
+			  publisherId="tech.scotth",<br/>
+			  marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+   	},<br/>
+	android =<br/>
+    {<br/>
+        useGoogleServicesJson = true,<br/>
+    },<br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p> <a href="https://solar2dmarketplace.com/plugins?FirebaseFunctions_tech-scotth">Get Plugin</a> </p>
+	<p> <a href="https://github.com/scottrules44/Firebase-Function-Demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>
