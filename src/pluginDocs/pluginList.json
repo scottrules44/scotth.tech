@@ -26,6 +26,7 @@
         "plugin-gamecenter":{"category":"Gaming", "name":"Gamecenter", "legacyFormat":true},
         "plugin-dreamlo":{"category":"Gaming", "name":"Dreamlo", "legacyFormat":true},
 
+        "plugin-orientation":{"category":"Hardware", "name":"Orientation Plugin", "legacyFormat":true},
         "plugin-textToSpeech":{"category":"Hardware", "name":"Text To Speech", "legacyFormat":true},
         "plugin-scanner":{"category":"Hardware", "name":"(QR/Barcode)Scanner Plugin"},
         "plugin-controllerHaptics":{"category":"Hardware", "name":"Controller Haptics", "legacyFormat":true},
