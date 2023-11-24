@@ -114,9 +114,10 @@
 	<p>listener(function) event.isError(boolean value, true if successful and false if not) and event.error(string value, description of error, nil if isError is false). If isError is false then event.doesEmailExist (boolean is returned, true if email exists, false if email does not exists). </p>
 	<p>email(string) email to check if registered</p>
 	<p></p>
-	<p><h5>firebaseAuth.setAPNSToken(APNSToken, mode)</h5>--set the apns token</p>
-	<p>APNSToken(string) Apple push notifications </p>
-	<p>mode(string) "prod"(production), "sandbox"(sandbox), and "unknown"</p>
+	<p><h5>firebaseAuth.signInWithGameNetwork(listener, serverAuthCode)</h5>--sign in with Game Center(iOS) or GPGS(Android)</p>
+	<p>listener(function) event.isError(boolean value, true if successful and false if not) and event.error(string value, description of error, nil if isError is false)</p>
+	<p>serverAuthCode(string)(used for Android ingored on iOS/MacOS) used for Google Sign In with GSPS</p>
+	<p></p>
 	<p></p>
 	<p><a id="setup"><h3>Setup:</h3></a></h3></p>
 	<p>Make sure you download and include GoogleServices-Info.plist and put in root folder of corona project. Also add your google-services.json to your root folder and useGoogleServicesJson = true in build.settings. Please note according to firebase docs, you must have firebase cloud messaging enabled for phone login. Please follow setup on <a href="https://docs.coronalabs.com/plugin/notifications-v2/index.html">Corona FCM plugin page</a></p>
