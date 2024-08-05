@@ -10,6 +10,7 @@
         "plugin-searchAds":{"category":"Analytics/Attribution", "name":"Search Ads", "legacyFormat":true},
         "plugin-firebaseAnalytics":{"category":"Analytics/Attribution", "name":"Firebase Analytics", "legacyFormat":true},
 
+        "plugin-nativeCharts":{"category":"Business/Data", "name":"Native Charts", "legacyFormat":true},
         "plugin-firebaseFunctions":{"category":"Business/Data", "name":"Firebase Functions", "legacyFormat":true},
         "plugin-firestore":{"category":"Business/Data", "name":"Firestore", "legacyFormat":true},
         "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config", "legacyFormat":true},
