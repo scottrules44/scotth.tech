@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f69c11d.css",
-    "main.js": "/static/js/main.1f94ab27.js",
-    "static/js/496.61e6a052.chunk.js": "/static/js/496.61e6a052.chunk.js",
+    "main.css": "/static/css/main.3f94be75.css",
+    "main.js": "/static/js/main.54b009b7.js",
+    "static/js/488.9671c707.chunk.js": "/static/js/488.9671c707.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.7bf50b43019868285033.htm",
@@ -97,12 +97,12 @@
     "static/media/plugin-passkit.htm": "/static/media/plugin-passkit.4978118fe0c64e3bd7ee.htm",
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
-    "main.7f69c11d.css.map": "/static/css/main.7f69c11d.css.map",
-    "main.1f94ab27.js.map": "/static/js/main.1f94ab27.js.map",
-    "496.61e6a052.chunk.js.map": "/static/js/496.61e6a052.chunk.js.map"
+    "main.3f94be75.css.map": "/static/css/main.3f94be75.css.map",
+    "main.54b009b7.js.map": "/static/js/main.54b009b7.js.map",
+    "488.9671c707.chunk.js.map": "/static/js/488.9671c707.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f69c11d.css",
-    "static/js/main.1f94ab27.js"
+    "static/css/main.3f94be75.css",
+    "static/js/main.54b009b7.js"
   ]
 }
