@@ -1,0 +1,76 @@
+<div id = "main">
+	<h3><a id="firebaseStorage">Firebase Storage Plugin</a></h3>
+	<p>This plugin allows you store files though firebase storage for iOS(8+), MacOS(10.13+), and Android(4.0 +)</p>
+	<p></p>
+	<h3>Functions:</h3>
+	<p></p>
+	<p><h4>firebaseStorage.init(bucketUrl)</h4></p>
+	<p>-- initialize firebase storage</p>
+	<p>bucketUrl(string)(optional) bucket to use( note no bucket url with result in using deafult bucket)</p>
+	<p></p>
+	<p><h4>firebaseStorage.upload(filePath, pathInFirebase, listener)</h4></p>
+	<p>filePath(path) path to file you want to upload via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile()</a></p>
+	<p>pathInFirebase(string) where you want to put file in firebase</p>
+	<p>listener(function) returns event.isError(boolean), event.error(string), and event.downloadURL(string, returned on successful upload)</p>
+	<p></p>
+	<p><h4>firebaseStorage.getDownloadURL(pathInFirebase, listener)</h4></p>
+	<p>pathInFirebase(string) where you want to get file url in firebase</p>
+	<p>listener(function) returns event.isError(boolean), event.error(string), and event.downloadURL(string, returned if url is found)</p>
+	<p></p>
+	<p><h4>firebaseStorage.delete(pathInFirebase, listener)</h4></p>
+	<p>pathInFirebase(string) where you want to delete file in firebase</p>
+	<p>listener(function) returns event.isError(boolean) and event.error(string)</p>
+	<p></p>
+	<p><a id="download"><h3>How do I download a file:</h3></a></h3></p>
+<code><pre>
+local urlForImage = "insert url for this file here"
+network.download(  urlForImage, "GET", function(e)
+	if (e.isError == false) then
+		local displayDownload = display.newImageRect("coronaIcon.png", system.TemporaryDirectory, 50, 50 )
+		displayDownload.x, displayDownload.y =display.contentCenterX, display.contentCenterY+50
+	end
+end, "coronaIcon.png", system.TemporaryDirectory )
+</pre></code>
+	<p></p>
+	<p><a id="setup"><h3>Setup:</h3></a></h3></p>
+	<p>Please go to your firebase console. Go to Storage>Rules and copy paste the rules in below(this is for testing).
+<code><pre>
+rules_version = '2';<br/>
+service firebase.storage {<br/>
+	match /b/{bucket}/o {<br/>
+		match /{allPaths=**} {<br/>
+			allow read, write: if true;<br/>
+		}<br/>
+	}<br/>
+}<br/>
+</pre></code>
+	<p>Make sure you download and include GoogleServices-Info.plist and put in root folder of corona project. Also add your google-services.json to your root folder and useGoogleServicesJson = true in build.settings.</p>
+	<p></p>
+	<img src="/pluginDocs/projectSettings.png">
+	<p></p>
+	<img src="/pluginDocs/androidJson.png">
+	<p></p>
+	<img src="/pluginDocs/iosPlist.png">
+	<p></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins =<br/>
+	{<br/>
+		["plugin.firebaseStorage"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	},<br/>
+	android =<br/>
+	{<br/>
+		useGoogleServicesJson = true,<br/>
+	},<br/>
+}</pre></code>	
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p></p>
+	<p><a href="https://solar2dmarketplace.com/plugins?FirebaseStorage_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/firebaseStorage-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>
