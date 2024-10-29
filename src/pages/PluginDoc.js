@@ -48,7 +48,7 @@ function PluginDoc() {
                 <h5 ref={pageSubtitle}></h5>
 
                 {pageContent != "" && pluginInfo.legacyFormat ? <div className="legacyFormat" dangerouslySetInnerHTML={{ __html: pageContent }}></div>: undefined}
-                {pageContent != "" && !pluginInfo.legacyFormat ? <ReactMarkdown children={pageContent} />: undefined}
+                {pageContent != "" && !pluginInfo.legacyFormat ? <ReactMarkdown allowElement={() => true} children={pageContent} />: undefined}
             </div>
             <Footer/>
         </>

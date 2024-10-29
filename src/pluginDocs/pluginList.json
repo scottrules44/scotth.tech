@@ -5,7 +5,7 @@
         "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay", "legacyFormat":true},
         "plugin-storeView":{"category":"Ads/Monetization", "name":"Store View", "legacyFormat":true},
 
-        "plugin-firebaseCrashlytics":{"category":"Analytics/Attribution", "name":"Firebase Crashlytics", "legacyFormat":true},
+        "plugin-firebaseCrashlytics":{"category":"Analytics/Attribution", "name":"Firebase Crashlytics"},
         "plugin-appmetrica":{"category":"Analytics/Attribution", "name":"Appmetrica", "legacyFormat":true},
         "plugin-searchAds":{"category":"Analytics/Attribution", "name":"Search Ads", "legacyFormat":true},
         "plugin-firebaseAnalytics":{"category":"Analytics/Attribution", "name":"Firebase Analytics", "legacyFormat":true},
@@ -13,7 +13,7 @@
         "plugin-nativeCharts":{"category":"Business/Data", "name":"Native Charts", "legacyFormat":true},
         "plugin-firebaseFunctions":{"category":"Business/Data", "name":"Firebase Functions", "legacyFormat":true},
         "plugin-firestore":{"category":"Business/Data", "name":"Firestore", "legacyFormat":true},
-        "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config", "legacyFormat":true},
+        "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config"},
         "plugin-firebaseStorage":{"category":"Business/Data", "name":"Firebase Storage", "legacyFormat":true},
         "plugin-firebaseDatabase":{"category":"Business/Data", "name":"Firebase Database", "legacyFormat":true},
         "plugin-externalStorage":{"category":"Business/Data", "name":"External Storage", "legacyFormat":true},
@@ -57,7 +57,7 @@
 
         "plugin-appleSignIn":{"category":"Security", "name":"Apple Sign In", "legacyFormat":true},
         "plugin-fingerprintManager":{"category":"Security", "name":"Fingerprint Manager", "legacyFormat":true},
-        "plugin-firebaseAuth":{"category":"Security", "name":"Firebase Auth", "legacyFormat":true},
+        "plugin-firebaseAuth":{"category":"Security", "name":"Firebase Auth"},
         "plugin-touchId":{"category":"Security", "name":"Face ID/Touch Id", "legacyFormat":true},
         "plugin-onePassword":{"category":"Security", "name":"One Password", "legacyFormat":true},
 
