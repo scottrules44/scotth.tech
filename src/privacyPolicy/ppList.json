@@ -5,6 +5,7 @@
       {"name":"runRoly", "legacy":true},
       {"name":"rolyArmadillo", "legacy":true},
       {"name":"tableTrivia", "legacy":true},
-      {"name":"cloudPaste"}
+      {"name":"cloudPaste"},
+      {"name":"sportsScoreKeeper"}
     ]
 }
