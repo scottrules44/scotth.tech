@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.3f94be75.css",
-    "main.js": "/static/js/main.b6e31c6d.js",
-    "static/js/488.9671c707.chunk.js": "/static/js/488.9671c707.chunk.js",
+    "main.js": "/static/js/main.7deccf74.js",
+    "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.7bf50b43019868285033.htm",
@@ -23,6 +23,7 @@
     "static/media/plugin-storeKit.htm": "/static/media/plugin-storeKit.da49aec0aa375c14820b.htm",
     "static/media/tableTrivia.htm": "/static/media/tableTrivia.2816f1f8d99967299c19.htm",
     "static/media/plugin-mapbox.htm": "/static/media/plugin-mapbox.8db2d77884c13f45f0a2.htm",
+    "static/media/sportsScoreKeeper.md": "/static/media/sportsScoreKeeper.bf1be6351c5897705064.md",
     "static/media/plugin-applePay.htm": "/static/media/plugin-applePay.55a9bed7b73909fa8ed8.htm",
     "static/media/plugin-replayKit.htm": "/static/media/plugin-replayKit.182e7724a2d69ba54c2e.htm",
     "static/media/plugin-screenRecorder.htm": "/static/media/plugin-screenRecorder.d4a975a7de65c666b215.htm",
@@ -99,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.3f94be75.css.map": "/static/css/main.3f94be75.css.map",
-    "main.b6e31c6d.js.map": "/static/js/main.b6e31c6d.js.map",
-    "488.9671c707.chunk.js.map": "/static/js/488.9671c707.chunk.js.map"
+    "main.7deccf74.js.map": "/static/js/main.7deccf74.js.map",
+    "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f94be75.css",
-    "static/js/main.b6e31c6d.js"
+    "static/js/main.7deccf74.js"
   ]
 }
