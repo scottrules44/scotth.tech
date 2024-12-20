@@ -8,6 +8,7 @@ import PluginDoc from "./pages/PluginDoc";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ErrorHandlePage from "./pages/ErrorHandlePage";
+import AppleSignInRedirect from './pages/AppleSignInRedirect';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact/>,
+  },
+  {
+    path: "/appleSignInApi",
+    element: <Contact/>,
+  },
+  {
+    path: "/appleSignInRedirect",
+    element: <AppleSignInRedirect/>,
   },
   {
     path:"*",
