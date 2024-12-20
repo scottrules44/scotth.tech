@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Sign In</title>
+</head>
+<body>
+    <h1>Welcome! Please Sign In with Apple</h1>
+
+    <script>
+        // Dynamically create the redirect URL with parameters
+        const clientId = new URLSearchParams(window.location.search).get("client_id") || "default-client-id";
+        const scopes = new URLSearchParams(window.location.search).get("scopes") || "email name";
+        const redirectUri = encodeURIComponent("https://scotth.tech.com/appleSignInCallback");
+
+        // Build Apple Sign-In URL
+        const appleAuthUrl = `https://appleid.apple.com/auth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code%20id_token&scope=${encodeURIComponent(scopes)}`;
+
+        // Redirect to Apple Sign-In
+        window.location.href = appleAuthUrl;
+    </script>
+</body>
+</html>
