@@ -32,7 +32,7 @@
         const redirectUri = encodeURIComponent(`${window.location.origin}/apple_process_sign_in_solar2d`);
     
         // Build Apple Sign-In URL with the nonce included
-        const appleAuthUrl = `https://appleid.apple.com/auth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code%20id_token&scope=${encodeURIComponent(scopes)}&nonce=${nonce}&response_mode=form_post`;
+        const appleAuthUrl = `https://appleid.apple.com/auth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=code%20id_token&scope=${encodeURIComponent(scopes)}&nonce=${nonce}&response_mode=fragment`;
     
         // Redirect to Apple Sign-In
         window.location.href = appleAuthUrl;
