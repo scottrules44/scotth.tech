@@ -221,7 +221,18 @@ settings =
     {
         plist =
         {
-            SKAdNetworkItems = {{SKAdNetworkIdentifier = "SU67R6K2V3.skadnetwork"}, {SKAdNetworkIdentifier = "4PFYVQ9L8R.skadnetwork"}, {SKAdNetworkIdentifier = "cstr6suwn9.skadnetwork"}, {SKAdNetworkIdentifier = "ludvb6z3bs.skadnetwork"}, {SKAdNetworkIdentifier = "F38H382JLK.skadnetwork"}, {SKAdNetworkIdentifier = "V4NXQHLYQP.skadnetwork"}, {SKAdNetworkIdentifier = "22mmun2rn5.skadnetwork"}, {SKAdNetworkIdentifier = "238da6jt44.skadnetwork"}, {SKAdNetworkIdentifier = "4DZT52R2T5.skadnetwork"}, {SKAdNetworkIdentifier = "GTA9LK7P23.skadnetwork"}}, -- iOS 14 ready, supports all adapters https://developers.ironsrc.com/ironsource-mobile/ios/ios-14-network-support/
+            SKAdNetworkItems = {
+                { SKAdNetworkIdentifier = "SU67R6K2V3.skadnetwork" },
+                { SKAdNetworkIdentifier = "4PFYVQ9L8R.skadnetwork" },
+                { SKAdNetworkIdentifier = "cstr6suwn9.skadnetwork" },
+                { SKAdNetworkIdentifier = "ludvb6z3bs.skadnetwork" },
+                { SKAdNetworkIdentifier = "F38H382JLK.skadnetwork" },
+                { SKAdNetworkIdentifier = "V4NXQHLYQP.skadnetwork" },
+                { SKAdNetworkIdentifier = "22mmun2rn5.skadnetwork" },
+                { SKAdNetworkIdentifier = "238da6jt44.skadnetwork" },
+                { SKAdNetworkIdentifier = "4DZT52R2T5.skadnetwork" },
+                { SKAdNetworkIdentifier = "GTA9LK7P23.skadnetwork" },
+            },
             NSAppTransportSecurity =
                 {
                     NSAllowsArbitraryLoads = true,
