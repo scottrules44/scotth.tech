@@ -202,7 +202,7 @@ ironSource.init(listener, params)
 ```
 
 ## Build.settings
-```
+```lua
 settings =
 {
     android =
