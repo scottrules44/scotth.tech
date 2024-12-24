@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.3f94be75.css",
-    "main.js": "/static/js/main.b16d20a8.js",
+    "main.js": "/static/js/main.2edea4c1.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
     "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.7bf50b43019868285033.htm",
     "static/media/mylogo.png": "/static/media/mylogo.4c4d9173aa3153cfc0b6.png",
     "static/media/googlePlay.png": "/static/media/googlePlay.fb8308a84de42fb9d9ca.png",
-    "static/media/plugin-ironSource.htm": "/static/media/plugin-ironSource.27d29dc4f1b1e829bb87.htm",
+    "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.5e6ddebc1a2d8d4761fe.md",
     "static/media/plugin-firebaseLegacy.htm": "/static/media/plugin-firebaseLegacy.5eb14dc7bbf61f3df1fb.htm",
-    "static/media/plugin-firebaseAuth.htm": "/static/media/plugin-firebaseAuth.6e83cc51a68939c1f4fc.htm",
     "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.9f911744da603e8c3ee7.md",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
     "static/media/listbud.htm": "/static/media/listbud.40ba414521fa13126827.htm",
@@ -42,6 +41,7 @@
     "static/media/plugin-appmetrica.htm": "/static/media/plugin-appmetrica.a9a1c87fbaf2a416de71.htm",
     "static/media/plugin-facebookSharing.htm": "/static/media/plugin-facebookSharing.628023176ed034b4a6cb.htm",
     "static/media/plugin-contacts.htm": "/static/media/plugin-contacts.22b841651c84a6239ec5.htm",
+    "static/media/plugin-appleSignIn.md": "/static/media/plugin-appleSignIn.2dd3d4a50237aeaef71a.md",
     "static/media/plugin-helpshift.htm": "/static/media/plugin-helpshift.ec82055f8d8a82105e2d.htm",
     "static/media/plugin-firestore.htm": "/static/media/plugin-firestore.2dd1babef00278257658.htm",
     "static/media/plugin-quickAction.htm": "/static/media/plugin-quickAction.523dc2005ceda3d0babf.htm",
@@ -61,7 +61,6 @@
     "static/media/plugin-deploy.htm": "/static/media/plugin-deploy.2903fbe82b59268f5942.htm",
     "static/media/plugin-textToSpeech.htm": "/static/media/plugin-textToSpeech.92cb046e5930028da9a0.htm",
     "static/media/plugin-textbelt.htm": "/static/media/plugin-textbelt.46fa995ef668efdcdbea.htm",
-    "static/media/plugin-appleSignIn.htm": "/static/media/plugin-appleSignIn.9732fad8e52ed1529046.htm",
     "static/media/plugin-cardIO.htm": "/static/media/plugin-cardIO.e6cb782527eb9fb88d09.htm",
     "static/media/plugin-fingerprintManager.htm": "/static/media/plugin-fingerprintManager.ea6ec03b34a850c2d42b.htm",
     "static/media/plugin-airprint.htm": "/static/media/plugin-airprint.27e6fd507b089fef1eeb.htm",
@@ -100,11 +99,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.3f94be75.css.map": "/static/css/main.3f94be75.css.map",
-    "main.b16d20a8.js.map": "/static/js/main.b16d20a8.js.map",
+    "main.2edea4c1.js.map": "/static/js/main.2edea4c1.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3f94be75.css",
-    "static/js/main.b16d20a8.js"
+    "static/js/main.2edea4c1.js"
   ]
 }
