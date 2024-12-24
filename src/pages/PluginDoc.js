@@ -43,7 +43,7 @@ function PluginDoc() {
     return (
         <>
             <NavBar/>
-            <div className="Page">
+            <div className="Page" style={ {paddingLeft: 6}} >
                 <h1 ref={pageTitle}>Loading...</h1>
                 <h5 ref={pageSubtitle}></h5>
 
