@@ -1,6 +1,6 @@
 {
     "plugins":{
-        "plugin-ironSource":{"category":"Ads/Monetization", "name":"Iron Source", "legacyFormat":true},
+        "plugin-ironSource":{"category":"Ads/Monetization", "name":"Iron Source"},
         "plugin-isAdQuality":{"category":"Ads/Monetization", "name":"Ad Quality (Iron Source)", "legacyFormat":true},
         "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay", "legacyFormat":true},
         "plugin-storeView":{"category":"Ads/Monetization", "name":"Store View", "legacyFormat":true},
