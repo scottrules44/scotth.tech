@@ -11,7 +11,10 @@ iOS and Android
 Go to [Iron Source website](https://www.ironsrc.com) and create account. Then go to apps and create an app for android and/or iOS
 
 If you want to setup mediation go here and setup each network
-	[https://platform.ironsrc.com/partners/monetize/mediation/setup](https://platform.ironsrc.com/partners/monetize/mediation/setup)
+	[https://platform.ironsrc.com/partners/monetize/mediation/setup](https://platform.ironsrc.com/partners/monetize/mediation/setup)\
+\
+Note if using V2 you need to include adUnits with your project and double check the event lists
+
 ## Functions
 
 
