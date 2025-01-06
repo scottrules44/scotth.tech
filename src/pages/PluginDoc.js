@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import data from "../pluginDocs/pluginList.json";
 import ReactMarkdown from 'react-markdown';
 import "../pages/PluginDoc.css"
+import style from './markdown-styles.module.css';
 import Footer from "../components/Footer";
 function PluginDoc() {
     document.title = "Loading...";
@@ -48,7 +49,7 @@ function PluginDoc() {
                 <h5 ref={pageSubtitle}></h5>
 
                 {pageContent != "" && pluginInfo.legacyFormat ? <div className="legacyFormat" dangerouslySetInnerHTML={{ __html: pageContent }}></div>: undefined}
-                {pageContent != "" && !pluginInfo.legacyFormat ? <ReactMarkdown allowElement={() => true} children={pageContent} />: undefined}
+                {pageContent != "" && !pluginInfo.legacyFormat ? <ReactMarkdown className={style.reactMarkDown} allowElement={() => true} children={pageContent} />: undefined}
             </div>
             <Footer/>
         </>

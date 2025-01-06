@@ -17,7 +17,7 @@
         "plugin-firebaseStorage":{"category":"Business/Data", "name":"Firebase Storage", "legacyFormat":true},
         "plugin-firebaseDatabase":{"category":"Business/Data", "name":"Firebase Database", "legacyFormat":true},
         "plugin-externalStorage":{"category":"Business/Data", "name":"External Storage", "legacyFormat":true},
-        "plugin-airprint":{"category":"Business/Data", "name":"Airprint", "legacyFormat":true},
+        "plugin-airprint":{"category":"Business/Data", "name":"Airprint"},
         "plugin-mapbox":{"category":"Business/Data", "name":"Mapbox", "legacyFormat":true},
         "plugin-cardIO":{"category":"Business/Data", "name":"Card IO", "legacyFormat":true},
         "plugin-classKit":{"category":"Business/Data", "name":"Class Kit", "legacyFormat":true},
