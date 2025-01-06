@@ -13,7 +13,9 @@ Go to [Iron Source website](https://www.ironsrc.com) and create account. Then go
 If you want to setup mediation go here and setup each network
 	[https://platform.ironsrc.com/partners/monetize/mediation/setup](https://platform.ironsrc.com/partners/monetize/mediation/setup)\
 \
-Note if using V2 you need to include adUnits with your project and double check the event lists
+Note if using V2 you need to include adUnits with your project and double check the event lists \
+\
+(Banner and rewardedVideo ad load events have changed since V1)
 
 ## Functions
 
@@ -116,7 +118,7 @@ Returned in listener function on `.init()`.
 
 #### Banner:
 
-- `phase == "adLoaded"`, `isError == false`, `type == "banner"`
+- `phase == "adReady"`, `isError == false`, `type == "banner"`
 - `phase == "adLoadedFailed"`, `isError == true`, `error == error message (string)`, `type == "banner"`
 - `phase == "adClicked"`, `isError == false`, `type == "banner"`
 - `phase == "adScreenPresented"`, `isError == false`, `type == "banner"`
@@ -136,7 +138,7 @@ Returned in listener function on `.init()`.
 
 #### Reward Video:
 
-- `phase == "availabilityChanged"`, `isError == false`, `type == "rewardedVideo"`, `available == boolean (could be false or true)`
+- `phase == "adReady"`, `isError == false`, `type == "rewardedVideo"`
 - `phase == "adClosed"`, `isError == false`, `type == "rewardedVideo"`
 - `phase == "adOpened"`, `isError == false`, `type == "rewardedVideo"`
 - `phase == "adStarted"`, `isError == false`, `type == "rewardedVideo"`
