@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.12cd75e0.js",
+    "main.js": "/static/js/main.3a6332c1.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -13,12 +13,12 @@
     "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.9f911744da603e8c3ee7.md",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
     "static/media/listbud.htm": "/static/media/listbud.40ba414521fa13126827.htm",
-    "static/media/plugin-googleSignIn.htm": "/static/media/plugin-googleSignIn.d21aa7dcaee3de85e2e1.htm",
     "static/media/runRoly.htm": "/static/media/runRoly.81f8dc07e793e067a6b3.htm",
     "static/media/notesOnWatch.htm": "/static/media/notesOnWatch.0b61c6a1312434bd40d6.htm",
     "static/media/plugin-firebaseDynamicLinks.htm": "/static/media/plugin-firebaseDynamicLinks.9a76279e262fc448867f.htm",
     "static/media/plugin-storeView.htm": "/static/media/plugin-storeView.b9197e41f631144f0c09.htm",
     "static/media/plugin-externalStorage.htm": "/static/media/plugin-externalStorage.7fd0a108639c909629ef.htm",
+    "static/media/plugin-googleSignIn.md": "/static/media/plugin-googleSignIn.9e82cbd4941c9894b60a.md",
     "static/media/plugin-storeKit.htm": "/static/media/plugin-storeKit.da49aec0aa375c14820b.htm",
     "static/media/tableTrivia.htm": "/static/media/tableTrivia.2816f1f8d99967299c19.htm",
     "static/media/plugin-mapbox.htm": "/static/media/plugin-mapbox.8db2d77884c13f45f0a2.htm",
@@ -41,7 +41,7 @@
     "static/media/plugin-appmetrica.htm": "/static/media/plugin-appmetrica.a9a1c87fbaf2a416de71.htm",
     "static/media/plugin-facebookSharing.htm": "/static/media/plugin-facebookSharing.628023176ed034b4a6cb.htm",
     "static/media/plugin-contacts.htm": "/static/media/plugin-contacts.22b841651c84a6239ec5.htm",
-    "static/media/plugin-appleSignIn.md": "/static/media/plugin-appleSignIn.2dd3d4a50237aeaef71a.md",
+    "static/media/plugin-appleSignIn.md": "/static/media/plugin-appleSignIn.9dc855a2169463191a21.md",
     "static/media/plugin-helpshift.htm": "/static/media/plugin-helpshift.ec82055f8d8a82105e2d.htm",
     "static/media/plugin-firestore.htm": "/static/media/plugin-firestore.2dd1babef00278257658.htm",
     "static/media/plugin-quickAction.htm": "/static/media/plugin-quickAction.523dc2005ceda3d0babf.htm",
@@ -55,7 +55,6 @@
     "static/media/plugin-wifiManager.htm": "/static/media/plugin-wifiManager.429566af16b049411c60.htm",
     "static/media/plugin-physicBody.htm": "/static/media/plugin-physicBody.eb3fa0c58d7e62e8a8a0.htm",
     "static/media/plugin-docPicker.htm": "/static/media/plugin-docPicker.3ad3ff7d0a1c712b92ff.htm",
-    "static/media/plugin-yelp.htm": "/static/media/plugin-yelp.dcf19e706d0ba63422f7.htm",
     "static/media/plugin-pdfImageConverter.htm": "/static/media/plugin-pdfImageConverter.72e66d3b3131683c7c27.htm",
     "static/media/plugin-imageCrop.htm": "/static/media/plugin-imageCrop.9c5871d3877672172e5f.htm",
     "static/media/plugin-deploy.htm": "/static/media/plugin-deploy.2903fbe82b59268f5942.htm",
@@ -99,11 +98,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.12cd75e0.js.map": "/static/js/main.12cd75e0.js.map",
+    "main.3a6332c1.js.map": "/static/js/main.3a6332c1.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.12cd75e0.js"
+    "static/js/main.3a6332c1.js"
   ]
 }
