@@ -48,11 +48,11 @@ This plugin only works with:
 
 ## Setup for Other Devices
 
-In order to support the webview, please follow Apple Guide [here](https://developer.apple.com/help/account/configure-app-capabilities/configure-sign-in-with-apple-for-the-web)
+In order to support webviews, please follow Apple Guide [here](https://developer.apple.com/help/account/configure-app-capabilities/configure-sign-in-with-apple-for-the-web)
 
 - Note for Step 7, you will need to setup a web server that can handle post request (i.e not Github Pages or other static host), check out the [example server posted](https://github.com/scottrules44/AppleSignIn_Web_Solar2D/tree/main/Express%20Server%20Example), all redirects will come as post requests to path "/apple_process_sign_in_solar2d" on your domain
 
-- If you need to customize the domain path or UI, source code can be [here](https://github.com/scottrules44/AppleSignIn_Web_Solar2D/blob/main/plugin_appleSignIn.lua)
+- If you need to customize the domain path or UI, source code can be found [here](https://github.com/scottrules44/AppleSignIn_Web_Solar2D/blob/main/plugin_appleSignIn.lua)
 
 
 - You will then need to add credentials to the .show function

@@ -55,13 +55,13 @@
         "plugin-musicStreaming":{"category":"Media", "name":"Music Streaming", "legacyFormat":true},
         "plugin-replayKit":{"category":"Media", "name":"Replay Kit", "legacyFormat":true},
 
-        "plugin-appleSignIn":{"category":"Security", "name":"Apple Sign In", "legacyFormat":true},
+        "plugin-appleSignIn":{"category":"Security", "name":"Apple Sign In"},
         "plugin-fingerprintManager":{"category":"Security", "name":"Fingerprint Manager", "legacyFormat":true},
         "plugin-firebaseAuth":{"category":"Security", "name":"Firebase Auth"},
         "plugin-touchId":{"category":"Security", "name":"Face ID/Touch Id", "legacyFormat":true},
         "plugin-onePassword":{"category":"Security", "name":"One Password", "legacyFormat":true},
 
-        "plugin-firebaseDynamicLinks":{"category":"Social", "name":"Firebase Dynamic Links", "legacyFormat":true},
+        
 
         "plugin-appIcon":{"category":"Utilities", "name":"App Icon"},
         "plugin-universalLinks":{"category":"Utilities", "name":"Universal Links", "legacyFormat":true},
@@ -69,7 +69,7 @@
         "plugin-androidFilePicker":{"category":"Utilities", "name":"Android File Picker", "legacyFormat":true},
         "plugin-androidPreview":{"category":"Utilities", "name":"Android Preview", "legacyFormat":true},
         "plugin-androidShare":{"category":"Utilities", "name":"Android Share", "legacyFormat":true},
-        "plugin-googleSignIn":{"category":"Utilities", "name":"Google Sign In", "legacyFormat":true},
+        "plugin-googleSignIn":{"category":"Utilities", "name":"Google Sign In"},
         "plugin-docPicker":{"category":"Utilities", "name":"Doc Picker", "legacyFormat":true},
         "plugin-equalizer":{"category":"Utilities", "name":"Equalizer", "legacyFormat":true},
         "plugin-wallpaper":{"category":"Utilities", "name":"Wallpaper", "legacyFormat":true},
@@ -79,5 +79,5 @@
         "plugin-quickAction":{"category":"Utilities", "name":"Quick Action", "legacyFormat":true},
         "plugin-moreInfo":{"category":"Utilities", "name":"More Info", "legacyFormat":true}
     },
-    "categories":["Ads/Monetization", "Analytics/Attribution", "Business/Data", "Gaming", "Hardware", "Marketing", "Media", "Security", "Social", "Utilities"]
+    "categories":["Ads/Monetization", "Analytics/Attribution", "Business/Data", "Gaming", "Hardware", "Marketing", "Media", "Security", "Utilities"]
 }

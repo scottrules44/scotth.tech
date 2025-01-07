@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import emailjs from '@emailjs/browser';
-
+import "../pages/PluginDoc.css"
 function Contact() {
     document.title = 'Contact';
 
@@ -23,97 +23,115 @@ function Contact() {
     };
 
     return (
-        <>
+        <div className='tailwind-layout'>
             <NavBar />
-            <div className="flex flex-col items-center px-4 py-8 max-w-4xl mx-auto">
+            <div className="flex flex-col items-center px-4 py-12 max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold mb-6">About</h1>
-                <p className="text-lg text-gray-700 mb-8">
-                    My name is Scott Harrison. I am a freelance developer who works on all kinds of
-                    projects.
+                <p className="text-lg text-gray-700 mb-8 text-center">
+                    Hi! I’m Scott Harrison, a freelance developer passionate about crafting effective solutions for all kinds of projects. Let's work together!
                 </p>
 
                 <h1 className="text-4xl font-bold mb-6">Contact</h1>
+                <p className="text-lg text-gray-600 mb-8 text-center">
+                    Have a question or want to collaborate? Fill out the form below, and I'll get back to you as soon as possible.
+                </p>
+
                 <form
                     ref={formRef}
                     onSubmit={sendEmail}
-                    className="w-full max-w-lg bg-white shadow-md rounded-lg p-6"
+                    className="w-full max-w-lg bg-white shadow-lg rounded-lg p-8"
                 >
-                    <div className="mb-4">
-                        <label
+                    <div className="mb-6 flex flex-col">
+                        <div><label
                             htmlFor="name"
                             className="block text-sm font-medium text-gray-700 mb-2"
                         >
-                            Name
+                            Name:
                         </label>
+                        </div>
                         <input
                             type="text"
                             id="name"
                             name="user_name"
+                            aria-label="Your name"
+                            placeholder="Enter your name"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label
+
+                    <div className="mb-6 flex flex-col">
+                        <div
                             htmlFor="reason"
                             className="block text-sm font-medium text-gray-700 mb-2"
                         >
-                            Reason For Contact
-                        </label>
+                            Reason for Contact
+                        </div>
                         <select
                             name="reason_for_contact"
                             id="reason"
+                            aria-label="Reason for contacting"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         >
-                            <option value="">-- Choose a reason --</option>
+                            <option value="" disabled selected>
+                            -- Select a reason --
+                            </option>
                             <option value="App/Project Bug">App/Project Bug</option>
-                            <option value="Business_Related_Reasons">Business Related Reasons</option>
+                            <option value="Business_Related_Reasons">Business Inquiry</option>
                             <option value="Plugin Support">Plugin Support</option>
                             <option value="Suggestion">Suggestion</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <div className="mb-4">
-                        <label
+
+                    <div className="mb-6">
+                        <div
                             htmlFor="email"
                             className="block text-sm font-medium text-gray-700 mb-2"
                         >
                             Email
-                        </label>
+                        </div>
                         <input
                             type="email"
                             id="email"
                             name="user_email"
+                            aria-label="Your email"
+                            placeholder="Enter your email"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
+
                     <div className="mb-6">
-                        <label
+                        <div
                             htmlFor="message"
                             className="block text-sm font-medium text-gray-700 mb-2"
                         >
                             Message
-                        </label>
+                        </div>
                         <textarea
                             id="message"
                             name="message"
+                            aria-label="Your message"
                             rows="5"
+                            placeholder="Write your message here"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         ></textarea>
                     </div>
+
                     <button
-                        type="submit"
-                        className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    type="submit"
+                    className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition"
                     >
-                        Send
+                    Send Message
                     </button>
                 </form>
-            </div>
+                </div>
+
             <Footer />
-        </>
+        </div>
     );
 }
 

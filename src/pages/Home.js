@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import "../pages/GlobalPageStyles.css";
@@ -8,6 +8,18 @@ import 'react-github-cards/dist/default.css';
 import AppViewer from "../components/AppViewer";
 function Home() {
     document.title = "Home";
+    useEffect(() => {
+      // Create a script element to load the GitHub Cards widget
+      const script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/github-cards/latest/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+  
+      // Clean up the script when the component unmounts
+      return () => {
+        document.body.removeChild(script);
+      };
+    }, []);
     return (
           <>
             <NavBar/>
@@ -30,7 +42,13 @@ function Home() {
                 <a href="/plugin/ironSource"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded my-3">Check out this plugin</button></a>
 
                 <h2>More on Github:</h2>
-                <UserCard username="scottrules44" />
+                <div
+                  className="github-card"
+                  data-github="scottrules44"
+                  data-width="400"
+                  data-height=""
+                  data-theme="default"
+                ></div>
             </div>
             <Footer/>
           </>
