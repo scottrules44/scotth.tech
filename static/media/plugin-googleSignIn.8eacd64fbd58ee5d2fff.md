@@ -35,7 +35,7 @@ Sign in to Google.
 - **listener (function)**: 
 	- `event.status` can be "signed in", "cancelled", "error".
 	- If `event.isError` is true, then `event.error` will be returned.
-	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode`, `event.scopes` will be returned.
+	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode` will be returned.
 
 **`googleSignIn.silentSignIn(listener)`**  
 Sign in to Google without popup.
@@ -43,7 +43,7 @@ Sign in to Google without popup.
 - **listener (function)**: 
 	- `event.status` can be "signed in", "cancelled", "error".
 	- If `event.isError` is true, then `event.error` will be returned.
-	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode`, `event.scopes` will be returned.
+	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode`, will be returned.
 
 **`googleSignIn.signOut(listener)`**  
 Sign out of Google.
@@ -65,7 +65,7 @@ Returns the current user information if signed in.
 - **listener (function)**: 
 	- `event.status` can be "account data found", "not signed in".
 	- If `event.isError` is true, then `event.error` will be returned.
-	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode`, `event.scopes` will be returned.
+	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode` will be returned.
 
 **`googleSignIn.requestScope(scope, listener)`**  
 Requests scopes for a signed-in user. -- Note this is being phased out
