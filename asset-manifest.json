@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.3a6332c1.js",
+    "main.js": "/static/js/main.6eedcf8c.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -18,8 +18,8 @@
     "static/media/plugin-firebaseDynamicLinks.htm": "/static/media/plugin-firebaseDynamicLinks.9a76279e262fc448867f.htm",
     "static/media/plugin-storeView.htm": "/static/media/plugin-storeView.b9197e41f631144f0c09.htm",
     "static/media/plugin-externalStorage.htm": "/static/media/plugin-externalStorage.7fd0a108639c909629ef.htm",
-    "static/media/plugin-googleSignIn.md": "/static/media/plugin-googleSignIn.9e82cbd4941c9894b60a.md",
     "static/media/plugin-storeKit.htm": "/static/media/plugin-storeKit.da49aec0aa375c14820b.htm",
+    "static/media/plugin-googleSignIn.md": "/static/media/plugin-googleSignIn.8728764984c4363d3776.md",
     "static/media/tableTrivia.htm": "/static/media/tableTrivia.2816f1f8d99967299c19.htm",
     "static/media/plugin-mapbox.htm": "/static/media/plugin-mapbox.8db2d77884c13f45f0a2.htm",
     "static/media/sportsScoreKeeper.md": "/static/media/sportsScoreKeeper.bf1be6351c5897705064.md",
@@ -98,11 +98,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.3a6332c1.js.map": "/static/js/main.3a6332c1.js.map",
+    "main.6eedcf8c.js.map": "/static/js/main.6eedcf8c.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.3a6332c1.js"
+    "static/js/main.6eedcf8c.js"
   ]
 }

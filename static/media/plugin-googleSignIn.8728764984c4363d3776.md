@@ -17,9 +17,6 @@ Initialize Google Sign In.
 		- `serverClientID (string, optional)`: Web client (Auto-created for Google Sign-In).
 	- **android**:
 		- `clientId (string)`: Client ID for Google Sign-In (found in Google Console, see setup).
-		- `scopes (array of strings, optional)`: The API scopes requested by the app. Example: `{"https://www.googleapis.com/auth/drive.appdata"}` (see [docs](https://developers.google.com/identity/protocols/googlescopes)).
-		- `hostedDomain (string, optional)`: The Google Apps domain to which users must belong to sign in.
-		- `serverClientID (string, optional)`: Web client (Auto-created for Google Sign-In).
 
 ```lua
 googleSignIn.init({
@@ -28,7 +25,6 @@ googleSignIn.init({
 	},
 	android = {
 		clientId = "652763858765-hq7huph5a5to4m39gqsoo7cn0ih3bd3d.apps.googleusercontent.com",
-		scopes = {"https://www.googleapis.com/auth/drive.appdata"}
 	}
 })
 ```
@@ -72,7 +68,7 @@ Returns the current user information if signed in.
 	- If `event.isError` is false, then `event.email`, `event.userId`, `event.idToken`, `event.photoUrl`, `event.displayName`, `event.givenName`, `event.familyName`, `event.accessToken`, `event.serverAuthCode`, `event.scopes` will be returned.
 
 **`googleSignIn.requestScope(scope, listener)`**  
-Requests scopes for a signed-in user.
+Requests scopes for a signed-in user. -- Note this is being phased out
 
 - **scope (array of strings)**: The API scopes requested by the app. Example: `{"https://www.googleapis.com/auth/drive.appdata"}` (see [docs](https://developers.google.com/identity/protocols/googlescopes)).
 - **listener (function)**: 
@@ -102,7 +98,6 @@ googleSignIn.init({
 	},
 	android = {
 		clientId = "652763858765-hq7huph5a5to4m39gqsoo7cn0ih3bd3d.apps.googleusercontent.com",
-		scopes = {"https://www.googleapis.com/auth/drive.appdata"}
 	}
 })
 googleSignIn.signIn(function (ev) end)
