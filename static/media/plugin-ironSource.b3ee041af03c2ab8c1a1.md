@@ -116,6 +116,11 @@ Returned in listener function on `.init()`.
 - `phase == "att event"`, `status == "denied"`
 - `phase == "att event"`, `status == "restricted"`
 
+#### Init:
+
+- `phase == "initLevelPlay"`, `status == "error"`, `isError == true`, `error == error message (string)`
+- `phase == "initLevelPlay"`, `status == "success"`, `isError == false`
+
 #### Banner:
 
 - `phase == "adReady"`, `isError == false`, `type == "banner"`
