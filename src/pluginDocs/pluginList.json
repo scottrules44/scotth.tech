@@ -24,7 +24,7 @@
         "plugin-contacts":{"category":"Business/Data", "name":"Contacts", "legacyFormat":true},
         "plugin-textbelt":{"category":"Business/Data", "name":"Textbelt", "legacyFormat":true},
 
-        "plugin-gamecenter":{"category":"Gaming", "name":"Gamecenter", "legacyFormat":true},
+        "plugin-gamecenter":{"category":"Gaming", "name":"Gamecenter"},
         "plugin-dreamlo":{"category":"Gaming", "name":"Dreamlo", "legacyFormat":true},
 
         "plugin-orientation":{"category":"Hardware", "name":"Orientation Plugin", "legacyFormat":true},

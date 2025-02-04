@@ -655,6 +655,22 @@ gc.accessPoint.triggerAccessPointWithType("achievements")
 	<p><h3>Build Settings:</h3></p>
 <code><pre>settings =<br/>
 {<br/>
+	tvos = {
+		entitlements = {
+            ["com.apple.developer.game-center"] = true,
+        },
+	},
+	macos = {
+		entitlements = {
+            ["com.apple.developer.game-center"] = true,
+        },
+	},
+	iphone =
+	{
+		entitlements = {
+            ["com.apple.developer.game-center"] = true,
+        },
+	},
 	plugins = {<br/>
 		["plugin.gamecenter"] =<br/>
 		{<br/>
