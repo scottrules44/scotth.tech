@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.a3b14a2b.js",
+    "main.css": "/static/css/main.3f94be75.css",
+    "main.js": "/static/js/main.7deccf74.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
-    "static/media/plugin-gamecenter-old.htm": "/static/media/plugin-gamecenter-old.11290f5903534f1e18f9.htm",
+    "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.7bf50b43019868285033.htm",
     "static/media/mylogo.png": "/static/media/mylogo.4c4d9173aa3153cfc0b6.png",
-    "static/media/plugin-gamecenter.md": "/static/media/plugin-gamecenter.918b01ca77949812d7aa.md",
     "static/media/googlePlay.png": "/static/media/googlePlay.fb8308a84de42fb9d9ca.png",
-    "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.b3ee041af03c2ab8c1a1.md",
+    "static/media/plugin-ironSource.htm": "/static/media/plugin-ironSource.27d29dc4f1b1e829bb87.htm",
     "static/media/plugin-firebaseLegacy.htm": "/static/media/plugin-firebaseLegacy.5eb14dc7bbf61f3df1fb.htm",
+    "static/media/plugin-firebaseAuth.htm": "/static/media/plugin-firebaseAuth.6e83cc51a68939c1f4fc.htm",
     "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.9f911744da603e8c3ee7.md",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
     "static/media/listbud.htm": "/static/media/listbud.40ba414521fa13126827.htm",
+    "static/media/plugin-googleSignIn.htm": "/static/media/plugin-googleSignIn.d21aa7dcaee3de85e2e1.htm",
     "static/media/runRoly.htm": "/static/media/runRoly.81f8dc07e793e067a6b3.htm",
     "static/media/notesOnWatch.htm": "/static/media/notesOnWatch.0b61c6a1312434bd40d6.htm",
     "static/media/plugin-firebaseDynamicLinks.htm": "/static/media/plugin-firebaseDynamicLinks.9a76279e262fc448867f.htm",
@@ -61,8 +62,10 @@
     "static/media/plugin-deploy.htm": "/static/media/plugin-deploy.2903fbe82b59268f5942.htm",
     "static/media/plugin-textToSpeech.htm": "/static/media/plugin-textToSpeech.92cb046e5930028da9a0.htm",
     "static/media/plugin-textbelt.htm": "/static/media/plugin-textbelt.46fa995ef668efdcdbea.htm",
+    "static/media/plugin-appleSignIn.htm": "/static/media/plugin-appleSignIn.9732fad8e52ed1529046.htm",
     "static/media/plugin-cardIO.htm": "/static/media/plugin-cardIO.e6cb782527eb9fb88d09.htm",
     "static/media/plugin-fingerprintManager.htm": "/static/media/plugin-fingerprintManager.ea6ec03b34a850c2d42b.htm",
+    "static/media/plugin-airprint.htm": "/static/media/plugin-airprint.27e6fd507b089fef1eeb.htm",
     "static/media/plugin-firebasePerformance.htm": "/static/media/plugin-firebasePerformance.5937bb7f15eadd526871.htm",
     "static/media/plugin-screenRecorderV2.md": "/static/media/plugin-screenRecorderV2.759cb7744d424af2aa6c.md",
     "static/media/plugin-firebaseInAppMessaging.htm": "/static/media/plugin-firebaseInAppMessaging.0b73b20175030fd1a214.htm",
@@ -77,7 +80,6 @@
     "static/media/plugin-nativeSockets.htm": "/static/media/plugin-nativeSockets.e55c409d51e76a499cc0.htm",
     "static/media/plugin-searchAds.htm": "/static/media/plugin-searchAds.66337d61fe9ba307e89b.htm",
     "static/media/plugin-universalLinks.htm": "/static/media/plugin-universalLinks.708c2ce8125db841f768.htm",
-    "static/media/plugin-airprint.md": "/static/media/plugin-airprint.f0576ab5a0de63f7ce92.md",
     "static/media/plugin-reviewPopUp.htm": "/static/media/plugin-reviewPopUp.9db5c5409b75e030ffe7.htm",
     "static/media/plugin-controllerHaptics.htm": "/static/media/plugin-controllerHaptics.af01021682fe2b2a64df.htm",
     "static/media/plugin-hcModulePlugin.htm": "/static/media/plugin-hcModulePlugin.919fccdd7d4318ea7385.htm",
@@ -98,12 +100,12 @@
     "static/media/plugin-passkit.htm": "/static/media/plugin-passkit.4978118fe0c64e3bd7ee.htm",
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
-    "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.a3b14a2b.js.map": "/static/js/main.a3b14a2b.js.map",
+    "main.3f94be75.css.map": "/static/css/main.3f94be75.css.map",
+    "main.7deccf74.js.map": "/static/js/main.7deccf74.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6aef704.css",
-    "static/js/main.a3b14a2b.js"
+    "static/css/main.3f94be75.css",
+    "static/js/main.7deccf74.js"
   ]
 }

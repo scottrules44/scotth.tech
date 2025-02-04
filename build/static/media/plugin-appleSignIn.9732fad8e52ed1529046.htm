@@ -1,0 +1,42 @@
+<div id = "main">
+	<h3><a id="appleSignIn">Apple Sign In Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you to do an Apple Sign In in iOS 13+</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works with iOS 13+ and iOS Simulator 13+</p>
+	<p></p>
+	<p>Note: <a href="https://www.raywenderlich.com/4875322-sign-in-with-apple-using-swiftui">"when an existing user logs into your app, Apple doesn’t provide the email and full name"</a></p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>appleSignIn.show(type, listener)</h4></p>
+	<p>type(string)(optional) can be nil, "email"(returns the following events to the listener : event.email note this could be personal or apple email),"name" ( returns the following events to the listener: event.fullName which is a table that returns event.fullName.givenName(string aka first name) and  .fullName.familyName(string aka Last name)), and "nameAndEmail" (returns name and email events) </p>
+	<p>listener(function) listener which will return events. An addition to the events in type above: event.isError(boolean was login successful), event.error(string will return error if isError is true), event.identityToken(string), event.authorizationCode(string) and event.user(string user ID will return if login was successful)</p>
+	<p></p>
+	<p><h4>appleSignIn.getCredentialState(userId,listener)--Returns the credential state for the given user</h4></p>
+	<p>userId(string) user id (found from event.user in )</p>
+	<p>listener(function) returns event.type = "revoked", "notFound", "authorized", or "transferred"</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<pre><code>settings = <br/>
+{ <br/>
+	iphone = <br/>
+	{ <br/>
+		entitlements = { <br/>
+		    ["com.apple.developer.applesignin"] = {"Default"}, -- make sure provisioning profile supports apple sign in <br/>
+		} <br/>
+	}, <br/>
+	plugins = { <br/>
+		["plugin.appleSignIn"] = <br/>
+		{ <br/>
+			publisherId="tech.scotth", <br/>
+			marketplaceId = "insert marketplace account ID", <br/>
+		}, <br/>
+	}, <br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?AppleSignIn_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/appleSignIn-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+</div>
