@@ -1,0 +1,59 @@
+<div id = "main">
+	<h3><a id="fingerprintManager">Fingerprint Manager Plugin</a></h3>
+	<p></p>
+	<p>This plugin allows you detect registered fingerprints from the sensor on Android. Note no UI is shown, so you need to handle this yourself.</p>
+	<p></p>
+	<p><h3>Platforms:</h3>this plugin only works with Android 6.0+ (API 23) and Up</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>fingerprintManager.sensorStatus()</h4>(returns string) -- used to determined if device has a fingerprint and is enabled</p>
+	<unordered-list-item>
+		<li>"does not have a fingerprint sensor"</li>
+		<dl></dl>
+		<li>"lock screen security not enabled in settings"</li>
+		<dl></dl>
+		<li>"does not have a fingerprint registered"</li>
+		<dl></dl>
+		<li>"has access"</li>
+	</unordered-list-item>
+	<p></p>
+	<p><h4>fingerprintManager.detect(listener)</h4> --activate fingerprint detection</p>
+	<p>listener, event.response (string)</p>
+	<unordered-list-item>
+		<li>"does not have a fingerprint sensor"</li>
+		<dl></dl>
+		<li>"lock screen security not enabled in settings"</li>
+		<dl></dl>
+		<li>"does not have a fingerprint registered"</li>
+		<dl></dl>
+		<li>"fingerprint authentication succeeded"</li>
+		<dl></dl>
+		<li>"fingerprint authentication failed"</li>
+		<dl></dl>
+		<li>"advice for authentication:"..authencation advice here</li>
+		<dl></dl>
+		<li>"error:"..error</li>
+	</unordered-list-item>
+	<p></p>
+	<p><h4>fingerprintManager.cancel()</h4> --cancel fingerprint detection</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins = {<br/>
+		["plugin.fingerprintManager"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+	}<br/>
+}<br/>
+</pre></code>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p> <a href="https://github.com/scottrules44/fingerprintManager-demo">Example</a> </p>
+	<p> <a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a> </p>
+	<p> <a href="https://solar2dmarketplace.com/plugins?FingerprintManager_tech-scotth">Get the Plugin</a> </p>
+</div>
+			

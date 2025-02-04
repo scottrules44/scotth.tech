@@ -1,0 +1,109 @@
+<div id = "main">
+	<h3><a id="start">Facebook Sharing plugin</a></h3>
+	<p></p>
+	<p>This plugin allows your application to share content(links, photos, and videos) to Facebook within the App</p>
+	<p></p>
+	<p><h3>Platforms:</h3> only works with iOS 7+ and Android 5+</p>
+	<p></p>
+	<p><h3>Gotchas:</h3> you need Facebook App installed to share videos and photos, use canShow to check api</p>
+	<p></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>facebookSharing.init()</h4> -- initialize Facebook Sharing</p>
+	<p></p>
+<code><pre>
+facebookSharing.init()<br/>
+</pre></code>
+	<p></p>
+	<p><h4>facebookSharing.show(params, listener)</h4> -- initialize Facebook Sharing</p>
+	<p></p>
+	<p>params(required)(table) {url=(string), photos=(array, array of <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">pathForFile</a> image files less than 12MB each), video=(file path, <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">pathForFile</a> video file less than 50MB), hashtag=(string, ex "#solar2d")}</p>
+	<p>(Note: for params you can have only have photos and video keys together and the url key should not use photos and video keys)</p>
+	<p></p>
+	<p>listener (function)</p>
+	<unordered-list-item>
+		<li>event.status</li>
+		<unordered-list-item>
+			<li>"did share"</li>
+			<li>"did cancel"</li>
+			<li>"error"</li>
+		</unordered-list-item>
+		<li>event.isError(boolean)</li>
+		<li>event.error(string)</li>
+	</unordered-list-item>
+	<p></p>
+<code><pre>
+local function fbLis(e)<br/>
+	print(json.encode(e))<br/>
+end<br/>
+facebookSharing.show(<br/>
+{<br/>
+	photos={system.pathForFile("test1.png"), system.pathForFile("test2.png")},<br/>
+	video=system.pathForFile("test.mp4"),<br/>
+	hashtag="#solar2d"<br/>
+}, fbLis)<br/>
+</pre></code>
+	<p></p>
+	<p><h4>facebookSharing.canShow(type)</h4> -- returns boolean is can show</p>
+	<p></p>
+	<p>type (string) type can be "video", "photos", and "url"</p>
+	<p></p>
+<code><pre>
+print(facebookSharing.canShow("video"))-- prints boolean<br/>
+</pre></code>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	iphone =<br/>
+	{<br/>
+		plist =<br/>
+		{<br/>
+			FacebookAppID = "XXXXXXXXXX",  -- Replace XXXXXXXXXX with your Facebook App ID<br/>
+			FacebookDisplayName="solar2d test app",<br/>
+			CFBundleURLTypes =<br/>
+			{
+					{ CFBundleURLSchemes = { "fbXXXXXXXXXX", } }  -- Replace XXXXXXXXXX with your Facebook App ID<br/>
+			},<br/>
+			-- Whitelist Facebook apps<br/>
+			LSApplicationQueriesSchemes =<br/>
+			{<br/>
+				"fb",<br/>
+				"fbapi",<br/>
+				"fbauth2",<br/>
+				"fbauth",<br/>
+				"fbshareextension",<br/>
+			},<br/>
+		},<br/>
+	},<br/>
+    android =<br/>
+    {<br/>
+    	usesPermissions =<br/>
+    	{<br/>
+        	"android.permission.INTERNET"<br/>
+    	},<br/>
+			applicationChildElements =<br/>
+        {<br/>
+            -- Array of strings<br/>
+            [[<br/>
+                <provider android:authorities="com.facebook.app.FacebookContentProviderXXXXXXXXXX"
+                          android:name="com.facebook.FacebookContentProvider" android:exported="true"/>
+            ]],<br/>
+        },<br/>
+        facebookAppId = "XXXXXXXXXX",  -- Replace XXXXXXXXXX with your Facebook App ID<br/>
+    },<br/>
+    plugins =<br/>
+    {<br/>
+		["plugin.facebookSharing"]={<br/>
+			publisherId = "tech.scotth",<br/>
+			marketplaceId = "xxxxxx",--replace with solar2d marketplace with account id<br/>
+		},<br/>
+    },<br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p> <a href="https://solar2dmarketplace.com/plugins?FacebookSharing_tech-scotth">Get plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/facebookSharing-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>
+			

@@ -1,0 +1,33 @@
+
+<div id = "main">
+	<h3><a id="controllerHaptics">Controller Haptics Plugin</a></h3>
+	<p></p>
+	<p>Play Haptics/Vibration Patterns on Supported Controllers</p>
+	<p></p>
+	<p><h3>Platforms/Limitations:</h3>this plugin only works with iOS 11+ and MacOS 11+ and only supports playing .ahap files</p>
+	<p>You can find Ahap files and creator at <a href="https://haptrix.com">https://haptrix.com</a></p>
+	<p><h3>Functions:</h3></p>
+	<p></p>
+	<p><h4>controllerHaptics.isSupported()</h4>-- return true if controller is connected and supports haptics</p>
+	<p></p>
+	<p><h4>controllerHaptics.play(pathOfAhap, hatpicLocality)</h4></p>
+	<p>pathOfAhap(string) path of Ahap you would like to play (via <a href="https://docs.coronalabs.com/api/library/system/pathForFile.html">system.pathForFile</a>)</a></p>
+	<p>hatpicLocality(string)(optional) location on controller to play, default value is "default", other options are "all","handles", "triggers", "leftHandle", "rightHandle", "leftTrigger", or "rightTrigger"</p>
+	<p></p>
+	<p><h3>Build Settings:</h3></p>
+<code><pre>settings =<br/>
+{<br/>
+	plugins= {<br/>
+		["plugin.controllerHaptics"] =<br/>
+		{<br/>
+			publisherId="tech.scotth",<br/>
+			marketplaceId = "insert marketplace account ID",<br/>
+		},<br/>
+   },<br/>
+}</code></pre>
+	<p></p>
+	<h5> Helpful Links:</h5>
+	<p><a href="https://solar2dmarketplace.com/plugins?ControllerHaptics_tech-scotth">Get Plugin</a></p>
+	<p> <a href="https://github.com/scottrules44/controllerHaptics-demo">Example</a> </p>
+	<p><a href="https://forums.solar2d.com/c/corona-marketplace/13">Support</a></p>
+</div>

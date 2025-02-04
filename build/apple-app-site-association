@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+    {
+      "appID": "A6QFRGXX8S.tech.scotth.coronaPlugin",
+      "paths": ["*"]
+    }
+    ]
+  }
+}
