@@ -1,17 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.db6afa7f.js",
+    "main.js": "/static/js/main.12873f74.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
-    "static/media/plugin-gamecenter.htm": "/static/media/plugin-gamecenter.11290f5903534f1e18f9.htm",
+    "static/media/plugin-gamecenter-old.htm": "/static/media/plugin-gamecenter-old.11290f5903534f1e18f9.htm",
     "static/media/mylogo.png": "/static/media/mylogo.4c4d9173aa3153cfc0b6.png",
+    "static/media/plugin-gamecenter.md": "/static/media/plugin-gamecenter.918b01ca77949812d7aa.md",
     "static/media/googlePlay.png": "/static/media/googlePlay.fb8308a84de42fb9d9ca.png",
     "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.b3ee041af03c2ab8c1a1.md",
     "static/media/plugin-firebaseLegacy.htm": "/static/media/plugin-firebaseLegacy.5eb14dc7bbf61f3df1fb.htm",
     "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.9f911744da603e8c3ee7.md",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
+    "static/media/plugin-onesignal.md": "/static/media/plugin-onesignal.0a9e26f1660619e2d204.md",
     "static/media/listbud.htm": "/static/media/listbud.40ba414521fa13126827.htm",
     "static/media/runRoly.htm": "/static/media/runRoly.81f8dc07e793e067a6b3.htm",
     "static/media/notesOnWatch.htm": "/static/media/notesOnWatch.0b61c6a1312434bd40d6.htm",
@@ -98,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.db6afa7f.js.map": "/static/js/main.db6afa7f.js.map",
+    "main.12873f74.js.map": "/static/js/main.12873f74.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.db6afa7f.js"
+    "static/js/main.12873f74.js"
   ]
 }
