@@ -502,4 +502,4 @@ settings =
 
 [Get Support In Forums](https://forums.solar2d.com/c/corona-marketplace/13)
 
-[Check Demo](https://github.com/scottrules44/scanner-demo)
+[Check Demo](https://github.com/scottrules44/OneSignal-Example)
