@@ -1,6 +1,6 @@
 ## About
 
-This plugin allows implement the OneSignal SDK 
+This plugin allows implement the OneSignal SDK for iOS and Android
 
 
 ## Functions
@@ -83,7 +83,7 @@ Retrieves all tags associated with the user.
 **Example:**
 ```lua
 local tags = onesignal.getTags()
-print(tags.key1)
+print(json.encode(tags))
 ```
 
 ---
@@ -237,6 +237,22 @@ onesignal.requestPermission(function(event)
 end)
 ```
 
+#### onesignal.addClickListener(callback)
+
+Handles callback when a user clicks on a notfication in app or launching app
+
+**Parameters:**
+- `callback` (function): A function that receives the result of the clicking a notfication
+
+**Example:**
+```lua
+onesignal.addClickListener(function(event)
+    print("Got Notification")
+    print(json.encode(event.data))
+end)
+```
+
+
 #### onesignal.clearAllNotifications()
 
 Clears all notifications from the notification center.
@@ -369,7 +385,14 @@ onesignal.inAppClearTriggers()
 Sets the log level for the SDK.
 
 **Parameters:**
-- `level` (string): The log level (e.g., "debug", "info").
+- `level` (string): The log level. Available options are:
+	- `"VERBOSE"`: Enables verbose logging.
+	- `"NONE"`: Disables all logging.
+	- `"FATAL"`: Logs only fatal errors.
+	- `"WARN"`: Logs warnings and above.
+	- `"INFO"`: Logs informational messages and above.
+	- `"DEBUG"`: Logs debug messages and above.
+
 
 **Example:**
 ```lua
@@ -381,7 +404,13 @@ onesignal.setLogLevel("debug")
 Sets the alert level for the SDK.
 
 **Parameters:**
-- `level` (string): The alert level (e.g., "error", "warning").
+- `level` (string): The log level. Available options are:
+	- `"VERBOSE"`: Enables verbose logging.
+	- `"NONE"`: Disables all logging.
+	- `"FATAL"`: Logs only fatal errors.
+	- `"WARN"`: Logs warnings and above.
+	- `"INFO"`: Logs informational messages and above.
+	- `"DEBUG"`: Logs debug messages and above.
 
 **Example:**
 ```lua
@@ -443,6 +472,12 @@ Removes an email address from the user.
 ```lua
 onesignal.removeEmail("user@example.com")
 ```
+
+### Setup iOS Extention
+
+To take advantage delivery analytics and logging features
+This requires a bit of work and am working on this guide
+
 
 ### Build.settings
 ```

@@ -43,6 +43,7 @@
         "plugin-proximitySensor":{"category":"Hardware", "name":"Proximity Sensor", "legacyFormat":true},
         "plugin-voiceToText":{"category":"Hardware", "name":"Voice To Text", "legacyFormat":true},
 
+        "plugin-onesignal":{"category":"Marketing", "name":"OneSignal"},
         "plugin-firebaseInAppMessaging":{"category":"Marketing", "name":"Firebase In-App Messaging", "legacyFormat":true},
         "plugin-helpshift":{"category":"Marketing", "name":"Helpshift", "legacyFormat":true},
         "plugin-reviewPopUp":{"category":"Marketing", "name":"Review Pop Up", "legacyFormat":true},
