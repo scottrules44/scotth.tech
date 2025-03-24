@@ -1,3 +1,4 @@
+{% raw %}
 ### Apple Pay Plugin
 
 This plugin allows you to accept payments via stripe with the apple pay pop up
@@ -116,3 +117,4 @@ settings =
 [Example](https://github.com/scottrules44/applePay-demo)
 
 [Support](https://forums.solar2d.com/c/corona-marketplace/13)
+{% endraw %}

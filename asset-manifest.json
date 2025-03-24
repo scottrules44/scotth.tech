@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.fdabb3cf.js",
+    "main.js": "/static/js/main.5edcef40.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -31,8 +31,8 @@
     "static/media/plugin-classKit.htm": "/static/media/plugin-classKit.ed3a5c57be50b4052e2f.htm",
     "static/media/cloudPaste.md": "/static/media/cloudPaste.c533e353d73baafcdb55.md",
     "static/media/plugin-bt.htm": "/static/media/plugin-bt.e4b3b7e2b808743fc7ec.htm",
+    "static/media/plugin-applePay.md": "/static/media/plugin-applePay.445560a80cfea52fc484.md",
     "static/media/plugin-multipeerConnectivity.htm": "/static/media/plugin-multipeerConnectivity.085cbab0accee6e85137.htm",
-    "static/media/plugin-applePay.md": "/static/media/plugin-applePay.75c67d47d78f307a78ff.md",
     "static/media/plugin-musicStreaming.htm": "/static/media/plugin-musicStreaming.79193e6d06ac087e2917.htm",
     "static/media/plugin-safariWebview.htm": "/static/media/plugin-safariWebview.2a1ac415fb84df3c71ee.htm",
     "static/media/plugin-videoEditor.htm": "/static/media/plugin-videoEditor.d9f7dc922b1f4a8d5653.htm",
@@ -100,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.fdabb3cf.js.map": "/static/js/main.fdabb3cf.js.map",
+    "main.5edcef40.js.map": "/static/js/main.5edcef40.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.fdabb3cf.js"
+    "static/js/main.5edcef40.js"
   ]
 }
