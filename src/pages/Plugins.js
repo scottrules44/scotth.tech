@@ -20,6 +20,9 @@ function Plugins() {
         if(sortedPlugins[category]){
             return sortedPlugins[category].map((plugin, i) => {
                 const pluginPath = plugin.key.replace("-", "/");
+                if(plugin.hidden === true){
+                    return null
+                }
                 return (
                  <a href={"/"+pluginPath}><h3>{plugin.name}</h3></a>
                 );

@@ -2,7 +2,7 @@
     "plugins":{
         "plugin-ironSource":{"category":"Ads/Monetization", "name":"Iron Source"},
         "plugin-isAdQuality":{"category":"Ads/Monetization", "name":"Ad Quality (Iron Source)", "legacyFormat":true},
-        "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay", "legacyFormat":true},
+        "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay"},
         "plugin-storeView":{"category":"Ads/Monetization", "name":"Store View", "legacyFormat":true},
 
         "plugin-firebaseCrashlytics":{"category":"Analytics/Attribution", "name":"Firebase Crashlytics"},
@@ -37,13 +37,13 @@
         "plugin-tapticEngine":{"category":"Hardware", "name":"Taptic Engine", "legacyFormat":true},
         "plugin-androidCameraView":{"category":"Hardware", "name":"Android Camera View", "legacyFormat":true},
         "plugin-bt":{"category":"Hardware", "name":"Bluetooth", "legacyFormat":true},
-        "plugin-wifiManager":{"category":"Hardware", "name":"Wifi Manager", "legacyFormat":true},
+        "plugin-wifiManager":{"category":"Hardware", "name":"Wifi Manager"},
         "plugin-ibeacon":{"category":"Hardware", "name":"iBeacon", "legacyFormat":true},
         "plugin-macTrackpad":{"category":"Hardware", "name":"Mac Trackpad", "legacyFormat":true},
         "plugin-proximitySensor":{"category":"Hardware", "name":"Proximity Sensor", "legacyFormat":true},
         "plugin-voiceToText":{"category":"Hardware", "name":"Voice To Text", "legacyFormat":true},
 
-        "plugin-onesignal":{"category":"Marketing", "name":"OneSignal"},
+        "plugin-onesignal":{"category":"Marketing", "name":"OneSignal", "hidden": true},
         "plugin-firebaseInAppMessaging":{"category":"Marketing", "name":"Firebase In-App Messaging", "legacyFormat":true},
         "plugin-helpshift":{"category":"Marketing", "name":"Helpshift", "legacyFormat":true},
         "plugin-reviewPopUp":{"category":"Marketing", "name":"Review Pop Up", "legacyFormat":true},
