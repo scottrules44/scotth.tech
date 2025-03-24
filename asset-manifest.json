@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.29f9d42d.js",
+    "main.js": "/static/js/main.fdabb3cf.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -43,7 +43,7 @@
     "static/media/plugin-appmetrica.htm": "/static/media/plugin-appmetrica.a9a1c87fbaf2a416de71.htm",
     "static/media/plugin-facebookSharing.htm": "/static/media/plugin-facebookSharing.628023176ed034b4a6cb.htm",
     "static/media/plugin-contacts.htm": "/static/media/plugin-contacts.22b841651c84a6239ec5.htm",
-    "static/media/plugin-appleSignIn.md": "/static/media/plugin-appleSignIn.9dc855a2169463191a21.md",
+    "static/media/plugin-appleSignIn.md": "/static/media/plugin-appleSignIn.d3e2529d3a5000d5655f.md",
     "static/media/plugin-helpshift.htm": "/static/media/plugin-helpshift.ec82055f8d8a82105e2d.htm",
     "static/media/plugin-firestore.htm": "/static/media/plugin-firestore.2dd1babef00278257658.htm",
     "static/media/plugin-quickAction.htm": "/static/media/plugin-quickAction.523dc2005ceda3d0babf.htm",
@@ -100,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.29f9d42d.js.map": "/static/js/main.29f9d42d.js.map",
+    "main.fdabb3cf.js.map": "/static/js/main.fdabb3cf.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.29f9d42d.js"
+    "static/js/main.fdabb3cf.js"
   ]
 }
