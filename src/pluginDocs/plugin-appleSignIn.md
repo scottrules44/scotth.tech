@@ -1,3 +1,5 @@
+{% raw %}
+
 # Apple Sign In Plugin
 
 This plugin allows you to perform an Apple Sign In on iOS 13+ and Other Device though the Web View.
@@ -80,3 +82,5 @@ settings =
         }, 
     }, 
 }
+
+{% endraw %}
