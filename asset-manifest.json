@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.f039e13c.js",
+    "main.js": "/static/js/main.29f9d42d.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -25,7 +25,6 @@
     "static/media/tableTrivia.htm": "/static/media/tableTrivia.2816f1f8d99967299c19.htm",
     "static/media/plugin-mapbox.htm": "/static/media/plugin-mapbox.8db2d77884c13f45f0a2.htm",
     "static/media/sportsScoreKeeper.md": "/static/media/sportsScoreKeeper.bf1be6351c5897705064.md",
-    "static/media/plugin-applePay.htm": "/static/media/plugin-applePay.55a9bed7b73909fa8ed8.htm",
     "static/media/plugin-replayKit.htm": "/static/media/plugin-replayKit.182e7724a2d69ba54c2e.htm",
     "static/media/plugin-screenRecorder.htm": "/static/media/plugin-screenRecorder.d4a975a7de65c666b215.htm",
     "static/media/plugin-firebaseDatabase.htm": "/static/media/plugin-firebaseDatabase.ba898f5443c5fb07b7bc.htm",
@@ -33,6 +32,7 @@
     "static/media/cloudPaste.md": "/static/media/cloudPaste.c533e353d73baafcdb55.md",
     "static/media/plugin-bt.htm": "/static/media/plugin-bt.e4b3b7e2b808743fc7ec.htm",
     "static/media/plugin-multipeerConnectivity.htm": "/static/media/plugin-multipeerConnectivity.085cbab0accee6e85137.htm",
+    "static/media/plugin-applePay.md": "/static/media/plugin-applePay.75c67d47d78f307a78ff.md",
     "static/media/plugin-musicStreaming.htm": "/static/media/plugin-musicStreaming.79193e6d06ac087e2917.htm",
     "static/media/plugin-safariWebview.htm": "/static/media/plugin-safariWebview.2a1ac415fb84df3c71ee.htm",
     "static/media/plugin-videoEditor.htm": "/static/media/plugin-videoEditor.d9f7dc922b1f4a8d5653.htm",
@@ -54,11 +54,11 @@
     "static/media/plugin-firebaseCrashlytics.md": "/static/media/plugin-firebaseCrashlytics.56f41bf8ab56fe038cbd.md",
     "static/media/plugin-multiVideo.htm": "/static/media/plugin-multiVideo.334ae1ca267a1f1acbf3.htm",
     "static/media/plugin-equalizer.htm": "/static/media/plugin-equalizer.bec92c64e9dc9fff1799.htm",
-    "static/media/plugin-wifiManager.htm": "/static/media/plugin-wifiManager.429566af16b049411c60.htm",
     "static/media/plugin-physicBody.htm": "/static/media/plugin-physicBody.eb3fa0c58d7e62e8a8a0.htm",
     "static/media/plugin-docPicker.htm": "/static/media/plugin-docPicker.3ad3ff7d0a1c712b92ff.htm",
     "static/media/plugin-pdfImageConverter.htm": "/static/media/plugin-pdfImageConverter.72e66d3b3131683c7c27.htm",
     "static/media/plugin-imageCrop.htm": "/static/media/plugin-imageCrop.9c5871d3877672172e5f.htm",
+    "static/media/plugin-wifiManager.md": "/static/media/plugin-wifiManager.fbee1630b85f585cc1f5.md",
     "static/media/plugin-deploy.htm": "/static/media/plugin-deploy.2903fbe82b59268f5942.htm",
     "static/media/plugin-textToSpeech.htm": "/static/media/plugin-textToSpeech.92cb046e5930028da9a0.htm",
     "static/media/plugin-textbelt.htm": "/static/media/plugin-textbelt.46fa995ef668efdcdbea.htm",
@@ -100,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.f039e13c.js.map": "/static/js/main.f039e13c.js.map",
+    "main.29f9d42d.js.map": "/static/js/main.29f9d42d.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.f039e13c.js"
+    "static/js/main.29f9d42d.js"
   ]
 }
