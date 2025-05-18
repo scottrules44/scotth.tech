@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.470e3d75.js",
+    "main.js": "/static/js/main.f510de9d.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -11,7 +11,7 @@
     "static/media/googlePlay.png": "/static/media/googlePlay.fb8308a84de42fb9d9ca.png",
     "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.b3ee041af03c2ab8c1a1.md",
     "static/media/plugin-firebaseLegacy.htm": "/static/media/plugin-firebaseLegacy.5eb14dc7bbf61f3df1fb.htm",
-    "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.9f911744da603e8c3ee7.md",
+    "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.8642f6257179310ad6e3.md",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
     "static/media/plugin-onesignal.md": "/static/media/plugin-onesignal.3a66a551bd93eed4bc74.md",
     "static/media/listbud.htm": "/static/media/listbud.40ba414521fa13126827.htm",
@@ -52,7 +52,7 @@
     "static/media/plugin-androidCameraView.htm": "/static/media/plugin-androidCameraView.dcb96d87fdd4dba3fb94.htm",
     "static/media/plugin-dreamlo.htm": "/static/media/plugin-dreamlo.3928f15bce94e30a744f.htm",
     "static/media/plugin-firebaseCrashlytics.md": "/static/media/plugin-firebaseCrashlytics.56f41bf8ab56fe038cbd.md",
-    "static/media/plugin-moreInfo.md": "/static/media/plugin-moreInfo.b30267d6dc12ba78202d.md",
+    "static/media/plugin-moreInfo copy.htm": "/static/media/plugin-moreInfo copy.b30267d6dc12ba78202d.htm",
     "static/media/plugin-multiVideo.htm": "/static/media/plugin-multiVideo.334ae1ca267a1f1acbf3.htm",
     "static/media/plugin-equalizer.htm": "/static/media/plugin-equalizer.bec92c64e9dc9fff1799.htm",
     "static/media/plugin-physicBody.htm": "/static/media/plugin-physicBody.eb3fa0c58d7e62e8a8a0.htm",
@@ -101,11 +101,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.470e3d75.js.map": "/static/js/main.470e3d75.js.map",
+    "main.f510de9d.js.map": "/static/js/main.f510de9d.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.470e3d75.js"
+    "static/js/main.f510de9d.js"
   ]
 }
