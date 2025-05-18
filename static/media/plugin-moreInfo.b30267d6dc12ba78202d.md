@@ -63,7 +63,6 @@ At this moment, iOS (and simulator) and Android.
 ### `moreInfo.getKeyboardSize()`
 
 - Returns: `width` (number), `height` (number)  
-	*(Note: `coronaWindowMovesWhenKeyboardAppears` must be enabled on Android)*
 
 ### `moreInfo.getColorMode()`
 
@@ -125,7 +124,6 @@ settings =
 				{
 						"android.permission.BLUETOOTH",
 				},
-				coronaWindowMovesWhenKeyboardAppears = true,
 		},
 }
 ```
