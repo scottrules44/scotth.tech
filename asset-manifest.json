@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.0625554c.js",
+    "main.js": "/static/js/main.afb74037.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -38,7 +38,6 @@
     "static/media/plugin-videoEditor.htm": "/static/media/plugin-videoEditor.d9f7dc922b1f4a8d5653.htm",
     "static/media/plugin-imageToText.htm": "/static/media/plugin-imageToText.9e5696bd4323d40499a6.htm",
     "static/media/plugin-ibeacon.htm": "/static/media/plugin-ibeacon.d8f7990317cdce191b25.htm",
-    "static/media/plugin-moreInfo.htm": "/static/media/plugin-moreInfo.4b568d42da0bd0df6b8a.htm",
     "static/media/plugin-voiceToText.htm": "/static/media/plugin-voiceToText.915bac018bfdfd63263b.htm",
     "static/media/plugin-appmetrica.htm": "/static/media/plugin-appmetrica.a9a1c87fbaf2a416de71.htm",
     "static/media/plugin-facebookSharing.htm": "/static/media/plugin-facebookSharing.628023176ed034b4a6cb.htm",
@@ -52,7 +51,7 @@
     "static/media/plugin-androidCameraView.htm": "/static/media/plugin-androidCameraView.dcb96d87fdd4dba3fb94.htm",
     "static/media/plugin-dreamlo.htm": "/static/media/plugin-dreamlo.3928f15bce94e30a744f.htm",
     "static/media/plugin-firebaseCrashlytics.md": "/static/media/plugin-firebaseCrashlytics.56f41bf8ab56fe038cbd.md",
-    "static/media/plugin-moreInfo copy.htm": "/static/media/plugin-moreInfo copy.b30267d6dc12ba78202d.htm",
+    "static/media/plugin-moreInfo.md": "/static/media/plugin-moreInfo.b30267d6dc12ba78202d.md",
     "static/media/plugin-multiVideo.htm": "/static/media/plugin-multiVideo.334ae1ca267a1f1acbf3.htm",
     "static/media/plugin-equalizer.htm": "/static/media/plugin-equalizer.bec92c64e9dc9fff1799.htm",
     "static/media/plugin-physicBody.htm": "/static/media/plugin-physicBody.eb3fa0c58d7e62e8a8a0.htm",
@@ -101,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.0625554c.js.map": "/static/js/main.0625554c.js.map",
+    "main.afb74037.js.map": "/static/js/main.afb74037.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.0625554c.js"
+    "static/js/main.afb74037.js"
   ]
 }
