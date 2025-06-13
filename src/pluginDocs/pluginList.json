@@ -78,7 +78,7 @@
         "plugin-safariWebview":{"category":"Utilities", "name":"Safari WebView", "legacyFormat":true},
         "plugin-volumeControl":{"category":"Utilities", "name":"Volume Control", "legacyFormat":true},
         "plugin-quickAction":{"category":"Utilities", "name":"Quick Action", "legacyFormat":true},
-        "plugin-moreInfo":{"category":"Utilities", "name":"More Info", "legacyFormat":true}
+        "plugin-moreInfo":{"category":"Utilities", "name":"More Info"}
     },
     "categories":["Ads/Monetization", "Analytics/Attribution", "Business/Data", "Gaming", "Hardware", "Marketing", "Media", "Security", "Utilities"]
 }

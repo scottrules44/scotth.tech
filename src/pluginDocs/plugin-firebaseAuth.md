@@ -67,6 +67,11 @@ listener(function) event.isError(boolean value, true if successful and false if 
 
 &nbsp;
 
+### firebaseAuth.getProviders()
+**returns array of strings, for providers of account (email auth:"password", google auth: "google.com", etc)**
+
+&nbsp;
+
 ### firebaseAuth.getDisplayName()
 **returns string, display name for account**
 
