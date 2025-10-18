@@ -250,9 +250,6 @@ settings =
         ["ironsource.applovin"] = {
             publisherId = "tech.scotth",
         },
-        ["ironsource.adColony"] = {
-            publisherId = "tech.scotth",
-        },
         ["ironsource.admob"] = {
             publisherId = "tech.scotth",
         },
@@ -294,7 +291,7 @@ settings =
             publisherId = "tech.scotth",
         },
 
-        ["ironsource.yahoo"] = {
+        ["ironsource.yandex"] = {
             publisherId = "tech.scotth",
         },
         -- Core Plugin

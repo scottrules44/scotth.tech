@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.d0bc5f38.js",
+    "main.js": "/static/js/main.3f60a926.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -9,7 +9,7 @@
     "static/media/mylogo.png": "/static/media/mylogo.4c4d9173aa3153cfc0b6.png",
     "static/media/plugin-gamecenter.md": "/static/media/plugin-gamecenter.918b01ca77949812d7aa.md",
     "static/media/googlePlay.png": "/static/media/googlePlay.fb8308a84de42fb9d9ca.png",
-    "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.a4a4fda5e7593eeed482.md",
+    "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.7df07c7c4e9e7692a740.md",
     "static/media/plugin-firebaseLegacy.htm": "/static/media/plugin-firebaseLegacy.5eb14dc7bbf61f3df1fb.htm",
     "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.f60398e500bc5997d9a9.md",
     "static/media/plugin-nativeCharts.htm": "/static/media/plugin-nativeCharts.7c8f5495805fa3936fce.htm",
@@ -100,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.d0bc5f38.js.map": "/static/js/main.d0bc5f38.js.map",
+    "main.3f60a926.js.map": "/static/js/main.3f60a926.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.d0bc5f38.js"
+    "static/js/main.3f60a926.js"
   ]
 }
