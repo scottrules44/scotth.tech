@@ -30,9 +30,7 @@ Note if using V2 you need to include adUnits with your project and double check 
   - `clientSideCallback` = boolean (default is false)
   - `GDPR` = boolean (default is false)
   - `enableATT` = boolean (shows App Tracking Transparency popup before initiating and returns events, default is true)
-  - `enableRewardVideo` = boolean (init reward videos, default is true)
-  - `enableInterstitial` = boolean (should init interstitial, default is true)
-  - `enableBanner` = boolean (should init banner, default is true)
+  - `testSuite` = boolean (allow you to show test suite afer init, default is false)
 
 #### `ironSource.load(type, params)` — load ad
 
@@ -88,15 +86,12 @@ Note if using V2 you need to include adUnits with your project and double check 
   - `rewardName` (string)
   - `isRewardedVideoPlacementCapped` (boolean)
 
-#### `ironSource.getOfferwallCredits()`
-
 #### `ironSource.getSize()` — gets size of banners (note: banner must be showing and loaded to get size)
 
 - Returns `height` (number)
 
-#### `ironSource.getAdId()` — return ad id for [test mode](https://developers.is.com/ironsource-mobile/air/integration-testing/#step-1)
+#### `ironSource.getAdId()` — (this has been Depercated) return ad id for [test mode](https://developers.is.com/ironsource-mobile/air/integration-testing/#step-1)
 
-- Returns a string
 
 #### `ironSource.debugMode()` — prints SDK integration for validation
 
@@ -118,25 +113,24 @@ Returned in listener function on `.init()`.
 
 #### Init:
 
-- `phase == "initLevelPlay"`, `status == "error"`, `isError == true`, `error == error message (string)`
-- `phase == "initLevelPlay"`, `status == "success"`, `isError == false`
+- `phase == "init"`, `status == "error"`, `isError == true`, `error == error message (string)`
+- `phase == "init"`, `status == "success"`, `isError == false`
 
 #### Banner:
 
 - `phase == "adReady"`, `isError == false`, `type == "banner"`
 - `phase == "adLoadedFailed"`, `isError == true`, `error == error message (string)`, `type == "banner"`
 - `phase == "adClicked"`, `isError == false`, `type == "banner"`
-- `phase == "adScreenPresented"`, `isError == false`, `type == "banner"`
+- `phase == "adShown"`, `isError == false`, `type == "banner"`
 - `phase == "adScreenDismissed"`, `isError == false`, `type == "banner"`
 - `phase == "adLeftApplication"`, `isError == false`, `type == "banner"`
 
 #### Interstitial:
 
 - `phase == "adReady"`, `isError == false`, `type == "interstitial"`
-- `phase == "adLoadFailed"`, `isError == true`, `error == error message (string)`, `type == "interstitial"`
+- `phase == "adLoadedFailed"`, `isError == true`, `error == error message (string)`, `type == "interstitial"`
 - `phase == "adOpened"`, `isError == false`, `type == "interstitial"`
 - `phase == "adClosed"`, `isError == false`, `type == "interstitial"`
-- `phase == "adShowSucceeded"`, `isError == false`, `type == "interstitial"`
 - `phase == "adShowFailed"`, `isError == false`, `type == "interstitial"`, `error == error message (string)`
 - `phase == "adClicked"`, `isError == false`, `type == "interstitial"`
 
@@ -147,7 +141,6 @@ Returned in listener function on `.init()`.
 - `phase == "adClosed"`, `isError == false`, `type == "rewardedVideo"`
 - `phase == "adOpened"`, `isError == false`, `type == "rewardedVideo"`
 - `phase == "adStarted"`, `isError == false`, `type == "rewardedVideo"`
-- `phase == "adEnded"`, `isError == false`, `type == "rewardedVideo"`
 - `phase == "adRewarded"`, `isError == false`, `type == "rewardedVideo"`, `rewardName == reward name from video ad (string)`, `rewardAmount == reward amount from video ad (number)`
 - `phase == "adShowError"`, `isError == true`, `type == "rewardedVideo"`, `error == error message (string)`
 - `phase == "didClickRewardedVideo"`, `isError == false`, `type == "rewardedVideo"`
@@ -257,9 +250,6 @@ settings =
         ["ironsource.applovin"] = {
             publisherId = "tech.scotth",
         },
-        ["ironsource.adColony"] = {
-            publisherId = "tech.scotth",
-        },
         ["ironsource.admob"] = {
             publisherId = "tech.scotth",
         },
@@ -301,7 +291,7 @@ settings =
             publisherId = "tech.scotth",
         },
 
-        ["ironsource.yahoo"] = {
+        ["ironsource.yandex"] = {
             publisherId = "tech.scotth",
         },
         -- Core Plugin

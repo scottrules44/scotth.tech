@@ -28,7 +28,7 @@
         "plugin-dreamlo":{"category":"Gaming", "name":"Dreamlo", "legacyFormat":true},
 
         "plugin-orientation":{"category":"Hardware", "name":"Orientation Plugin", "legacyFormat":true},
-        "plugin-textToSpeech":{"category":"Hardware", "name":"Text To Speech", "legacyFormat":true},
+        "plugin-textToSpeech":{"category":"Hardware", "name":"Text To Speech"},
         "plugin-scanner":{"category":"Hardware", "name":"(QR/Barcode)Scanner Plugin"},
         "plugin-controllerHaptics":{"category":"Hardware", "name":"Controller Haptics", "legacyFormat":true},
         "plugin-datamax":{"category":"Hardware", "name":"Data Max", "legacyFormat":true},
@@ -77,7 +77,7 @@
         "plugin-imageToText":{"category":"Utilities", "name":"Image to Text", "legacyFormat":true},
         "plugin-safariWebview":{"category":"Utilities", "name":"Safari WebView", "legacyFormat":true},
         "plugin-volumeControl":{"category":"Utilities", "name":"Volume Control", "legacyFormat":true},
-        "plugin-quickAction":{"category":"Utilities", "name":"Quick Action", "legacyFormat":true},
+        "plugin-quickAction":{"category":"Utilities", "name":"Quick Action"},
         "plugin-moreInfo":{"category":"Utilities", "name":"More Info"}
     },
     "categories":["Ads/Monetization", "Analytics/Attribution", "Business/Data", "Gaming", "Hardware", "Marketing", "Media", "Security", "Utilities"]
