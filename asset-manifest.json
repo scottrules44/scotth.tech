@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b6aef704.css",
-    "main.js": "/static/js/main.3f60a926.js",
+    "main.js": "/static/js/main.7409e9c4.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -65,8 +65,8 @@
     "static/media/plugin-fingerprintManager.htm": "/static/media/plugin-fingerprintManager.ea6ec03b34a850c2d42b.htm",
     "static/media/plugin-firebasePerformance.htm": "/static/media/plugin-firebasePerformance.5937bb7f15eadd526871.htm",
     "static/media/plugin-screenRecorderV2.md": "/static/media/plugin-screenRecorderV2.759cb7744d424af2aa6c.md",
+    "static/media/plugin-textToSpeech.md": "/static/media/plugin-textToSpeech.232d2837e720cee2767b.md",
     "static/media/plugin-firebaseInAppMessaging.htm": "/static/media/plugin-firebaseInAppMessaging.0b73b20175030fd1a214.htm",
-    "static/media/plugin-textToSpeech.md": "/static/media/plugin-textToSpeech.2495947bc56af102260c.md",
     "static/media/plugin-datamax.htm": "/static/media/plugin-datamax.cd784e50bcac4feae9dc.htm",
     "static/media/plugin-firebaseFunctions.htm": "/static/media/plugin-firebaseFunctions.2fa894b0ef38feb3684a.htm",
     "static/media/plugin-isAdQuality.htm": "/static/media/plugin-isAdQuality.2d4a6b7fdab85c034382.htm",
@@ -100,11 +100,11 @@
     "static/media/plugin-orientation.htm": "/static/media/plugin-orientation.752f995b186fe062fea1.htm",
     "index.html": "/index.html",
     "main.b6aef704.css.map": "/static/css/main.b6aef704.css.map",
-    "main.3f60a926.js.map": "/static/js/main.3f60a926.js.map",
+    "main.7409e9c4.js.map": "/static/js/main.7409e9c4.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b6aef704.css",
-    "static/js/main.3f60a926.js"
+    "static/js/main.7409e9c4.js"
   ]
 }
