@@ -7,13 +7,16 @@ only works with iOS 7+ and Android 5+
 
 ### Functions:
 
-#### textToSpeech.init(listener)
+#### textToSpeech.init(listener, engineChoice)
 
 listener (required)
 - event.phase
   - "started"
   - "init"
   - "finished"
+
+engineChoice (optional android only) String
+- Package name of the TTS engine to use. i.e "com.google.android.tts"
 
 ```lua
 textToSpeech.init(function (e)
