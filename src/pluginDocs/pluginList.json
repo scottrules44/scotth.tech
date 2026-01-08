@@ -5,7 +5,8 @@
         "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay"},
         "plugin-storeView":{"category":"Ads/Monetization", "name":"Store View", "legacyFormat":true},
 
-        "plugin-firebaseCrashlytics":{"category":"Analytics/Attribution", "name":"Firebase Crashlytics"},
+        "plugin-launchDarkly":{"category":"Analytics/Attribution", "name":"Launch Darkly"},
+        "plugin-firebaseCrashlytics":{"category":"Analytics/Attributiwon", "name":"Firebase Crashlytics"},
         "plugin-appmetrica":{"category":"Analytics/Attribution", "name":"Appmetrica", "legacyFormat":true},
         "plugin-searchAds":{"category":"Analytics/Attribution", "name":"Search Ads", "legacyFormat":true},
         "plugin-firebaseAnalytics":{"category":"Analytics/Attribution", "name":"Firebase Analytics", "legacyFormat":true},
