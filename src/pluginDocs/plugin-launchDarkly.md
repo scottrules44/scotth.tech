@@ -371,8 +371,8 @@ if launchDarkly.isInitialized() then
 end
 ```
 
-[Get LaunchDarkly Plugin](https://solar2dmarketplace.com/plugins)
+[Get LaunchDarkly Plugin](https://solar2dmarketplace.com/plugins?LaunchDarkly_tech-scotth)
 
 [Get Support In Forums](https://forums.solar2d.com)
 
-[LaunchDarkly Demo](https://docs.launchdarkly.com)
+[LaunchDarkly Demo](https://github.com/scottrules44/LaunchDarkly-Demo)
