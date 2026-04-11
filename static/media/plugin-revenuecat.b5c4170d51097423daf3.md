@@ -18,12 +18,13 @@ iOS 13+ and Android API 24+
 
 ### 2. Create your products in the App Store / Google Play
 
-Your product IDs need to exist in App Store Connect or Google Play Console before RevenueCat can load them.
+Your product IDs need to exist in App Store Connect or Google Play Console before RevenueCat can load them. Create whichever types your app needs:
 
-- **iOS subscriptions** → App Store Connect → Your App → Monetization → Subscriptions
-- **iOS one-time purchases** → App Store Connect → Monetization → In-App Purchases → Non-Consumable
-- **Android** → Google Play Console → Your App → Monetization → In-app products or Subscriptions
-- Each product needs a display name, price, and description and must reach **Ready to Submit** status before it can be fetched
+- **Auto-Renewable Subscription** — recurring billing (monthly, annual, etc.)
+- **Non-Consumable** — one-time purchase that persists (e.g. lifetime unlock, remove ads)
+- **Consumable** — items that can be bought multiple times (e.g. coins, credits)
+
+Each product needs a display name, price, and description and must reach **Ready to Submit** status before it can be fetched.
 
 ### 3. Configure the RevenueCat dashboard
 
