@@ -92,21 +92,24 @@ else
 end
 
 rc.setDebugLogsEnabled(true)
-rc.configure({ apiKey = RC_API_KEY })
-
-rc.getOfferings(function(ev)
-    if ev.isError then
-        print("Error: " .. ev.error)
-        return
-    end
-    local current = ev.offerings.current
-    if current then
-        print("Current offering: " .. current.identifier)
-        for _, pkg in ipairs(current.availablePackages) do
-            print("  Package: " .. pkg.identifier)
-        end
-    end
-end)
+rc.configure({
+    apiKey  = RC_API_KEY,
+    onReady = function()
+        rc.getOfferings(function(ev)
+            if ev.isError then
+                print("Error: " .. ev.error)
+                return
+            end
+            local current = ev.offerings.current
+            if current then
+                print("Current offering: " .. current.identifier)
+                for _, pkg in ipairs(current.availablePackages) do
+                    print("  Package: " .. pkg.identifier)
+                end
+            end
+        end)
+    end,
+})
 ```
 
 ---
@@ -121,12 +124,16 @@ Initialises the RevenueCat SDK. Call this once before any other function.
 - `apiKey` (string, required) — Your Public SDK Key from the RC dashboard
 - `appUserID` (string, optional) — Custom user ID to identify the customer. Omit to let RC generate an anonymous ID
 - `observerMode` (boolean, optional) — Set `true` if your app handles purchases itself and you only want RC to observe
+- `onReady` (function, optional) — Callback fired once the SDK is fully initialised. On Android `configure` is asynchronous, so any calls to `getOfferings`, `setAttributes`, etc. **must** go inside `onReady`. On iOS `configure` is synchronous and `onReady` fires immediately — use it on both platforms for a consistent cross-platform pattern
 
 ```lua
-rc.configure({ apiKey = "appl_YOUR_KEY" })
-
--- With a logged-in user ID
-rc.configure({ apiKey = "appl_YOUR_KEY", appUserID = "user_12345" })
+rc.configure({
+    apiKey  = "appl_YOUR_KEY",
+    onReady = function()
+        rc.setAttributes({ displayName = "Jane" })
+        rc.getOfferings(callback)
+    end
+})
 ```
 
 ---
@@ -402,48 +409,81 @@ local RC_API_KEY = system.getInfo("platform") == "android"
     or  "appl_YOUR_IOS_KEY"
 
 rc.setDebugLogsEnabled(true)
-rc.configure({ apiKey = RC_API_KEY })
+rc.configure({
+    apiKey  = RC_API_KEY,
+    onReady = function()
+        -- Check existing entitlement on launch
+        rc.getCustomerInfo(function(ev)
+            if not ev.isError then
+                local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
+                if prem then
+                    print("User has premium access!")
+                    -- unlock your app features here
+                end
+            end
+        end)
 
--- Check existing entitlement on launch
-rc.getCustomerInfo(function(ev)
-    if not ev.isError then
-        local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
-        if prem then
-            print("User has premium access!")
-            -- unlock your app features here
-        end
-    end
-end)
+        -- Fetch offerings and show a buy button
+        rc.getOfferings(function(ev)
+            if ev.isError or not ev.offerings.current then return end
 
--- Fetch offerings and show a buy button
-rc.getOfferings(function(ev)
-    if ev.isError or not ev.offerings.current then return end
+            local monthly = ev.offerings.current.monthly
+            if monthly then
+                print("Monthly price: " .. monthly.storeProduct.localizedPriceString)
+            end
+        end)
 
-    local monthly = ev.offerings.current.monthly
-    if monthly then
-        print("Monthly price: " .. monthly.storeProduct.localizedPriceString)
-    end
-end)
+        -- Present the paywall
+        rc.presentPaywall({}, function(ev)
+            if ev.result == "purchased" or ev.result == "restored" then
+                local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
+                if prem then print("Unlocked premium!") end
+            end
+        end)
 
--- Present the paywall
-rc.presentPaywall({}, function(ev)
-    if ev.result == "purchased" or ev.result == "restored" then
-        local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
-        if prem then print("Unlocked premium!") end
-    end
-end)
-
--- Restore button handler
-rc.restorePurchases(function(ev)
-    if not ev.isError then
-        print("Restore done")
-    end
-end)
+        -- Restore button handler
+        rc.restorePurchases(function(ev)
+            if not ev.isError then
+                print("Restore done")
+            end
+        end)
+    end,
+})
 ```
 
 ---
 
+---
+
+## Marketplace Build Settings
+
+To use this plugin via the [Solar2D Marketplace](https://solar2dmarketplace.com/plugins?RevenueCat_tech-scotth), replace the `build.settings` plugin block with the following:
+
+```lua
+settings =
+{
+    plugins =
+    {
+        ["plugin.revenuecat"] =
+        {
+            publisherId = "tech.scotth",
+            marketplaceId = "(replace with Account ID in account page)",
+        },
+    },
+
+    android =
+    {
+        minSdkVersion = "24",   -- Required for RevenueCat paywalls
+    },
+}
+```
+
+Your Account ID can be found on your Solar2D Marketplace account page.
+
+---
+
 ##### Helpful Links:
+- [Get plugin](https://solar2dmarketplace.com/plugins?RevenueCat_tech-scotth)
 - [RevenueCat Dashboard](https://app.revenuecat.com)
 - [RevenueCat Docs](https://www.revenuecat.com/docs)
 - [Why are offerings empty?](https://rev.cat/why-are-offerings-empty)
