@@ -13,104 +13,23 @@ iOS 13+ and Android API 24+
 
 1. Sign up at [app.revenuecat.com](https://app.revenuecat.com)
 2. Create a new **Project**
-3. Under **Apps & Providers**, add your iOS app (Bundle ID) and/or Android app (Package Name)
+3. Under **Apps & Providers**, add your app — use your Bundle ID for iOS or Package Name for Android
 4. Copy your **Public SDK Key** — it starts with `appl_` for iOS and `andp_` for Android
 
-### 2. Create products in the App Store / Google Play
+### 2. Create your products in the App Store / Google Play
 
-Your product IDs must exist in App Store Connect (or Google Play Console) **before** RevenueCat can load them.
+Your product IDs need to exist in App Store Connect or Google Play Console before RevenueCat can load them.
 
-- **iOS subscriptions** → App Store Connect → Your App → Monetization → Subscriptions → create a Subscription Group, then add products inside it
-- **iOS one-time (lifetime)** → App Store Connect → Monetization → In-App Purchases → Non-Consumable
+- **iOS subscriptions** → App Store Connect → Your App → Monetization → Subscriptions
+- **iOS one-time purchases** → App Store Connect → Monetization → In-App Purchases → Non-Consumable
 - **Android** → Google Play Console → Your App → Monetization → In-app products or Subscriptions
-- Each product needs a display name, price, and description and must reach **"Ready to Submit"** status
+- Each product needs a display name, price, and description and must reach **Ready to Submit** status before it can be fetched
 
 ### 3. Configure the RevenueCat dashboard
 
-1. In the RC dashboard go to **Product catalog → Products** and add each product ID
-2. Go to **Product catalog → Entitlements**, create an entitlement (e.g. `premium`) and attach all your products to it
-3. Go to **Product catalog → Offerings**, create an offering, add packages for Monthly / Annual / Lifetime, and mark it as the **default** offering
-
-### 4. iOS — add the frameworks
-
-Download `RevenueCat.xcframework` and `RevenueCatUI.xcframework` from the [purchases-ios releases page](https://github.com/RevenueCat/purchases-ios/releases) and place them in:
-
-```
-src/ios/EmbeddedFrameworks/
-```
-
-### 5. Android — build the plugin AAR
-
-Open `src/android` in Android Studio and run the Gradle task:
-
-```
-Solar2Dev → deployToLocalSolar2DRepo
-```
-
-Or from the terminal:
-
-```bash
-cd src/android
-./gradlew :plugin:deployToLocalSolar2DRepo
-```
-
----
-
-## Build Settings
-
-```lua
-settings =
-{
-    plugins =
-    {
-        ["plugin.revenuecat"] =
-        {
-            publisherId = "com.solar2d",
-        },
-    },
-
-    android =
-    {
-        minSdkVersion = "24",   -- Required for RevenueCat paywalls
-    },
-}
-```
-
----
-
-## Quick Start
-
-```lua
-local rc = require("plugin.revenuecat")
-
--- Use appl_... for iOS, andp_... for Android
-local RC_API_KEY
-if system.getInfo("platform") == "android" then
-    RC_API_KEY = "andp_YOUR_ANDROID_KEY"
-else
-    RC_API_KEY = "appl_YOUR_IOS_KEY"
-end
-
-rc.setDebugLogsEnabled(true)
-rc.configure({
-    apiKey  = RC_API_KEY,
-    onReady = function()
-        rc.getOfferings(function(ev)
-            if ev.isError then
-                print("Error: " .. ev.error)
-                return
-            end
-            local current = ev.offerings.current
-            if current then
-                print("Current offering: " .. current.identifier)
-                for _, pkg in ipairs(current.availablePackages) do
-                    print("  Package: " .. pkg.identifier)
-                end
-            end
-        end)
-    end,
-})
-```
+1. **Product catalog → Products** — add each of your product IDs
+2. **Product catalog → Entitlements** — create an entitlement (e.g. `premium`) and attach your products to it
+3. **Product catalog → Offerings** — create an offering, add packages for your products, and set it as the **default** offering
 
 ---
 
@@ -207,7 +126,6 @@ rc.purchasePackage(
             print("Purchase error: " .. ev.error)
         else
             print("Purchased! Transaction: " .. ev.transactionId)
-            -- check entitlement:
             local ent = ev.customerInfo.entitlements.active["premium"]
             if ent then print("Premium is active!") end
         end
@@ -234,7 +152,6 @@ Shows the RevenueCat native paywall UI. The paywall is built from the offering's
 rc.presentPaywall({}, function(ev)
     if ev.result == "purchased" then
         print("Purchase complete!")
-        -- unlock features using ev.customerInfo
     elseif ev.result == "restored" then
         print("Purchases restored!")
     elseif ev.result == "cancelled" then
@@ -412,18 +329,15 @@ rc.setDebugLogsEnabled(true)
 rc.configure({
     apiKey  = RC_API_KEY,
     onReady = function()
-        -- Check existing entitlement on launch
         rc.getCustomerInfo(function(ev)
             if not ev.isError then
                 local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
                 if prem then
                     print("User has premium access!")
-                    -- unlock your app features here
                 end
             end
         end)
 
-        -- Fetch offerings and show a buy button
         rc.getOfferings(function(ev)
             if ev.isError or not ev.offerings.current then return end
 
@@ -433,7 +347,6 @@ rc.configure({
             end
         end)
 
-        -- Present the paywall
         rc.presentPaywall({}, function(ev)
             if ev.result == "purchased" or ev.result == "restored" then
                 local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
@@ -441,7 +354,6 @@ rc.configure({
             end
         end)
 
-        -- Restore button handler
         rc.restorePurchases(function(ev)
             if not ev.isError then
                 print("Restore done")
@@ -453,11 +365,7 @@ rc.configure({
 
 ---
 
----
-
-## Marketplace Build Settings
-
-To use this plugin via the [Solar2D Marketplace](https://solar2dmarketplace.com/plugins?RevenueCat_tech-scotth), replace the `build.settings` plugin block with the following:
+## Build Settings
 
 ```lua
 settings =
