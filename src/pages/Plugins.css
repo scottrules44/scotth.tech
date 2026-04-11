@@ -1,17 +1,1 @@
-.pluginCategory{
-    background-color: lightgray;
-    text-align: center;
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 20px;
-    border-radius: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-@media (max-width:620px)  {
-  .pluginCategory{
-      grid-template-columns: repeat(2, 1fr);
-
-  }
-}
+/* Replaced by Tailwind — see Plugins.js */

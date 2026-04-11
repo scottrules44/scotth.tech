@@ -1,26 +1,30 @@
-.Page{
-    min-height: 70vh;
-    margin: auto;
-}
-
-h1,h2, h3{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.Page {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  min-height: 70vh;
 }
 
 pre {
-    background: #eee;
-    padding: 1rem;
-    overflow: auto;
-    border-radius: 3px;
-    max-width: 80ch;
-  }
+  background: #f3f4f6;
+  padding: 1rem;
+  overflow: auto;
+  border-radius: 0.5rem;
+  max-width: 80ch;
+}
 
-  pre code {
-      text-align: left;
-      white-space: pre;
-      word-spacing: normal;
-      word-break: normal;
-      word-wrap: normal;
-      line-height: 1.5;
+pre code {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  pre {
+    background: #1f2937;
+    color: #f9fafb;
   }
+}
