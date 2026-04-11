@@ -1,5 +1,6 @@
 {
     "plugins":{
+        "plugin-revenuecat":{"category":"Ads/Monetization", "name":"RevenueCat"},
         "plugin-ironSource":{"category":"Ads/Monetization", "name":"Iron Source"},
         "plugin-isAdQuality":{"category":"Ads/Monetization", "name":"Ad Quality (Iron Source)"},
         "plugin-applePay":{"category":"Ads/Monetization", "name":"Apple Pay"},
