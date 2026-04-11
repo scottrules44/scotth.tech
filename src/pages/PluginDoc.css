@@ -1,13 +1,1 @@
-
-.legacyFormat img{
-    padding: 20px;
-}
-
-.Page {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-ol ul {
-    padding-left: 10px !important;
-}
+/* Replaced by Tailwind — see PluginDoc.js */
