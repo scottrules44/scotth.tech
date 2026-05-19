@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9d1eb562.css",
-    "main.js": "/static/js/main.3f3879c4.js",
+    "main.js": "/static/js/main.be352247.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -27,6 +27,7 @@
     "static/media/sportsScoreKeeper.md": "/static/media/sportsScoreKeeper.bf1be6351c5897705064.md",
     "static/media/plugin-storeKit.md": "/static/media/plugin-storeKit.0ab58c18fd23745cdf60.md",
     "static/media/cloudPaste.md": "/static/media/cloudPaste.c533e353d73baafcdb55.md",
+    "static/media/plugin-textToSpeech.md": "/static/media/plugin-textToSpeech.0ca73fc14909e7f8ffec.md",
     "static/media/plugin-applePay.md": "/static/media/plugin-applePay.445560a80cfea52fc484.md",
     "static/media/plugin-mapbox.md": "/static/media/plugin-mapbox.4f06fa2763b6d8a37018.md",
     "static/media/plugin-firebaseDatabase.md": "/static/media/plugin-firebaseDatabase.ec29adce97ce433add0c.md",
@@ -62,7 +63,6 @@
     "static/media/plugin-pdfImageConverter.md": "/static/media/plugin-pdfImageConverter.f06d9ee1a875c3a14755.md",
     "static/media/plugin-imageCrop.md": "/static/media/plugin-imageCrop.550fae80c2f2b3201a9a.md",
     "static/media/plugin-screenRecorderV2.md": "/static/media/plugin-screenRecorderV2.759cb7744d424af2aa6c.md",
-    "static/media/plugin-textToSpeech.md": "/static/media/plugin-textToSpeech.232d2837e720cee2767b.md",
     "static/media/plugin-cardIO.md": "/static/media/plugin-cardIO.bf68040abbca6edfc6e5.md",
     "static/media/plugin-deploy.md": "/static/media/plugin-deploy.d3b88828dbd69a7448ec.md",
     "static/media/plugin-textbelt.md": "/static/media/plugin-textbelt.cc362668ca223a446b23.md",
@@ -102,11 +102,11 @@
     "static/media/plugin-androidPreview.md": "/static/media/plugin-androidPreview.5c3b040423a9db36a133.md",
     "static/media/plugin-passkit.md": "/static/media/plugin-passkit.beb8d3f839be8faaeae3.md",
     "main.9d1eb562.css.map": "/static/css/main.9d1eb562.css.map",
-    "main.3f3879c4.js.map": "/static/js/main.3f3879c4.js.map",
+    "main.be352247.js.map": "/static/js/main.be352247.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d1eb562.css",
-    "static/js/main.3f3879c4.js"
+    "static/js/main.be352247.js"
   ]
 }
