@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Open in Roly Armadillo</title>
+  <meta name="description" content="Open this shared Roly Armadillo level in the app." />
+  <!-- Social preview -->
+  <meta property="og:title" content="Play my Roly Armadillo level!" />
+  <meta property="og:description" content="Tap to open this shared level in Roly Armadillo." />
+  <meta property="og:image" content="/logo512.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/logo192.png" />
+  <style>
+    :root { --orange: #ff7a00; --ink: #1b2430; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(160deg, #0aa0ff 0%, #0077cc 100%);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      padding: 24px; text-align: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.10); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.25); border-radius: 20px;
+      padding: 32px 28px; max-width: 380px; width: 100%;
+    }
+    .logo { width: 96px; height: 96px; border-radius: 22px; margin: 0 auto 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25); display: block; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
+    p { font-size: 15px; line-height: 1.5; opacity: 0.92; margin: 0 0 22px; }
+    .btn {
+      display: block; width: 100%; padding: 14px 18px; margin: 10px 0;
+      border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none;
+      border: none; cursor: pointer; transition: transform .05s ease, filter .15s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--orange); color: #fff; }
+    .btn-primary:hover { filter: brightness(1.05); }
+    .btn-ghost { background: rgba(255,255,255,0.14); color: #fff; }
+    .spinner {
+      width: 26px; height: 26px; margin: 4px auto 18px; border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.35); border-top-color: #fff;
+      animation: spin .8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .stores { display: flex; gap: 10px; margin-top: 6px; }
+    .stores .btn { margin: 0; }
+    .small { font-size: 12.5px; opacity: 0.7; margin-top: 16px; }
+    .hidden { display: none; }
+    a { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="/logo192.png" alt="Roly Armadillo" />
+    <h1>Roly Armadillo</h1>
+
+    <div id="opening">
+      <div class="spinner"></div>
+      <p>Opening your shared level in the app&hellip;</p>
+      <a class="btn btn-primary" id="openBtn" href="#">Open in the app</a>
+    </div>
+
+    <div id="fallback" class="hidden">
+      <p>Don&rsquo;t have Roly Armadillo yet? Grab it, then reopen this link.</p>
+      <div class="stores">
+        <a class="btn btn-primary" id="appStore"
+           href="https://apps.apple.com/us/app/roly-armadillo/id1281711301">App&nbsp;Store</a>
+        <a class="btn btn-ghost" id="googlePlay"
+           href="https://play.google.com/store/apps/details?id=tech.scotth.rolyArmadillo">Google&nbsp;Play</a>
+      </div>
+      <a class="btn btn-ghost" id="openBtn2" href="#" style="margin-top:12px">Try opening the app again</a>
+    </div>
+
+    <p class="small" id="err"></p>
+    <p class="small"><a href="/">scotth.tech</a></p>
+  </div>
+
+  <script>
+    (function () {
+      // ---- read the level id from the query string ----
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get("id");
+      // Fallback: also accept a bare "?<id>" or trailing path segment
+      if (!id) {
+        var q = window.location.search.replace(/^\?/, "");
+        if (q && q.indexOf("=") === -1) id = q;
+      }
+      if (!id) {
+        var seg = window.location.pathname.split("/").filter(Boolean).pop();
+        if (seg && seg !== "rolyLevel") id = seg;
+      }
+
+      var appUrl = "rolyArmadillo://rolyLevel?id=" + encodeURIComponent(id || "");
+      var ua = navigator.userAgent || "";
+      var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      var isAndroid = /Android/.test(ua);
+      var appStore = "https://apps.apple.com/us/app/roly-armadillo/id1281711301";
+      var googlePlay = "https://play.google.com/store/apps/details?id=tech.scotth.rolyArmadillo";
+
+      // Emphasise the correct store for the platform
+      if (isIOS) { document.getElementById("googlePlay").classList.add("hidden"); }
+      if (isAndroid) { document.getElementById("appStore").classList.add("hidden"); }
+
+      document.getElementById("openBtn").setAttribute("href", appUrl);
+      document.getElementById("openBtn2").setAttribute("href", appUrl);
+
+      if (!id) {
+        document.getElementById("err").textContent =
+          "No level id found in this link.";
+      }
+
+      function goToStore() {
+        if (isIOS) window.location = appStore;
+        else if (isAndroid) window.location = googlePlay;
+        // desktop: just reveal the store buttons (below)
+      }
+
+      function showFallback() {
+        document.getElementById("opening").classList.add("hidden");
+        document.getElementById("fallback").classList.remove("hidden");
+      }
+
+      // Try to open the app automatically (only when we have an id and are on mobile).
+      if (id && (isIOS || isAndroid)) {
+        var start = Date.now();
+        // If the app opens, the page is backgrounded and the timer is delayed/paused.
+        var t = setTimeout(function () {
+          // Still here after ~1.6s -> app probably not installed.
+          if (Date.now() - start < 2100) { showFallback(); goToStore(); }
+        }, 1600);
+        // If the page gets hidden (app opened), cancel the store redirect.
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) clearTimeout(t);
+        });
+        window.location = appUrl;
+      } else {
+        // Desktop or missing id: show the manual options.
+        showFallback();
+      }
+    })();
+  </script>
+</body>
+</html>
