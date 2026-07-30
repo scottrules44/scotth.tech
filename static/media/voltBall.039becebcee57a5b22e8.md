@@ -13,9 +13,10 @@ Information leaves your device in only two situations, both described below: whe
 *   **Offline play.** Playing against the computer or against a second player on the same device requires no network connection and transmits no information.
 *   **Your settings and progress** — coins, unlocked colours, unlocked arena styles, difficulty and audio preferences — are stored on your own device. The Service Provider does not receive or store a copy of them.
 *   **Online matches.** When you choose ONLINE, the Application uses Unity Gaming Services to connect you to another player. This requires an anonymous sign-in, which creates a randomly generated player identifier that is not linked to your name, email address, Apple ID or any other personal detail. Your device's Internet Protocol (IP) address is processed by Unity's relay servers in order to route match traffic between the two players, as any online game must do.
+*   **Choosing a nearby server.** Also during online play only, Unity measures the connection quality between your device and its server regions so the match can use the closest one. This derives an approximate region from your IP address. The Application never uses your device's GPS or location services and never asks you for location permission; it cannot see your street, town or precise position.
 *   **Public match listing.** While you are waiting for a random opponent, a listing containing a randomly generated room code is published so another player can find and join you. It contains no personal information. It is removed when your match starts or when you leave the queue.
 
-The Application does not collect your name, email address, phone number, contacts, photos, or precise or approximate location. It contains no chat or messaging of any kind, so players cannot send each other text, voice or images.
+The Application does not collect your name, email address, phone number, contacts or photos. It contains no chat or messaging of any kind, so players cannot send each other text, voice or images. It does not use any advertising identifier and does not track you across other apps or websites.
 
 **Saved Progress and iCloud**
 

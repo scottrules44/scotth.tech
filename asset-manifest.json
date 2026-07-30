@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.070fe764.css",
-    "main.js": "/static/js/main.a38553a6.js",
+    "main.js": "/static/js/main.052c21b1.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -19,10 +19,10 @@
     "static/media/plugin-nativeCharts.md": "/static/media/plugin-nativeCharts.b8671a19e62da2d1e08d.md",
     "static/media/runRoly.htm": "/static/media/runRoly.81f8dc07e793e067a6b3.htm",
     "static/media/notesOnWatch.htm": "/static/media/notesOnWatch.0b61c6a1312434bd40d6.htm",
+    "static/media/voltBall.md": "/static/media/voltBall.039becebcee57a5b22e8.md",
     "static/media/plugin-googleSignIn.md": "/static/media/plugin-googleSignIn.8eacd64fbd58ee5d2fff.md",
     "static/media/plugin-firebaseDynamicLinks.md": "/static/media/plugin-firebaseDynamicLinks.29954b956b55deb1fbad.md",
     "static/media/tableTrivia.htm": "/static/media/tableTrivia.2816f1f8d99967299c19.htm",
-    "static/media/voltBall.md": "/static/media/voltBall.c168489b73d00e6e08aa.md",
     "static/media/plugin-externalStorage.md": "/static/media/plugin-externalStorage.3086d1026e8bad3e1cbe.md",
     "static/media/plugin-storeView.md": "/static/media/plugin-storeView.ab8eaadf53c782e60479.md",
     "static/media/sportsScoreKeeper.md": "/static/media/sportsScoreKeeper.bf1be6351c5897705064.md",
@@ -103,11 +103,11 @@
     "static/media/plugin-androidPreview.md": "/static/media/plugin-androidPreview.5c3b040423a9db36a133.md",
     "static/media/plugin-passkit.md": "/static/media/plugin-passkit.beb8d3f839be8faaeae3.md",
     "main.070fe764.css.map": "/static/css/main.070fe764.css.map",
-    "main.a38553a6.js.map": "/static/js/main.a38553a6.js.map",
+    "main.052c21b1.js.map": "/static/js/main.052c21b1.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.070fe764.css",
-    "static/js/main.a38553a6.js"
+    "static/js/main.052c21b1.js"
   ]
 }
