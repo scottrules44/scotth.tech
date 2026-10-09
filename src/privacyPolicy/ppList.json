@@ -6,6 +6,7 @@
       {"name":"rolyArmadillo", "legacy":true},
       {"name":"tableTrivia", "legacy":true},
       {"name":"cloudPaste"},
-      {"name":"sportsScoreKeeper"}
+      {"name":"sportsScoreKeeper"},
+      {"name":"voltBall"}
     ]
 }

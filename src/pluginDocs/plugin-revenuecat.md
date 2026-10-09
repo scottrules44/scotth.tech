@@ -142,19 +142,24 @@ Shows the RevenueCat native paywall UI. The paywall is built from the offering's
 
 **options** (table, optional)
 - `offeringIdentifier` (string, optional) — show a specific offering's paywall; omit for the default offering
+- `requiredEntitlementIdentifier` (string, optional) — the entitlement this paywall sells, e.g. `"premium"`. **Recommended** — without it the paywall does not close when the user taps *Restore Purchases*. See the restore notes below.
 
 **callback** receives an event table:
-- `event.result` (string) — `"purchased"`, `"restored"`, or `"cancelled"`
-- `event.isError` (boolean)
-- `event.error` (string)
-- `event.customerInfo` (table) — present on `"purchased"` or `"restored"`
+- `event.result` (string) — `"purchased"`, `"restored"`, `"cancelled"`, `"notNeeded"`, or `"error"`
+- `event.isError` (boolean) — `true` only when `result` is `"error"`
+- `event.error` (string) — the failure message; present when `isError` is true
+- `event.customerInfo` (table) — present on `"purchased"`, `"restored"`, or `"notNeeded"`
+
+The callback fires exactly once, when the paywall closes.
 
 ```lua
-rc.presentPaywall({}, function(ev)
+rc.presentPaywall({ requiredEntitlementIdentifier = "premium" }, function(ev)
     if ev.result == "purchased" then
         print("Purchase complete!")
     elseif ev.result == "restored" then
         print("Purchases restored!")
+    elseif ev.result == "notNeeded" then
+        print("Already subscribed — paywall was not shown")
     elseif ev.result == "cancelled" then
         print("Paywall dismissed")
     elseif ev.isError then
@@ -165,6 +170,18 @@ end)
 -- Show a specific offering's paywall
 rc.presentPaywall({ offeringIdentifier = "sale_offering" }, callback)
 ```
+
+**Restore and `requiredEntitlementIdentifier`**
+
+By default the RevenueCat paywall stays open after a successful restore. This is the SDK's own behaviour on both platforms, not a plugin limitation: a restore can succeed while finding nothing to restore, so the SDK will not guess whether the paywall should close.
+
+Pass `requiredEntitlementIdentifier` to tell it what "success" means:
+
+- The paywall **closes automatically** once a restore (or purchase) makes that entitlement active, and the callback fires with `result = "restored"`.
+- If the restore finds nothing, or fails outright, the paywall **stays open** so the user can still buy. The callback does not fire until they close it — at which point you get `"cancelled"`. RevenueCat shows its own alert explaining what happened.
+- If the entitlement is already active when you call `presentPaywall`, the paywall is **skipped entirely** and the callback fires immediately with `result = "notNeeded"` and the current `customerInfo`.
+
+**Note:** omit the option and you keep the old behaviour — the paywall must always be dismissed by hand, including after a restore.
 
 ---
 
@@ -348,10 +365,12 @@ rc.configure({
             end
         end)
 
-        rc.presentPaywall({}, function(ev)
+        rc.presentPaywall({ requiredEntitlementIdentifier = RC_ENTITLEMENT }, function(ev)
             if ev.result == "purchased" or ev.result == "restored" then
                 local prem = ev.customerInfo.entitlements.active[RC_ENTITLEMENT]
                 if prem then print("Unlocked premium!") end
+            elseif ev.result == "notNeeded" then
+                print("Already subscribed")
             end
         end)
 

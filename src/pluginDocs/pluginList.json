@@ -11,8 +11,10 @@
         "plugin-appmetrica":{"category":"Analytics/Attribution", "name":"Appmetrica"},
         "plugin-searchAds":{"category":"Analytics/Attribution", "name":"Search Ads"},
         "plugin-firebaseAnalytics":{"category":"Analytics/Attribution", "name":"Firebase Analytics"},
+        "plugin-firebasePerformance":{"category":"Analytics/Attribution", "name":"Firebase Performance"},
 
         "plugin-nativeCharts":{"category":"Business/Data", "name":"Native Charts"},
+        "plugin-firebaseAI":{"category":"Business/Data", "name":"Firebase AI Logic"},
         "plugin-firebaseFunctions":{"category":"Business/Data", "name":"Firebase Functions"},
         "plugin-firestore":{"category":"Business/Data", "name":"Firestore"},
         "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config"},
@@ -61,6 +63,7 @@
         "plugin-appleSignIn":{"category":"Security", "name":"Apple Sign In"},
         "plugin-fingerprintManager":{"category":"Security", "name":"Fingerprint Manager"},
         "plugin-firebaseAuth":{"category":"Security", "name":"Firebase Auth"},
+        "plugin-firebaseAppCheck":{"category":"Security", "name":"Firebase App Check"},
         "plugin-touchId":{"category":"Security", "name":"Face ID/Touch ID"},
         "plugin-onePassword":{"category":"Security", "name":"One Password"},
 

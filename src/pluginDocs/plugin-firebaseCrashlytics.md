@@ -1,129 +1,126 @@
-## About
+# Firebase Crashlytics Plugin
 
-This plugin allows you log crash in Firebase Crashlytics (Note that it only it real only optizied for Java(Android) and ObjC/Swift(ios) but some lua code logged)
+This plugin brings [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics) to Solar2D. Crashes, non-fatal errors, logs, custom keys and the user id are reported to the Firebase console, and unhandled Lua runtime errors are recorded as non-fatal exceptions automatically and handed to your listener.
 
-## Platforms
+**Platforms**
 
-iOS and Android
+- **iOS 15+** and the iOS Simulator (Apple Silicon and Intel) — Firebase iOS SDK 12.18.0.
+- **Android 6.0+** — Firebase Android BoM 34.19.0 (`firebase-crashlytics` 20.1.1); the plugin's Gradle settings apply the Crashlytics Gradle plugin, which uploads the mapping file for you.
+- **macOS** — Firebase macOS SDK 12.18.0. Firebase keeps its installation token in the Keychain, which needs an app signed with the **Keychain Sharing** entitlement.
+- **HTML5, Windows, Linux, Windows Simulator, macOS Simulator** — pure Lua. Firebase has no Crashlytics SDK for the web or the desktop and no upload API, so nothing is reported from these platforms. The same API keeps shared game code running: the listener still receives every unhandled Lua error, everything else is written to the console, and `isSupported()` returns `false`.
 
-## Functions
+### Setup:
 
-#### firebaseCrashlytics.init(errorListener)
+1. In the Firebase console enable **Crashlytics** for your app.
+2. Download `GoogleService-Info.plist` and `google-services.json` from the console and put both in the root folder of your project. Set `useGoogleServicesJson = true` in the `android` section of `build.settings`.
+3. Call `firebaseCrashlytics.init( listener )` as early as possible in `main.lua`.
+4. iOS: to see symbolicated native frames, upload the dSYM of each build with the `upload-symbols` tool from the Firebase SDK. Lua frames are reported as file, line and function name and need no symbols.
 
-##### setup Firebase Crashlytics
+![](/pluginDocs/projectSettings.png)
 
-errorListener(functions)(optional)
+![](/pluginDocs/androidJson.png)
 
-&nbsp;
+![](/pluginDocs/iosPlist.png)
 
-since this plugin handles and captures lua errors, Runtime:addEventListener("unhandledError") will not work, instead this errorListener will return event.error(string) of the lua error description when a error is captured
+### Functions:
 
-&nbsp;
+#### firebaseCrashlytics.init( [listener] )
+Configures Firebase (when no other Firebase plugin has done it), enables crash collection and installs the Lua error handler. Returns `true` when a configuration was found.
 
-#### firebaseCrashlytics.addLog(log)
+- listener (function) — optional. Receives an event for every unhandled Lua error. On iOS, Android and macOS this handler replaces `Runtime:addEventListener( "unhandledError" )`, so use the listener instead.
 
-##### add log to be sent with crash data
+#### firebaseCrashlytics.addLog( message )
+Adds a breadcrumb that is sent with the next crash report.
 
-log(string) log data
+- message (string)
 
-&nbsp;
+#### firebaseCrashlytics.setUserIdentifier( id )
+Sets the user id shown in the Crashlytics console.
 
-#### firebaseCrashlytics.setUserIdentifier(userId)
+- id (string)
 
-##### Specify a user identifier which will be visible in the Crashlytics UI.
+#### firebaseCrashlytics.setUserName( name )
+#### firebaseCrashlytics.setUserEmail( email )
+Stored as the custom keys `username` and `email`.
 
-userId(string) id of user
+#### firebaseCrashlytics.setStringValue( key, value )
+#### firebaseCrashlytics.setIntValue( key, value )
+#### firebaseCrashlytics.setFloatValue( key, value )
+#### firebaseCrashlytics.setBoolValue( key, value )
+Custom keys attached to every report, visible in the Crashlytics console.
 
-&nbsp;
+- key (string)
+- value (string, number or boolean)
 
-#### firebaseCrashlytics.sendCrash(error)
+#### firebaseCrashlytics.recordError( description, code, [stackTrace] )
+Records a non-fatal error without crashing.
 
-##### (you should only use to test and will only send when you relaunch) The easiest way to cause a crash
+- description (string)
+- code (number)
+- stackTrace (table) — optional. An array of frames `{ fileName = "main.lua", lineNumber = 12, methodName = "update" }`; on Android a frame can also carry `declaringClass`.
 
-error(string) error description
+#### firebaseCrashlytics.sendCrash( [message] )
+Crashes the app on purpose to test the pipeline. Crash reports are sent on the next launch. On the platforms without an SDK a Lua error with the message is raised instead.
 
-&nbsp;
+#### firebaseCrashlytics.isSupported()
+`true` where crashes are reported (iOS, Android, macOS), `false` on HTML5 and the desktop.
 
-#### firebaseCrashlytics.setStringValue(key,string)
+### Events:
 
-##### Set a string value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.
+- event.name (string) — `"firebaseCrashlytics"`
+- event.type (string) — `"error"`
+- event.error (string) — the Lua error message
+- event.stackTrace (string) — the Lua stack trace, when available
 
-key(string) key associated with string
+### Example:
 
-&nbsp;
+```lua
+local firebaseCrashlytics = require( "plugin.firebaseCrashlytics" )
 
-string(string) string to associated with crash
+firebaseCrashlytics.init( function( event )
+    print( "Lua error recorded: " .. tostring( event.error ) )
+end )
 
-&nbsp;
+firebaseCrashlytics.setUserIdentifier( "player-3547347" )
+firebaseCrashlytics.setStringValue( "level", "forest-2" )
+firebaseCrashlytics.setIntValue( "coins", 120 )
+firebaseCrashlytics.addLog( "level started" )
 
-#### firebaseCrashlytics.setIntValue(key,int)
+-- A handled problem worth knowing about
+firebaseCrashlytics.recordError( "save file was corrupt", 42, {
+    { fileName = "save.lua", lineNumber = 88, methodName = "load" },
+} )
 
-##### Set an interger value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.
-
-key(string) key associated with interger
-
-&nbsp;
-
-int(number) interger to associated with crash
-
-&nbsp;
-
-#### firebaseCrashlytics.setBoolValue(key,boolean)
-
-##### Set a boolean value for a key to be associated with your crash data which will be visible in the Firebase Crashlytics UI.
-
-key(string) key associated with boolean
-
-&nbsp;
-
-boolean(boolean) boolean to associated with crash
-
-&nbsp;
-
-#### firebaseCrashlytics.recordError(error, errorCode, stackTrace)
-
-##### log error
-
-error(string) error description
-&nbsp;
-errorCode(number) error code
-&nbsp;
-stackTrace(array, android only required) custom stack trace, include array of tables {methodName = "string", fileName = "fileName", lineNumber = number, declaringClass = "string"}
-&nbsp;
-
-## Crashlytics Setup:
-### add google-services.json and GoogleService-Info.plist from firebase console
-![Firebase Info 1](https://i.ibb.co/GvvSLX0/new-Firebase-Project-Settings.png) \
-![Firebase Info 2](https://i.ibb.co/Trydqm4/google-Sevices-Info.png) \
-![Firebase Info 3](https://i.ibb.co/HXJBSZb/google-Sevices-Json.png) \
-## Build.settings
+-- Once, to check that reports arrive in the console (the report is sent on the next launch)
+-- firebaseCrashlytics.sendCrash( "test crash" )
 ```
+
+### Build Settings:
+
+```lua
 settings =
 {
-	android = {
+	android =
+	{
 		useGoogleServicesJson = true,
-		usesPermissions = {
-			"android.permission.INTERNET"
-		}
+		usesPermissions =
+		{
+			"android.permission.INTERNET",
+			"android.permission.ACCESS_NETWORK_STATE",
+		},
 	},
 	plugins =
 	{
 		["plugin.firebaseCrashlytics"] =
 		{
-			publisherId="tech.scotth",
+			publisherId = "tech.scotth",
 			marketplaceId = "insert marketplace account ID",
 		},
 	},
 }
 ```
 
-
-## Helpful Links
-
-
-
-[Get Firebase Crashlytics Plugin](https://solar2dmarketplace.com/plugins?FirebaseCrashlytics_tech-scotth)
-
-[Get Support In Forums](https://forums.solar2d.com/c/corona-marketplace/13)
-
-[Check Demo](https://github.com/scottrules44/firebaseCrashlytics-demo)
+##### Helpful Links:
+- [Get Plugin](https://solar2dmarketplace.com/plugins?FirebaseCrashlytics_tech-scotth)
+- [Example](https://github.com/scottrules44/firebaseCrashlytics-demo)
+- [Support](https://forums.solar2d.com/c/corona-marketplace/13)

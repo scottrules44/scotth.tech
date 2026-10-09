@@ -7,6 +7,7 @@ import Plugins from "./pages/Plugins";
 import PluginDoc from "./pages/PluginDoc";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import RolyGuide from "./pages/RolyGuide";
 import ErrorHandlePage from "./pages/ErrorHandlePage";
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact/>,
+  },
+  {
+    path: "/roly-guide",
+    element: <RolyGuide/>,
   },
   {
     path:"*",
