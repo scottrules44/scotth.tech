@@ -15,6 +15,7 @@
 
         "plugin-nativeCharts":{"category":"Business/Data", "name":"Native Charts"},
         "plugin-firebaseAI":{"category":"Business/Data", "name":"Firebase AI Logic"},
+        "plugin-enterpriseAI":{"category":"Business/Data", "name":"AI Plugin"},
         "plugin-firebaseFunctions":{"category":"Business/Data", "name":"Firebase Functions"},
         "plugin-firestore":{"category":"Business/Data", "name":"Firestore"},
         "plugin-firebaseConfig":{"category":"Business/Data", "name":"Firebase Config"},
@@ -79,6 +80,7 @@
         "plugin-wallpaper":{"category":"Utilities", "name":"Wallpaper"},
         "plugin-imageToText":{"category":"Utilities", "name":"Image to Text"},
         "plugin-safariWebview":{"category":"Utilities", "name":"Safari WebView"},
+        "plugin-webView2":{"category":"Utilities", "name":"WebView2"},
         "plugin-volumeControl":{"category":"Utilities", "name":"Volume Control"},
         "plugin-quickAction":{"category":"Utilities", "name":"Quick Action"},
         "plugin-moreInfo":{"category":"Utilities", "name":"More Info"}
