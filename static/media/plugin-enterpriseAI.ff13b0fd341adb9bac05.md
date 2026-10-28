@@ -1,13 +1,13 @@
-# Enterprise AI Plugin
+# AI Plugin
 
-One on-device AI API for Solar2D on iOS, macOS, Android and Windows. Each platform's own model does the work (Apple Foundation Models, Gemini Nano through ML Kit GenAI, the Windows AI APIs), and a cloud fallback covers devices that have none. Sessions, streaming, structured output from a Lua schema, and summarize / rewrite / proofread / describe-image tasks.
+One on-device AI API for Solar2D on iOS, macOS, Android and Windows. Each platform's own model does the work (Apple Foundation Models, Gemini Nano through ML Kit GenAI), and a cloud fallback serves every other device with the same code. Sessions, streaming, structured output from a Lua schema, and summarize / rewrite / proofread / describe-image tasks.
 
 - **iOS 26+ / macOS 26+** — `FoundationModels`. Free-form prompting with guided decoding; the most capable backend.
-- **Android** — ML Kit GenAI (Gemini Nano). The stable surface is the four task verbs; free-form prompting is the alpha Prompt API only.
-- **Windows 11** — `Microsoft.Windows.AI.Text`. Not reachable from Solar2D yet: Solar2D builds 32-bit and the AI runtime is x64/arm64 only, so Windows uses the cloud fallback.
-- **Anywhere** — cloud provider in pure Lua, the fallback with no native code.
+- **Android** — ML Kit GenAI (Gemini Nano). Summarize, rewrite, proofread and describe-image run natively, and free-form prompting runs through the Prompt API.
+- **Windows** — served by any cloud provider, so the same Lua code runs unchanged.
+- **Anywhere** — Claude, ChatGPT, Gemini, Mistral, Groq, Grok, DeepSeek or OpenRouter in pure Lua, with no native code.
 
-The platforms are not equivalent, so the plugin does not flatten them. Ask the device what it can do with `getCapabilities()` and the plugin emulates the gaps (for example `summarize` on Apple is built as a prompt).
+Ask the device what it can do with `getCapabilities()`. Every feature it reports is available to call, served natively by the platform model or built by the plugin on top of `generate` (for example `summarize` on Apple).
 
 ### Functions:
 
@@ -33,16 +33,18 @@ Shorthand for `ai.getCapabilities().available`.
 Array of capability tables, one per configured provider, in priority order. Useful for a diagnostics screen.
 
 #### ai.prepare(listener)
-Downloads or initialises the on-device model. Emits `progress` events where the platform reports them (`progress = -1` means indeterminate). Safe to call when already ready. On Windows and Android this can be a multi-gigabyte download, so it is never triggered automatically; ask the player first.
+Downloads or initialises the on-device model. Emits `progress` events where the platform reports them (`progress = -1` means indeterminate). Safe to call when already ready. On Android this can be a multi-gigabyte download, so it is never triggered automatically; ask the player first.
 
 #### ai.setFallback(options)
-Routes requests the device cannot serve to a cloud provider. Pass `nil` to remove it.
+Routes requests the device cannot serve to a cloud AI service, see Providers below. Pass `nil` to remove it. Returns `true`, or `false, errorCode, message` for an unknown provider or a missing required model.
 
+- options.provider (string) — `"anthropic"` (default, also `"claude"`), `"openai"`, `"gemini"`, `"mistral"`, `"groq"`, `"xai"`, `"deepseek"`, `"openrouter"`
 - options.url (string) — an endpoint you control that holds the credential server-side. **Ship this.**
-- options.apiKey (string) — direct key, development only (prints a warning on every use)
-- options.model (string) — default `"claude-opus-5"`
+- options.apiKey (string) — the service's key, development only (prints a warning on every use)
+- options.model (string) — model id; each provider has a default
 - options.maxTokens (number) — default 1024
-- options.effort (string) — `"low"` (default), `"medium"` or `"high"`
+- options.maxTokensField (string) — OpenAI-format providers: `"max_tokens"` or `"max_completion_tokens"`
+- options.effort (string) — Claude only: `"low"` (default), `"medium"` or `"high"`
 - options.headers (table) — extra headers, e.g. your own player auth token
 - options.timeout (number) — seconds, default 60
 
@@ -112,6 +114,35 @@ Branch on `ai.errors.*`, never on message text. The set is the same on every pla
 
 With a fallback set, `UNSUPPORTED_DEVICE`, `UNSUPPORTED_OS`, `NEEDS_PACKAGE_IDENTITY`, `DISABLED_BY_POLICY`, `UNSUPPORTED_FEATURE`, `MODEL_NOT_READY`, `NEEDS_SETUP` and `CONTEXT_WINDOW_EXCEEDED` are retried on the cloud. `GUARDRAIL_VIOLATION` deliberately is not: a prompt the on-device model refused is never quietly sent off the device.
 
+### Providers:
+
+`provider` picks the service behind `setFallback`. Each one fills in its address and a default model, and anything you pass replaces them.
+
+**Hosted services (API key):**
+
+- `"anthropic"` / `"claude"` — Claude, default model `claude-opus-5`. Key from console.anthropic.com
+- `"openai"` — OpenAI / ChatGPT, default `gpt-5-mini`. Key from platform.openai.com
+- `"gemini"` — Google Gemini, default `gemini-2.5-flash`. Key from aistudio.google.com
+- `"mistral"` — Mistral, default `mistral-small-latest`. Key from console.mistral.ai
+- `"groq"` — Groq, default `llama-3.3-70b-versatile`. Key from console.groq.com
+- `"xai"` — xAI Grok, default `grok-4`. Key from console.x.ai
+- `"deepseek"` — DeepSeek, default `deepseek-chat`. Key from platform.deepseek.com
+- `"openrouter"` — OpenRouter, models from every vendor with one key; `model` is required (e.g. `"anthropic/claude-sonnet-4.5"`)
+
+Services rename models often, so set `model` to the one you have tested.
+
+```lua
+-- development: key in the app (prints a warning)
+ai.setFallback( { provider = "openai", apiKey = "sk-..." } )
+
+-- release: your own endpoint holds the key
+ai.setFallback( { provider = "gemini", url = "https://your-backend.example/ai" } )
+```
+
+For release, your endpoint receives exactly the request the service expects, adds the key (`x-api-key` for Claude, `Authorization: Bearer <key>` for the others) and forwards the body to the service, streaming the response back. It is also the place to authenticate and rate-limit players; send your own token with `headers`.
+
+**Adding another service:** if it speaks the OpenAI Chat Completions format, pass `provider = "openai"` with its `url`, `model` and `apiKey`, no plugin change needed.
+
 ### Build Settings:
 
 ```lua
@@ -120,7 +151,8 @@ settings =
 	plugins = {
 		["plugin.enterpriseAI"] =
 		{
-			publisherId = "com.enterpriseai",
+			publisherId = "tech.scotth",
+			marketplaceId = "insert marketplace account ID",
 		},
 	},
 }
@@ -171,11 +203,11 @@ end
 ### Notes:
 
 - **Never ship an API key.** A key inside an `.apk`, `.ipa` or `.exe` can be extracted by anyone. Point `setFallback{ url = ... }` at an endpoint you control that holds the key and authenticates and rate-limits players.
-- These are ~3B-class local models. A 50-token line takes about two seconds: good for dialogue, hints, flavour text and moderating player input, not for anything per-frame.
-- Android needs `minSdk` 26; the plugin's `corona.gradle` raises it and adds the ML Kit dependencies. The Prompt API (free-form prompting) is off by default.
-- On Windows, Solar2D's 32-bit builds cannot load the x64/arm64 Windows AI runtime, so Windows uses the cloud fallback today.
+- These are ~3B-class local models. A 50-token line takes about two seconds, which makes them a great fit for dialogue, hints, flavour text and moderating player input.
+- Android needs `minSdk` 26; the plugin's `corona.gradle` sets it and adds the ML Kit dependencies for you.
 
 ##### Helpful Links:
+- [Get Plugin](https://solar2dmarketplace.com/plugins?AI_tech-scotth)
 - [Apple Foundation Models](https://developer.apple.com/documentation/foundationmodels)
 - [ML Kit GenAI](https://developers.google.com/ml-kit/genai)
 - [Support](https://forums.solar2d.com/c/corona-marketplace/13)
