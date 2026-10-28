@@ -216,6 +216,7 @@ webView.hasBackground = false   -- transparent page over your scene
 - `target="_blank"` links open in the same view on every platform.
 
 ##### Helpful Links:
+- [Get Plugin](https://solar2dmarketplace.com/plugins?WebView2_tech-scotth)
 - [Microsoft Edge WebView2](https://learn.microsoft.com/en-us/microsoft-edge/webview2/)
 - [WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)
 - [Support](https://forums.solar2d.com/c/corona-marketplace/13)

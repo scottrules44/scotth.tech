@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.070fe764.css",
-    "main.js": "/static/js/main.c78c38f2.js",
+    "main.js": "/static/js/main.c20ff1e3.js",
     "static/js/488.1ec0a098.chunk.js": "/static/js/488.1ec0a098.chunk.js",
     "static/media/rolyArmadillo.htm": "/static/media/rolyArmadillo.e03f6a03f9ee9c21f1ce.htm",
     "static/media/appStore.png": "/static/media/appStore.e30b8c7a7b438e8237ab.png",
@@ -12,7 +12,7 @@
     "static/media/plugin-revenuecat.md": "/static/media/plugin-revenuecat.2b47fe00321af9e47027.md",
     "static/media/plugin-ironSource.md": "/static/media/plugin-ironSource.7df07c7c4e9e7692a740.md",
     "static/media/plugin-enterpriseAI.md": "/static/media/plugin-enterpriseAI.ff13b0fd341adb9bac05.md",
-    "static/media/plugin-webView2.md": "/static/media/plugin-webView2.943e79e151fd2a4f33b3.md",
+    "static/media/plugin-webView2.md": "/static/media/plugin-webView2.1899e21b0e5c874a1318.md",
     "static/media/plugin-firebasePerformance.md": "/static/media/plugin-firebasePerformance.d2f7d4dd724c60611ede.md",
     "static/media/plugin-launchDarkly.md": "/static/media/plugin-launchDarkly.6283f5b4c0b0e116efec.md",
     "static/media/plugin-firebaseAuth.md": "/static/media/plugin-firebaseAuth.f60398e500bc5997d9a9.md",
@@ -107,11 +107,11 @@
     "static/media/plugin-androidPreview.md": "/static/media/plugin-androidPreview.5c3b040423a9db36a133.md",
     "static/media/plugin-passkit.md": "/static/media/plugin-passkit.beb8d3f839be8faaeae3.md",
     "main.070fe764.css.map": "/static/css/main.070fe764.css.map",
-    "main.c78c38f2.js.map": "/static/js/main.c78c38f2.js.map",
+    "main.c20ff1e3.js.map": "/static/js/main.c20ff1e3.js.map",
     "488.1ec0a098.chunk.js.map": "/static/js/488.1ec0a098.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.070fe764.css",
-    "static/js/main.c78c38f2.js"
+    "static/js/main.c20ff1e3.js"
   ]
 }
